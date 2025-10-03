@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Couch.ma
-//Last modified: Fri, Oct 03, 2025 05:45:50 PM
+//Last modified: Fri, Oct 03, 2025 05:47:22 PM
 //Codeset: 1252
 requires maya "2026";
 requires "mtoa" "5.5.3";
@@ -10,23 +10,23 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "669A8788-4851-2EAD-9DF2-2292F7F9E0EC";
+fileInfo "UUID" "04EA1653-4170-F08D-4B9E-05A3B12913AB";
 createNode transform -s -n "persp";
 	rename -uid "92867258-4C33-5C27-6445-CF9BF67807FA";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 9.280624454239895 8.1480585238997776 24.74747061562276 ;
-	setAttr ".r" -type "double3" -10.550214357937547 20.0957936327993 -2.0447450310713881e-13 ;
-	setAttr ".rp" -type "double3" 2.4980018054066022e-16 -4.4408920985006262e-16 0 ;
-	setAttr ".rpt" -type "double3" 1.0585889436334159e-14 1.3683407696138852e-15 9.6774903170889377e-15 ;
+	setAttr ".t" -type "double3" 21.581387841347684 13.135167354027194 21.081204831527309 ;
+	setAttr ".r" -type "double3" -17.042653962819557 43.777468438399779 -1.8721262634611931e-13 ;
+	setAttr ".rp" -type "double3" -3.3306690738754696e-16 -1.7763568394002505e-15 0 ;
+	setAttr ".rpt" -type "double3" 1.3308524123846714e-14 2.8134869413221917e-15 9.2861847313506369e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "D9CCA553-4912-968B-3809-8F86FB745790";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 27.346438039826289;
+	setAttr ".coi" 33.901101945831599;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0.043482104017909862 3.1410026778154627 -0.49995036993506758 ;
+	setAttr ".tp" -type "double3" -0.84343023999501909 3.1993121582318498 -2.3215947593023714 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "EDC2444F-45C6-65DC-8CBB-70AA2B5D8A16";
