@@ -1,11 +1,11 @@
 //Maya ASCII 2026 scene
 //Name: Room_Model.ma
-//Last modified: Mon, Oct 13, 2025 06:04:45 PM
+//Last modified: Mon, Oct 13, 2025 06:19:09 PM
 //Codeset: 1252
 file -rdi 1 -ns "deadFlower" -rfn "deadFlowerRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/deadFlower.ma";
 file -rdi 1 -ns "Couch" -rfn "CouchRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Couch.ma";
-file -rdi 1 -ns "SnakePlant" -rfn "SnakePlantRN" -op "v=0;" -typ "mayaAscii"
+file -rdi 1 -ns "SnakePlant" -dr 1 -rfn "SnakePlantRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/SnakePlant.ma";
 file -r -ns "deadFlower" -dr 1 -rfn "deadFlowerRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/deadFlower.ma";
 file -r -ns "Couch" -dr 1 -rfn "CouchRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Couch.ma";
@@ -20,24 +20,24 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "B5F4E487-433F-8EBD-74D3-F3BEC02891E4";
+fileInfo "UUID" "E55FE1F5-46C7-6087-8754-74BF8534CEF8";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "C51326F7-41B5-DDA6-61A1-7CA6EBB48D30";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 12.889992247542722 11.693874834580734 41.242844215976774 ;
-	setAttr ".r" -type "double3" -14.879870240538011 29.697841366775737 9.1537271084367513e-16 ;
-	setAttr ".rp" -type "double3" -1.7763568394002505e-15 -8.8817841970012523e-16 3.5527136788005009e-15 ;
-	setAttr ".rpt" -type "double3" 2.0457772179032575e-14 -2.8014563148092513e-15 1.750882305169047e-14 ;
+	setAttr ".t" -type "double3" 32.651028569212677 2.433605307823572 21.815535262474949 ;
+	setAttr ".r" -type "double3" -0.83473770126002544 51.428477473389769 0 ;
+	setAttr ".rp" -type "double3" 2.2204460492503131e-16 0 -2.2204460492503131e-16 ;
+	setAttr ".rpt" -type "double3" 1.8407895128242319e-14 -3.6029035056797965e-15 1.7172525855739805e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E8C98068-4B2E-E35B-62D7-80A3D1B4D571";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 43.469672071953667;
+	setAttr ".coi" 44.746906967183421;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -7.9238303777683026 0.53115603975918146 4.7491339788274862 ;
+	setAttr ".tp" -type "double3" -2.329753566322228 1.7817142044019185 -6.0808014559062142 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "5B3B550C-4A7D-6A0E-50A3-C69F95676622";
@@ -1005,8 +1005,8 @@ createNode mesh -n "ChairArm_Shape1" -p "ChairArm_1";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "ChairArm_2" -p "Chair_1";
 	rename -uid "C0F49E38-4910-CFD6-FC4E-6D9C5A9274DF";
-	setAttr ".rp" -type "double3" 1.4926592111587542 0.89210450649261475 0.5457116961479187 ;
-	setAttr ".sp" -type "double3" 1.4926592111587542 0.89210450649261475 0.5457116961479187 ;
+	setAttr ".rp" -type "double3" 1.4926592111587551 0.89210450649261475 0.54571169614791826 ;
+	setAttr ".sp" -type "double3" 1.4926592111587551 0.89210450649261475 0.54571169614791826 ;
 createNode mesh -n "ChairArm_Shape2" -p "ChairArm_2";
 	rename -uid "CF8CEA99-440C-90FA-9EE0-D9B4ACC8B4FA";
 	setAttr -k off ".v";
@@ -1227,8 +1227,8 @@ createNode mesh -n "ChairArm_Shape2" -p "ChairArm_2";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "ChairPeg_1" -p "Chair_1";
 	rename -uid "A316CAD4-4D33-2FDD-78CD-7C86360B49C4";
-	setAttr ".rp" -type "double3" 1.5511997938156146 0.35782504081726074 -2.3841857976769631e-07 ;
-	setAttr ".sp" -type "double3" 1.5511997938156146 0.35782504081726074 -2.3841857976769631e-07 ;
+	setAttr ".rp" -type "double3" 1.5511997938156155 0.35782504081726074 -2.3841857998974092e-07 ;
+	setAttr ".sp" -type "double3" 1.5511997938156155 0.35782504081726074 -2.3841857998974092e-07 ;
 createNode mesh -n "ChairPeg_Shape1" -p "ChairPeg_1";
 	rename -uid "DF847D1B-4301-274B-5144-9B8D3516D9DC";
 	setAttr -k off ".v";
@@ -5183,8 +5183,8 @@ createNode mesh -n "ChairBacking_Shape1" -p "ChairBacking_1";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "ChairWheel_1" -p "Chair_1";
 	rename -uid "1B409B0C-4E7C-45E3-FD9E-51866DCB96DD";
-	setAttr ".rp" -type "double3" 1.1654341816902178 0.099381536245346069 -4.4408920985006262e-16 ;
-	setAttr ".sp" -type "double3" 1.1654341816902178 0.099381536245346069 -4.4408920985006262e-16 ;
+	setAttr ".rp" -type "double3" 1.1654341816902187 0.099381536245346069 -6.6613381477509392e-16 ;
+	setAttr ".sp" -type "double3" 1.1654341816902187 0.099381536245346069 -6.6613381477509392e-16 ;
 createNode mesh -n "ChairWheel_Shape1" -p "ChairWheel_1";
 	rename -uid "A07371FC-4275-D403-0AB9-569B3C753EB7";
 	setAttr -k off ".v";
@@ -6918,8 +6918,8 @@ createNode mesh -n "ChairWheel_Shape1" -p "ChairWheel_1";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "ChairWheel_2" -p "Chair_1";
 	rename -uid "D76EFEBF-48DD-FEB2-EDA0-2FA3ACDA2068";
-	setAttr ".rp" -type "double3" 1.9559614658355731 0.099381536245346069 -0.37502665817737579 ;
-	setAttr ".sp" -type "double3" 1.9559614658355731 0.099381536245346069 -0.37502665817737579 ;
+	setAttr ".rp" -type "double3" 1.955961465835574 0.099381536245346069 -0.37502665817737602 ;
+	setAttr ".sp" -type "double3" 1.955961465835574 0.099381536245346069 -0.37502665817737602 ;
 createNode mesh -n "ChairWheel_Shape2" -p "ChairWheel_2";
 	rename -uid "28B3C253-41C8-B01F-AD47-71B0DC5B2156";
 	setAttr -k off ".v";
@@ -8946,9 +8946,14 @@ createNode transform -n "BookShelf_3" -p "Bookshelf_1";
 	rename -uid "95E27E54-4E93-F091-3E66-B8919BACFBEC";
 	setAttr ".rp" -type "double3" 1.763175368309021 1.8323433995246887 -7.1128640174865723 ;
 	setAttr ".sp" -type "double3" 1.763175368309021 1.8323433995246887 -7.1128640174865723 ;
-createNode mesh -n "BookShelf_Shape3" -p "BookShelf_3";
+createNode transform -n "transform3" -p "|Bookshelf_1|BookShelf_3";
+	rename -uid "E6E32B66-4EF6-8178-AD54-73BE683E3DE6";
+	setAttr ".v" no;
+createNode mesh -n "BookShelf_Shape3" -p "transform3";
 	rename -uid "CDF1E0C9-48F9-48DA-6031-C5B9FA72AA74";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:45]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 6 ".gtag";
@@ -9124,9 +9129,14 @@ createNode transform -n "BookShelf_2" -p "Bookshelf_1";
 	rename -uid "F5415849-42CF-6D20-F684-75963851DE32";
 	setAttr ".rp" -type "double3" 1.7631752490997314 1.1004586219787598 -7.1128635406494141 ;
 	setAttr ".sp" -type "double3" 1.7631752490997314 1.1004586219787598 -7.1128635406494141 ;
-createNode mesh -n "BookShelf_Shape2" -p "BookShelf_2";
+createNode transform -n "transform2" -p "BookShelf_2";
+	rename -uid "5F1AE25F-4498-F7C7-15AB-9E803C44BFAB";
+	setAttr ".v" no;
+createNode mesh -n "BookShelf_Shape2" -p "transform2";
 	rename -uid "C423DCF5-472D-B0AA-4FF3-7D8DCDD1F03F";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:33]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 6 ".gtag";
@@ -9267,9 +9277,14 @@ createNode transform -n "BookShelf_1" -p "Bookshelf_1";
 	rename -uid "CAF5EF41-4E93-DE23-BDB9-3CB2277F4C1E";
 	setAttr ".rp" -type "double3" 1.7631798982620239 0.36654782295227051 -7.0693740844726562 ;
 	setAttr ".sp" -type "double3" 1.7631798982620239 0.36654782295227051 -7.0693740844726562 ;
-createNode mesh -n "BookShelf_Shape1" -p "BookShelf_1";
+createNode transform -n "transform1" -p "BookShelf_1";
+	rename -uid "DC7F9834-4470-79BF-1E7B-81AC7784DEA0";
+	setAttr ".v" no;
+createNode mesh -n "BookShelf_Shape1" -p "transform1";
 	rename -uid "64F0525B-4678-0FCE-FED0-7EB4CD683238";
 	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:57]";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr -s 6 ".gtag";
@@ -19888,8 +19903,8 @@ createNode transform -n "Moniter_1" -p "TableAccesories_1";
 	setAttr ".sp" -type "double3" -0.13177954447850626 8.8635938672498913 0 ;
 createNode transform -n "MoniterHead_1" -p "Moniter_1";
 	rename -uid "9D4308CB-4DEF-CC4A-D3A7-F983D9531A00";
-	setAttr ".rp" -type "double3" -0.076614961765482548 8.9074651630814365 1.7763568394002505e-15 ;
-	setAttr ".sp" -type "double3" -0.076614961765482548 8.9074651630814365 1.7763568394002505e-15 ;
+	setAttr ".rp" -type "double3" -0.076614961765482548 8.9074651630814348 2.2204460492503131e-15 ;
+	setAttr ".sp" -type "double3" -0.076614961765482548 8.9074651630814348 2.2204460492503131e-15 ;
 createNode mesh -n "MoniterHead_Shape1" -p "|TableAccesories_1|Moniter_1|MoniterHead_1";
 	rename -uid "7E1B2832-42EA-3581-56DB-E5BCE89801A0";
 	setAttr -k off ".v";
@@ -20321,8 +20336,8 @@ createNode mesh -n "MoniterHead_Shape1" -p "|TableAccesories_1|Moniter_1|Moniter
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "MoniterBase_1" -p "Moniter_1";
 	rename -uid "FA36B3A8-4214-3C6C-5BB4-DE9D2260D8BD";
-	setAttr ".rp" -type "double3" -0.13177954447850659 8.4909880335820613 -2.6504009209560309e-08 ;
-	setAttr ".sp" -type "double3" -0.13177954447850659 8.4909880335820613 -2.6504009209560309e-08 ;
+	setAttr ".rp" -type "double3" -0.13177954447850659 8.4909880335820596 -2.6504008765471099e-08 ;
+	setAttr ".sp" -type "double3" -0.13177954447850659 8.4909880335820596 -2.6504008765471099e-08 ;
 createNode mesh -n "MoniterBase_Shape1" -p "|TableAccesories_1|Moniter_1|MoniterBase_1";
 	rename -uid "13A4C24A-4D5B-04AC-732D-078B8F1150BD";
 	setAttr -k off ".v";
@@ -20868,8 +20883,8 @@ createNode transform -n "Moniter_2" -p "TableAccesories_1";
 	setAttr ".sp" -type "double3" -0.13177954447850626 8.8635938672498913 0 ;
 createNode transform -n "MoniterHead_1" -p "Moniter_2";
 	rename -uid "10340276-4CCA-F8B9-4C23-168F51C90E4B";
-	setAttr ".rp" -type "double3" -0.076614961765477219 8.9074651630814383 1.7763568394002505e-15 ;
-	setAttr ".sp" -type "double3" -0.076614961765477219 8.9074651630814383 1.7763568394002505e-15 ;
+	setAttr ".rp" -type "double3" -0.076614961765475442 8.9074651630814383 2.6645352591003757e-15 ;
+	setAttr ".sp" -type "double3" -0.076614961765475442 8.9074651630814383 2.6645352591003757e-15 ;
 createNode mesh -n "MoniterHead_Shape1" -p "|TableAccesories_1|Moniter_2|MoniterHead_1";
 	rename -uid "4AA01521-4DA6-110F-A4CF-DB8F2D0B6C92";
 	setAttr -k off ".v";
@@ -21301,8 +21316,8 @@ createNode mesh -n "MoniterHead_Shape1" -p "|TableAccesories_1|Moniter_2|Moniter
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "MoniterBase_1" -p "Moniter_2";
 	rename -uid "408EE43A-4C88-B910-9A2B-B7A5AF6A573B";
-	setAttr ".rp" -type "double3" -0.13177954447850304 8.4909880335820631 -2.6504009653649518e-08 ;
-	setAttr ".sp" -type "double3" -0.13177954447850304 8.4909880335820631 -2.6504009653649518e-08 ;
+	setAttr ".rp" -type "double3" -0.13177954447850126 8.4909880335820631 -2.6504008765471099e-08 ;
+	setAttr ".sp" -type "double3" -0.13177954447850126 8.4909880335820631 -2.6504008765471099e-08 ;
 createNode mesh -n "MoniterBase_Shape1" -p "|TableAccesories_1|Moniter_2|MoniterBase_1";
 	rename -uid "9559FDC3-4D3F-3502-B733-0E8345825ECD";
 	setAttr -k off ".v";
@@ -21848,8 +21863,8 @@ createNode transform -n "Moniter_3" -p "TableAccesories_1";
 	setAttr ".sp" -type "double3" -0.13177954447850626 8.8635938672498913 0 ;
 createNode transform -n "MoniterHead_1" -p "Moniter_3";
 	rename -uid "6B7FBC37-4C4C-26B1-2D5D-2AB9E84206C4";
-	setAttr ".rp" -type "double3" -0.076614961765480771 8.9074651630814383 1.7763568394002505e-15 ;
-	setAttr ".sp" -type "double3" -0.076614961765480771 8.9074651630814383 1.7763568394002505e-15 ;
+	setAttr ".rp" -type "double3" -0.076614961765478995 8.9074651630814383 2.6645352591003757e-15 ;
+	setAttr ".sp" -type "double3" -0.076614961765478995 8.9074651630814383 2.6645352591003757e-15 ;
 createNode mesh -n "MoniterHead_Shape1" -p "|TableAccesories_1|Moniter_3|MoniterHead_1";
 	rename -uid "7FF24823-4D9A-9475-67F9-30BCE63DB1EC";
 	setAttr -k off ".v";
@@ -35514,21 +35529,36 @@ createNode transform -n "SnakePlant_1";
 	rename -uid "2486D4F0-4FE2-D077-53EB-1E81154D9523";
 	setAttr ".t" -type "double3" -7.9238303777682999 0 4.7491339788274862 ;
 	setAttr ".s" -type "double3" 0.093300542390273619 0.093300542390273619 0.093300542390273619 ;
+createNode transform -n "BookShelf_3";
+	rename -uid "F034F774-46D1-E47A-6490-6D94AD8065E1";
+	setAttr ".rp" -type "double3" -3.7681018148383236 1.0994455814361572 -8.5590063803166974 ;
+	setAttr ".sp" -type "double3" -3.7681018148383236 1.0994455814361572 -8.5590063803166974 ;
+createNode mesh -n "BookShelf_3Shape" -p "|BookShelf_3";
+	rename -uid "E6E39827-4F77-2836-AD33-3E9CA70E5403";
+	setAttr -k off ".v";
+	setAttr -s 2 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "97C4B7D1-4797-69C0-A2D3-26A778B661A8";
+	rename -uid "82858E6B-40A3-7C5D-DD59-F69AB5315089";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "2553C15A-4229-DA10-770B-CF8AD07A70ED";
+	rename -uid "F8F9206D-4291-CD1D-E4E3-F19BAB4D36E8";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "C6A56F36-4A95-1204-0AEB-50A48CF69F6B";
+	rename -uid "4AA64CB6-49E6-ED73-2260-568D4AC52089";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B1414A73-4BDA-A7E9-B14B-72A644C28C2B";
+	rename -uid "48C971FF-4DE1-C1C9-EFE1-05BBC8D1D8B5";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "0FC74B38-43D9-D9A9-AEAE-F8BACC956A67";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "172429C2-4B48-48C7-294F-6D9BB2CBCB31";
+	rename -uid "B35C9EF7-4210-C4C5-79B4-C0B1B6C219D7";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "95DD8F41-4994-A089-E454-6FBEC009181F";
 	setAttr ".g" yes;
@@ -37165,16 +37195,16 @@ createNode reference -n "deadFlowerRN";
 		
 		2 "deadFlower:polyTweakUV1" "uvTweak[779]" " -type \"float2\" 0.39345074000000002 -0.22562832999999999"
 		
-		"deadFlowerRN" 141
+		"deadFlowerRN" 19
 		0 "|deadFlower:bezier1" "|DeadFlower_1" "-s -r "
 		0 "|deadFlower:Stem1" "|DeadFlower_1" "-s -r "
 		0 "|deadFlower:curve1" "|DeadFlower_1" "-s -r "
 		0 "|deadFlower:Dead_Flower_Pot1" "|DeadFlower_1" "-s -r "
 		0 "|deadFlower:Flower_Petals1" "|DeadFlower_1" "-s -r "
 		2 "|DeadFlower_1|deadFlower:bezier1" "visibility" " 0"
-		2 "|DeadFlower_1|deadFlower:Stem1" "rotatePivot" " -type \"double3\" 0 -3.00441386264936661 0"
+		2 "|DeadFlower_1|deadFlower:Stem1" "rotatePivot" " -type \"double3\" 0 -3.00441386264936483 0"
 		
-		2 "|DeadFlower_1|deadFlower:Stem1" "scalePivot" " -type \"double3\" 0 -3.00441386264936661 0"
+		2 "|DeadFlower_1|deadFlower:Stem1" "scalePivot" " -type \"double3\" 0 -3.00441386264936483 0"
 		
 		2 "|DeadFlower_1|deadFlower:curve1" "visibility" " 0"
 		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1" "rotatePivot" " -type \"double3\" 0 0 0"
@@ -37187,369 +37217,23 @@ createNode reference -n "deadFlowerRN";
 		
 		2 "|DeadFlower_1|deadFlower:Flower_Petals1" "scale" " -type \"double3\" 1 1 1"
 		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1" "rotatePivot" " -type \"double3\" 2.07554283066870937 3.25845368435384231 -0.06308932991562699"
+		2 "|DeadFlower_1|deadFlower:Flower_Petals1" "rotatePivot" " -type \"double3\" 2.07554283066872358 3.25845368435384231 -0.06308932991561278"
 		
 		2 "|DeadFlower_1|deadFlower:Flower_Petals1" "rotatePivotTranslate" " -type \"double3\" 0 0 0"
 		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1" "scalePivot" " -type \"double3\" 2.07554283066870937 3.25845368435384231 -0.06308932991562699"
+		2 "|DeadFlower_1|deadFlower:Flower_Petals1" "scalePivot" " -type \"double3\" 2.07554283066872358 3.25845368435384231 -0.06308932991561278"
 		
 		2 "|DeadFlower_1|deadFlower:Flower_Petals1" "scalePivotTranslate" " -type \"double3\" 0 0 0"
 		
 		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts" " -s 122"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[0]" " -type \"float3\" 0.097439252000000004 -0.069268285999999998 -0.072433769999999995"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[1]" " -type \"float3\" 0.030209636000000002 -0.040585033999999999 -0.26956229999999998"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[2]" " -type \"float3\" -0.12034756000000001 -0.071812435999999993 0.018156951000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[3]" " -type \"float3\" -0.20975906 -0.042896773999999999 -0.20540035000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[4]" " -type \"float3\" 0.073521121999999994 -0.052261543000000001 -0.20772108"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[5]" " -type \"float3\" 0.097860627000000006 -0.057036441 -0.17371389000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[6]" " -type \"float3\" 0.10353030000000001 -0.062359313999999999 -0.14393840999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[7]" " -type \"float3\" 0.095728627999999996 -0.067332923000000003 -0.10334309999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[8]" " -type \"float3\" -0.13317612000000001 -0.058097443999999998 -0.12004860000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[9]" " -type \"float3\" -0.1214826 -0.063082814000000001 -0.085724518"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[10]" " -type \"float3\" -0.11071493 -0.068011410999999994 -0.050300973999999998"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[11]" " -type \"float3\" -0.054978277999999998 -0.067766040999999999 -0.062454614999999998"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[12]" " -type \"float3\" -0.00021590901000000001 -0.067666903 -0.077512838000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[13]" " -type \"float3\" 0.052052028 -0.067942171999999995 -0.10000762000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[14]" " -type \"float3\" 0.040058807000000002 -0.062916681000000002 -0.13410233999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[15]" " -type \"float3\" 0.027608758000000001 -0.057907491999999998 -0.16866964000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[16]" " -type \"float3\" 0.014523611000000001 -0.053106002999999999 -0.20771672999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[17]" " -type \"float3\" -0.055417817000000001 -0.054816919999999998 -0.22375812"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[18]" " -type \"float3\" -0.10768556 -0.054768356999999997 -0.20519534"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[19]" " -type \"float3\" -0.14608839000000001 -0.053199124 -0.15590398"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[20]" " -type \"float3\" 0.070222287999999994 -0.070946515000000002 -0.045347441000000002"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[21]" " -type \"float3\" 0.024720799000000002 -0.074791393999999997 -0.0051398351999999998"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[22]" " -type \"float3\" -0.029793937 -0.075355179999999994 0.017781364000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[23]" " -type \"float3\" -0.087747425000000004 -0.072485051999999994 0.022528967"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[24]" " -type \"float3\" -0.17312795 -0.037284851000000001 -0.23393647000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[25]" " -type \"float3\" -0.13033297999999999 -0.032287594000000003 -0.27857440999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[26]" " -type \"float3\" -0.073091722999999997 -0.032277177999999997 -0.30030897000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[27]" " -type \"float3\" -0.012735366 -0.037245530999999998 -0.29452752999999998"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[28]" " -type \"float3\" -0.14839077000000001 -0.066958456999999999 -0.012897515999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[29]" " -type \"float3\" -0.18208047999999999 -0.062376468999999997 -0.048487518"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[30]" " -type \"float3\" -0.19582698000000001 -0.057004854000000001 -0.074417426999999994"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[31]" " -type \"float3\" -0.19710743 -0.052123357000000002 -0.11348733"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[32]" " -type \"float3\" -0.094940900999999994 -0.059536486999999999 -0.16440761000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[33]" " -type \"float3\" -0.083706319000000001 -0.064037180999999999 -0.11943427"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[34]" " -type \"float3\" -0.035222203000000001 -0.064314626 -0.14094620999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[35]" " -type \"float3\" -0.044282477000000001 -0.059627682000000001 -0.18294137999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[36]" " -type \"float3\" 0.017219445 -0.038501951999999999 -0.28252321000000002"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[37]" " -type \"float3\" 0.038783605999999998 -0.042255956999999997 -0.26082148999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[38]" " -type \"float3\" -0.20285511000000001 -0.040245588999999998 -0.21925365999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[39]" " -type \"float3\" -0.20885002999999999 -0.043955211000000001 -0.18914151000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[40]" " -type \"float3\" -0.12467112 -0.037907779000000003 -0.26022961999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[41]" " -type \"float3\" -0.14103173999999999 -0.033536911000000003 -0.26741499000000002"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[42]" " -type \"float3\" -0.068673201000000003 -0.037912119000000001 -0.28117111"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[43]" " -type \"float3\" -0.087402022999999995 -0.032279789000000003 -0.29487529000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[44]" " -type \"float3\" -0.11602264 -0.032284993999999997 -0.28400797"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[45]" " -type \"float3\" -0.058002587000000001 -0.033519267999999998 -0.29886347000000002"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[46]" " -type \"float3\" 0.090382351999999999 -0.068872057 0.14588474000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[47]" " -type \"float3\" 0.21130984999999999 -0.035632062999999999 0.093482002999999994"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[48]" " -type \"float3\" 0.00032228155999999998 -0.071632095000000007 -0.041833740000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[49]" " -type \"float3\" 0.14521154999999999 -0.037639245000000002 -0.11654709000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[50]" " -type \"float3\" 0.17785996000000001 -0.050017547000000002 0.12824956000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[51]" " -type \"float3\" 0.15786301 -0.055341266 0.14852514999999999"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[52]" " -type \"float3\" 0.14251326 -0.061037976000000001 0.15111679"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[53]" " -type \"float3\" 0.11532207999999999 -0.066490926000000006 0.14316881000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[54]" " -type \"float3\" 0.099169998999999995 -0.056008968999999999 -0.053311374000000002"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[55]" " -type \"float3\" 0.078859441000000002 -0.061477594000000003 -0.044515137000000003"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[56]" " -type \"float3\" 0.057311594 -0.066902935999999996 -0.036372066000000002"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[57]" " -type \"float3\" 0.070733272 -0.066764518999999994 0.012391454999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[58]" " -type \"float3\" 0.087272032999999999 -0.066718950999999999 0.059830304000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[59]" " -type \"float3\" 0.11179086000000001 -0.066911108999999996 0.10387753"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[60]" " -type \"float3\" 0.13176957 -0.061405267999999999 0.094879448000000005"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[61]" " -type \"float3\" 0.15222432 -0.05590564 0.085407324000000007"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[62]" " -type \"float3\" 0.17747852 -0.050536294000000002 0.074685439000000006"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[63]" " -type \"float3\" 0.1942286 -0.051596358000000002 0.0087757092000000005"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[64]" " -type \"float3\" 0.17405480000000001 -0.051564860999999997 -0.035916961999999997"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[65]" " -type \"float3\" 0.12111889000000001 -0.050595369000000001 -0.063445926"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[66]" " -type \"float3\" 0.067288727000000007 -0.070791818000000006 0.1226415"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[67]" " -type \"float3\" 0.036125809000000002 -0.074938758999999994 0.082169354"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[68]" " -type \"float3\" 0.013166768000000001 -0.075562023000000006 0.035282913999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[69]" " -type \"float3\" -0.00087795372000000005 -0.072527385999999999 -0.012972422000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[70]" " -type \"float3\" 0.16296552 -0.031901378000000001 -0.082018754999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[71]" " -type \"float3\" 0.18848883999999999 -0.028324768 -0.040261212999999997"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[72]" " -type \"float3\" 0.21177942 -0.028275259000000001 0.0086047202000000007"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[73]" " -type \"float3\" 0.22790356000000001 -0.031757552000000001 0.054948226000000003"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[74]" " -type \"float3\" 0.017126545 -0.066257602999999998 -0.065026960999999994"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[75]" " -type \"float3\" 0.038733728000000002 -0.061049297000000002 -0.094017959999999998"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[76]" " -type \"float3\" 0.049923502000000002 -0.055322560999999999 -0.10337132"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[77]" " -type \"float3\" 0.075493924000000004 -0.049936075000000003 -0.1034709"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[78]" " -type \"float3\" 0.14702782 -0.056926820000000003 -0.025283402"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[79]" " -type \"float3\" 0.1152483 -0.062084351000000003 -0.015283692"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[80]" " -type \"float3\" 0.13866851999999999 -0.062274210000000003 0.025484673999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[81]" " -type \"float3\" 0.16721161000000001 -0.056992080000000001 0.017930666000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[82]" " -type \"float3\" 0.21612696000000001 -0.034584835000000001 0.075694047"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[83]" " -type \"float3\" 0.19458495000000001 -0.042824805000000001 0.11086575999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[84]" " -type \"float3\" 0.15060889999999999 -0.035660338 -0.097804061999999997"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[85]" " -type \"float3\" 0.11035278 -0.043787661999999998 -0.11000907"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[86]" " -type \"float3\" -0.13010435000000001 -0.063779451000000001 0.020657266000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[87]" " -type \"float3\" -0.22667481 -0.044809762000000003 0.11049373999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[88]" " -type \"float3\" 0.044503212 -0.065354586000000006 0.20955186000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[89]" " -type \"float3\" -0.064467392999999998 -0.045955232999999998 0.33219859000000002"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[90]" " -type \"float3\" -0.21047131999999999 -0.053019397000000003 0.061226647000000002"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[91]" " -type \"float3\" -0.19953002 -0.056057586999999999 0.033541132000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[92]" " -type \"float3\" -0.18537891000000001 -0.059308636999999997 0.026781345000000002"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[93]" " -type \"float3\" -0.15441047999999999 -0.062420576999999998 0.029211708999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[94]" " -type \"float3\" -0.053652792999999997 -0.056438642999999997 0.24176513999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[95]" " -type \"float3\" -0.037326641000000001 -0.059559519999999998 0.22680365999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[96]" " -type \"float3\" -0.018693263000000002 -0.062655701999999994 0.21317406999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[97]" " -type \"float3\" -0.054620429999999998 -0.062576710999999993 0.16099972000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[98]" " -type \"float3\" -0.091576293000000003 -0.062550708999999996 0.1128265"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[99]" " -type \"float3\" -0.13443918999999999 -0.062660365999999995 0.071084403000000004"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[100]" " -type \"float3\" -0.15097493000000001 -0.05951824 0.085453965000000007"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[101]" " -type \"float3\" -0.16714290000000001 -0.056379665000000002 0.10120928"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[102]" " -type \"float3\" -0.18732475000000001 -0.053315441999999998 0.11982066"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[103]" " -type \"float3\" -0.17565554 -0.053920406999999997 0.19666434999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[104]" " -type \"float3\" -0.1360237 -0.053902440000000003 0.24116951"
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[105]" " -type \"float3\" -0.070636204999999994 -0.053349151999999997 0.25907952000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[106]" " -type \"float3\" -0.096713774000000002 -0.064875051000000003 0.040884192999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[107]" " -type \"float3\" -0.047196846000000001 -0.067241653999999998 0.078843199000000003"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[108]" " -type \"float3\" -0.0032645271000000002 -0.067597345000000003 0.12574038000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[109]" " -type \"float3\" 0.032268445999999999 -0.065865516999999998 0.17627019999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[110]" " -type \"float3\" -0.092538028999999994 -0.043696555999999998 0.29223701000000002"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[111]" " -type \"float3\" -0.14095223000000001 -0.040639564000000003 0.25843178999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[112]" " -type \"float3\" -0.1867296 -0.040611316000000001 0.20866539000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[113]" " -type \"float3\" -0.21985615999999999 -0.043614473000000001 0.15341516999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[114]" " -type \"float3\" 0.037083451000000003 -0.062287415999999998 0.23858077999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[115]" " -type \"float3\" 0.028912144000000001 -0.059315100000000003 0.27700233000000002"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[116]" " -type \"float3\" 0.022106583999999999 -0.056046910999999998 0.29050207"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[117]" " -type \"float3\" -0.0040551260999999996 -0.052972905000000001 0.29621467000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[118]" " -type \"float3\" -0.11443312 -0.056962448999999998 0.22174743999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[119]" " -type \"float3\" -0.087507135999999999 -0.059905786000000003 0.20220645000000001"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[120]" " -type \"float3\" -0.12865499 -0.060014140000000001 0.16287895999999999"
-		
-		2 "|DeadFlower_1|deadFlower:Flower_Petals1|deadFlower:Flower_Petals1Shape" 
-		"pnts[121]" " -type \"float3\" -0.15331343 -0.056999687 0.17901981";
+		"pt[0:121]" (" -s 122 -type \"float3\" 0.097439252000000004 -0.069268285999999998 -0.072433769999999995 0.030209636000000002 -0.040585033999999999 -0.26956229999999998 -0.12034756000000001 -0.071812435999999993 0.018156951000000001 -0.20975906 -0.042896773999999999 -0.20540035000000001 0.073521121999999994 -0.052261543000000001 -0.20772108 0.097860627000000006 -0.057036441 -0.17371389000000001 0.10353030000000001 -0.062359313999999999 -0.14393840999999999 0.095728627999999996 -0.067332923000000003 -0.10334309999999999 -0.13317612000000001 -0.058097443999999998 -0.12004860000000001 -0.1214826 -0.063082814000000001 -0.085724518 -0.11071493 -0.068011410999999994 -0.050300973999999998 -0.054978277999999998 -0.067766040999999999 -0.062454614999999998 -0.00021590901000000001 -0.067666903 -0.077512838000000001 0.052052028 -0.067942171999999995 -0.10000762000000001 0.040058807000000002 -0.062916681000000002 -0.13410233999999999 0.027608758000000001 -0.057907491999999998 -0.16866964000000001 0.014523611000000001 -0.053106002999999999"
+		+ " -0.20771672999999999 -0.055417817000000001 -0.054816919999999998 -0.22375812 -0.10768556 -0.054768356999999997 -0.20519534 -0.14608839000000001 -0.053199124 -0.15590398 0.070222287999999994 -0.070946515000000002 -0.045347441000000002 0.024720799000000002 -0.074791393999999997 -0.0051398351999999998 -0.029793937 -0.075355179999999994 0.017781364000000001 -0.087747425000000004 -0.072485051999999994 0.022528967 -0.17312795 -0.037284851000000001 -0.23393647000000001 -0.13033297999999999 -0.032287594000000003 -0.27857440999999999 -0.073091722999999997 -0.032277177999999997 -0.30030897000000001 -0.012735366 -0.037245530999999998 -0.29452752999999998 -0.14839077000000001 -0.066958456999999999 -0.012897515999999999 -0.18208047999999999 -0.062376468999999997 -0.048487518 -0.19582698000000001 -0.057004854000000001 -0.074417426999999994 -0.19710743 -0.052123357000000002 -0.11348733 -0.094940900999999994 -0.059536486999999999 -0.16440761000000001 -0.083706319000000001 -0.064037180999999999 -0.11943427 -0.035222203000000"
+		+ "001 -0.064314626 -0.14094620999999999 -0.044282477000000001 -0.059627682000000001 -0.18294137999999999 0.017219445 -0.038501951999999999 -0.28252321000000002 0.038783605999999998 -0.042255956999999997 -0.26082148999999999 -0.20285511000000001 -0.040245588999999998 -0.21925365999999999 -0.20885002999999999 -0.043955211000000001 -0.18914151000000001 -0.12467112 -0.037907779000000003 -0.26022961999999999 -0.14103173999999999 -0.033536911000000003 -0.26741499000000002 -0.068673201000000003 -0.037912119000000001 -0.28117111 -0.087402022999999995 -0.032279789000000003 -0.29487529000000001 -0.11602264 -0.032284993999999997 -0.28400797 -0.058002587000000001 -0.033519267999999998 -0.29886347000000002 0.090382351999999999 -0.068872057 0.14588474000000001 0.21130984999999999 -0.035632062999999999 0.093482002999999994 0.00032228155999999998 -0.071632095000000007 -0.041833740000000001 0.14521154999999999 -0.037639245000000002 -0.11654709000000001 0.17785996000000001 -0.050017547000000002 0.12824956000000001 0.15786301 -0."
+		+ "055341266 0.14852514999999999 0.14251326 -0.061037976000000001 0.15111679 0.11532207999999999 -0.066490926000000006 0.14316881000000001 0.099169998999999995 -0.056008968999999999 -0.053311374000000002 0.078859441000000002 -0.061477594000000003 -0.044515137000000003 0.057311594 -0.066902935999999996 -0.036372066000000002 0.070733272 -0.066764518999999994 0.012391454999999999 0.087272032999999999 -0.066718950999999999 0.059830304000000001 0.11179086000000001 -0.066911108999999996 0.10387753 0.13176957 -0.061405267999999999 0.094879448000000005 0.15222432 -0.05590564 0.085407324000000007 0.17747852 -0.050536294000000002 0.074685439000000006 0.1942286 -0.051596358000000002 0.0087757092000000005 0.17405480000000001 -0.051564860999999997 -0.035916961999999997 0.12111889000000001 -0.050595369000000001 -0.063445926 0.067288727000000007 -0.070791818000000006 0.1226415 0.036125809000000002 -0.074938758999999994 0.082169354 0.013166768000000001 -0.075562023000000006 0.035282913999999999 -0.00087795372000000005 -0.072527"
+		+ "385999999999 -0.012972422000000001 0.16296552 -0.031901378000000001 -0.082018754999999999 0.18848883999999999 -0.028324768 -0.040261212999999997 0.21177942 -0.028275259000000001 0.0086047202000000007 0.22790356000000001 -0.031757552000000001 0.054948226000000003 0.017126545 -0.066257602999999998 -0.065026960999999994 0.038733728000000002 -0.061049297000000002 -0.094017959999999998 0.049923502000000002 -0.055322560999999999 -0.10337132 0.075493924000000004 -0.049936075000000003 -0.1034709 0.14702782 -0.056926820000000003 -0.025283402 0.1152483 -0.062084351000000003 -0.015283692 0.13866851999999999 -0.062274210000000003 0.025484673999999999 0.16721161000000001 -0.056992080000000001 0.017930666000000001 0.21612696000000001 -0.034584835000000001 0.075694047 0.19458495000000001 -0.042824805000000001 0.11086575999999999 0.15060889999999999 -0.035660338 -0.097804061999999997 0.11035278 -0.043787661999999998 -0.11000907 -0.13010435000000001 -0.063779451000000001 0.020657266000000001 -0.22667481 -0.044809762000000003 "
+		+ "0.11049373999999999 0.044503212 -0.065354586000000006 0.20955186000000001 -0.064467392999999998 -0.045955232999999998 0.33219859000000002 -0.21047131999999999 -0.053019397000000003 0.061226647000000002 -0.19953002 -0.056057586999999999 0.033541132000000001 -0.18537891000000001 -0.059308636999999997 0.026781345000000002 -0.15441047999999999 -0.062420576999999998 0.029211708999999999 -0.053652792999999997 -0.056438642999999997 0.24176513999999999 -0.037326641000000001 -0.059559519999999998 0.22680365999999999 -0.018693263000000002 -0.062655701999999994 0.21317406999999999 -0.054620429999999998 -0.062576710999999993 0.16099972000000001 -0.091576293000000003 -0.062550708999999996 0.1128265 -0.13443918999999999 -0.062660365999999995 0.071084403000000004 -0.15097493000000001 -0.05951824 0.085453965000000007 -0.16714290000000001 -0.056379665000000002 0.10120928 -0.18732475000000001 -0.053315441999999998 0.11982066 -0.17565554 -0.053920406999999997 0.19666434999999999 -0.1360237 -0.053902440000000003 0.24116951 -0.07"
+		+ "0636204999999994 -0.053349151999999997 0.25907952000000001 -0.096713774000000002 -0.064875051000000003 0.040884192999999999 -0.047196846000000001 -0.067241653999999998 0.078843199000000003 -0.0032645271000000002 -0.067597345000000003 0.12574038000000001 0.032268445999999999 -0.065865516999999998 0.17627019999999999 -0.092538028999999994 -0.043696555999999998 0.29223701000000002 -0.14095223000000001 -0.040639564000000003 0.25843178999999999 -0.1867296 -0.040611316000000001 0.20866539000000001 -0.21985615999999999 -0.043614473000000001 0.15341516999999999 0.037083451000000003 -0.062287415999999998 0.23858077999999999 0.028912144000000001 -0.059315100000000003 0.27700233000000002 0.022106583999999999 -0.056046910999999998 0.29050207 -0.0040551260999999996 -0.052972905000000001 0.29621467000000001 -0.11443312 -0.056962448999999998 0.22174743999999999 -0.087507135999999999 -0.059905786000000003 0.20220645000000001 -0.12865499 -0.060014140000000001 0.16287895999999999 -0.15331343 -0.056999687 0.17901981"
+		);
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "CouchRN";
@@ -37563,46 +37247,45 @@ createNode reference -n "CouchRN";
 		2 "|Couch:Whole_Couch1" "rotate" " -type \"double3\" 0 90 0"
 		2 "|Couch:Whole_Couch1" "scale" " -type \"double3\" 0.29910682424278978 0.29910682424278978 0.29910682424278978"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Cushion2" "rotatePivot" " -type \"double3\" 0.46806227451655591 1.65026707843467269 0.46732071758767901"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Cushion2" "rotatePivot" " -type \"double3\" 0.4680622745165568 1.65026707843467269 0.46732071758768612"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Cushion2" "scalePivot" " -type \"double3\" 0.46806227451655591 1.65026707843467269 0.46732071758767901"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Cushion2" "scalePivot" " -type \"double3\" 0.4680622745165568 1.65026707843467269 0.46732071758768612"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Cushion1" "rotatePivot" " -type \"double3\" -3.79404802328912094 1.65026707843467269 0.46732071758767901"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Cushion1" "rotatePivot" " -type \"double3\" -3.79404802328912094 1.65026707843467269 0.46732071758768612"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Cushion1" "scalePivot" " -type \"double3\" -3.79404802328912094 1.65026707843467269 0.46732071758767901"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Cushion1" "scalePivot" " -type \"double3\" -3.79404802328912094 1.65026707843467269 0.46732071758768612"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Pillow3" "rotatePivot" " -type \"double3\" -4.71499952788089605 2.84343763287730944 0.65437226681689609"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Pillow3" "rotatePivot" " -type \"double3\" -4.71499952788089605 2.84343763287730944 0.65437226681689964"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Pillow3" "scalePivot" " -type \"double3\" -4.71499952788089605 2.84343763287730944 0.65437226681689609"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Pillow3" "scalePivot" " -type \"double3\" -4.71499952788089605 2.84343763287730944 0.65437226681689964"
 		
 		2 "|Couch:Whole_Couch1|Couch:Couch_Base1" "rotatePivot" " -type \"double3\" 0 0.20450706779956818 0"
 		
 		2 "|Couch:Whole_Couch1|Couch:Couch_Base1" "scalePivot" " -type \"double3\" 0 0.20450706779956818 0"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Cushion3" "rotatePivot" " -type \"double3\" 4.90378119323118611 1.65026707843467269 0.46732071758767901"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Cushion3" "rotatePivot" " -type \"double3\" 4.903781193231187 1.65026707843467269 0.46732071758768612"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Cushion3" "scalePivot" " -type \"double3\" 4.90378119323118611 1.65026707843467269 0.46732071758767901"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Cushion3" "scalePivot" " -type \"double3\" 4.903781193231187 1.65026707843467269 0.46732071758768612"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Pillow2" "rotatePivot" " -type \"double3\" 6.31602433996205193 3.03328260066373279 0.00042115444028212323"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Pillow2" "rotatePivot" " -type \"double3\" 6.31602433996205281 3.03328260066373279 0.00042115444028922866"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Pillow2" "scalePivot" " -type \"double3\" 6.31602433996205193 3.03328260066373279 0.00042115444028212323"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Pillow2" "scalePivot" " -type \"double3\" 6.31602433996205281 3.03328260066373279 0.00042115444028922866"
 		
 		2 "|Couch:Whole_Couch1|Couch:Couch_Top1" "translate" " -type \"double3\" 0 0 0"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Top1" "rotatePivot" " -type \"double3\" 0 2.54866836640374572 0.97548623035014614"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Top1" "rotatePivot" " -type \"double3\" 0 2.54866836640374572 0.9754862303501497"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Top1" "scalePivot" " -type \"double3\" 0 2.54866836640374572 0.97548623035014614"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Top1" "scalePivot" " -type \"double3\" 0 2.54866836640374572 0.9754862303501497"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Pillow1" "rotatePivot" " -type \"double3\" -5.58875881479428305 3.03328260066373279 -0.4832203466101852"
+		2 "|Couch:Whole_Couch1|Couch:Couch_Pillow1" "rotatePivot" " -type \"double3\" -5.58875881479428305 3.03328260066373279 -0.48322034661018165"
 		
-		2 "|Couch:Whole_Couch1|Couch:Couch_Pillow1" "scalePivot" " -type \"double3\" -5.58875881479428305 3.03328260066373279 -0.4832203466101852";
+		2 "|Couch:Whole_Couch1|Couch:Couch_Pillow1" "scalePivot" " -type \"double3\" -5.58875881479428305 3.03328260066373279 -0.48322034661018165";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "SnakePlantRN";
 	rename -uid "7E7941DC-4732-E700-A49B-329EE9618D43";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"SnakePlantRN"
-		"SnakePlantRN" 0
 		"SnakePlantRN" 31
 		0 "|SnakePlant:Curve_Pot1" "|SnakePlant_1" "-s -r "
 		0 "|SnakePlant:Pot_Plant1" "|SnakePlant_1" "-s -r "
@@ -37673,6 +37356,87 @@ createNode reference -n "SnakePlantRN";
 		3 "SnakePlant:file1.message" ":initialMaterialInfo.texture" "-na";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode polyUnite -n "polyUnite1";
+	rename -uid "037B505D-44AB-E926-1B1D-DFA4CEFD0845";
+	setAttr -s 3 ".ip";
+	setAttr -s 3 ".im";
+createNode groupId -n "groupId1";
+	rename -uid "1A02BA05-4C5F-F0C0-D488-6282ED1CAAA2";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId2";
+	rename -uid "BD586CE0-4581-4F90-4796-A3A0E31B6EDC";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId3";
+	rename -uid "EECE7ABB-444A-00EF-794E-7380C7F62BF3";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId4";
+	rename -uid "AC5F4F12-4321-F07F-C3EE-1A8DD932C982";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId5";
+	rename -uid "77B6D3E9-458C-3943-E555-F593EFF617E9";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId6";
+	rename -uid "8BD53E2B-4574-D776-5C6E-D1880DB02807";
+	setAttr ".ihi" 0;
+createNode groupId -n "groupId7";
+	rename -uid "E66A739A-45F9-77B6-FA3F-02895CE14969";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts1";
+	rename -uid "1A566772-4515-C151-0FCF-808B8B5DE195";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:137]";
+createNode groupId -n "groupId8";
+	rename -uid "17FFF3C3-4835-E650-B935-D1AD95B685A7";
+	setAttr ".ihi" 0;
+createNode polyPlanarProj -n "polyPlanarProj1";
+	rename -uid "7E0D6A35-40C6-C11A-F52B-889B7BEAF37B";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:137]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pc" -type "double3" -3.7681019306182861 1.0994455814361572 -8.5590062141418457 ;
+	setAttr ".ro" -type "double3" 0 90 0 ;
+	setAttr ".ps" -type "double2" 1.0869817733764648 2.1988911628723145 ;
+	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode polyPlanarProj -n "polyPlanarProj2";
+	rename -uid "91D72B12-439B-FE6F-9959-018B5FE74A66";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:137]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pc" -type "double3" -3.7681019306182861 1.0994455814361572 -8.5590062141418457 ;
+	setAttr ".ro" -type "double3" -90 0 0 ;
+	setAttr ".ps" -type "double2" 4.7124209403991699 1.0869817733764648 ;
+	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode polyPlanarProj -n "polyPlanarProj3";
+	rename -uid "A555915D-4D8E-10EA-845D-75A30562DEF5";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:137]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pc" -type "double3" -3.7681019306182861 1.0994455814361572 -8.5590062141418457 ;
+	setAttr ".ro" -type "double3" 0 90 0 ;
+	setAttr ".ps" -type "double2" 1.0869817733764648 2.1988911628723145 ;
+	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode polyPlanarProj -n "polyPlanarProj4";
+	rename -uid "78172AC3-41CA-6FB2-5099-F38A02DC772B";
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[0:137]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pc" -type "double3" -3.768101692199707 1.0791587829589844 -8.5648164749145508 ;
+	setAttr ".ro" -type "double3" -8.3879388152787636e-05 -15.983751337846236 90.000000000062244 ;
+	setAttr ".ps" -type "double2" 2.3709919592826445 4.7124223477708256 ;
+	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode polyAutoProj -n "polyAutoProj1";
+	rename -uid "694CD53E-473E-D1EE-14DF-478F6A384A16";
+	setAttr ".cch" yes;
+	setAttr ".uopa" yes;
+	setAttr ".ics" -type "componentList" 1 "f[84]";
+	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".s" -type "double3" 0.92267990112304688 0.92267990112304688 0.92267990112304688 ;
+	setAttr ".ps" 0.20000000298023224;
+	setAttr ".dl" yes;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -37690,19 +37454,18 @@ select -ne :defaultShaderList1;
 	setAttr -s 6 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
-select -ne :defaultRenderUtilityList1;
 select -ne :defaultRenderingList1;
-	setAttr -s 4 ".r";
-select -ne :defaultTextureList1;
+	setAttr -s 3 ".r";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :openPBR_shader1;
+	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 115 ".dsm";
+	setAttr -s 112 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 8 ".gn";
+	setAttr -s 15 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
@@ -37725,6 +37488,19 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
+connectAttr "groupId1.id" "BookShelf_Shape3.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "BookShelf_Shape3.iog.og[0].gco";
+connectAttr "groupId2.id" "BookShelf_Shape3.ciog.cog[0].cgid";
+connectAttr "groupId3.id" "BookShelf_Shape2.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "BookShelf_Shape2.iog.og[0].gco";
+connectAttr "groupId4.id" "BookShelf_Shape2.ciog.cog[0].cgid";
+connectAttr "groupId5.id" "BookShelf_Shape1.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "BookShelf_Shape1.iog.og[0].gco";
+connectAttr "groupId6.id" "BookShelf_Shape1.ciog.cog[0].cgid";
+connectAttr "polyAutoProj1.out" "BookShelf_3Shape.i";
+connectAttr "groupId7.id" "BookShelf_3Shape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "BookShelf_3Shape.iog.og[0].gco";
+connectAttr "groupId8.id" "BookShelf_3Shape.ciog.cog[0].cgid";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -37737,6 +37513,24 @@ connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drive
 		 -na;
 connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
+connectAttr "BookShelf_Shape3.o" "polyUnite1.ip[0]";
+connectAttr "BookShelf_Shape2.o" "polyUnite1.ip[1]";
+connectAttr "BookShelf_Shape1.o" "polyUnite1.ip[2]";
+connectAttr "BookShelf_Shape3.wm" "polyUnite1.im[0]";
+connectAttr "BookShelf_Shape2.wm" "polyUnite1.im[1]";
+connectAttr "BookShelf_Shape1.wm" "polyUnite1.im[2]";
+connectAttr "polyUnite1.out" "groupParts1.ig";
+connectAttr "groupId7.id" "groupParts1.gi";
+connectAttr "groupParts1.og" "polyPlanarProj1.ip";
+connectAttr "BookShelf_3Shape.wm" "polyPlanarProj1.mp";
+connectAttr "polyPlanarProj1.out" "polyPlanarProj2.ip";
+connectAttr "BookShelf_3Shape.wm" "polyPlanarProj2.mp";
+connectAttr "polyPlanarProj2.out" "polyPlanarProj3.ip";
+connectAttr "BookShelf_3Shape.wm" "polyPlanarProj3.mp";
+connectAttr "polyPlanarProj3.out" "polyPlanarProj4.ip";
+connectAttr "BookShelf_3Shape.wm" "polyPlanarProj4.mp";
+connectAttr "polyPlanarProj4.out" "polyAutoProj1.ip";
+connectAttr "BookShelf_3Shape.wm" "polyAutoProj1.mp";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "Floor_1Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "TableTop_Shape1.iog" ":initialShadingGroup.dsm" -na;
@@ -37751,9 +37545,6 @@ connectAttr "ChairArm_Shape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "ChairArm_Shape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "ChairPillow_Shape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Wall_Shape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "BookShelf_Shape1.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "BookShelf_Shape2.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "BookShelf_Shape3.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Book_Shape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Book_Shape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Book_Shape3.iog" ":initialShadingGroup.dsm" -na;
@@ -37836,4 +37627,19 @@ connectAttr "|TableAccesories_1|Moniter_3|MoniterHead_1|MoniterHead_Shape1.iog" 
 connectAttr "|TableAccesories_1|Moniter_3|MoniterBase_1|MoniterBase_Shape1.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "KeyBoard_Shape1.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "BookShelf_Shape3.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "BookShelf_Shape3.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "BookShelf_Shape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "BookShelf_Shape2.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "BookShelf_Shape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "BookShelf_Shape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "BookShelf_3Shape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "BookShelf_3Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId3.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId4.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId5.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId6.msg" ":initialShadingGroup.gn" -na;
+connectAttr "groupId7.msg" ":initialShadingGroup.gn" -na;
 // End of Room_Model.ma
