@@ -1,15 +1,16 @@
 //Maya ASCII 2026 scene
 //Name: Room_Model.ma
-//Last modified: Mon, Oct 13, 2025 06:19:09 PM
+//Last modified: Mon, Oct 20, 2025 07:35:31 PM
 //Codeset: 1252
 file -rdi 1 -ns "deadFlower" -rfn "deadFlowerRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/deadFlower.ma";
 file -rdi 1 -ns "Couch" -rfn "CouchRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Couch.ma";
-file -rdi 1 -ns "SnakePlant" -dr 1 -rfn "SnakePlantRN" -op "v=0;" -typ "mayaAscii"
-		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/SnakePlant.ma";
+file -rdi 1 -ns "Bookshelf_2" -rfn "Bookshelf_1RN" -op "v=0;" -typ "mayaAscii"
+		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Bookshelf_1.ma";
 file -r -ns "deadFlower" -dr 1 -rfn "deadFlowerRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/deadFlower.ma";
 file -r -ns "Couch" -dr 1 -rfn "CouchRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Couch.ma";
-file -r -ns "SnakePlant" -dr 1 -rfn "SnakePlantRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/SnakePlant.ma";
+file -r -ns "Bookshelf_2" -dr 1 -rfn "Bookshelf_1RN" -op "v=0;" -typ "mayaAscii"
+		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Bookshelf_1.ma";
 requires maya "2026";
 requires "stereoCamera" "10.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -20,24 +21,24 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "E55FE1F5-46C7-6087-8754-74BF8534CEF8";
+fileInfo "UUID" "699CEE81-4083-80F3-CC9E-169253AB6215";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "C51326F7-41B5-DDA6-61A1-7CA6EBB48D30";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 32.651028569212677 2.433605307823572 21.815535262474949 ;
-	setAttr ".r" -type "double3" -0.83473770126002544 51.428477473389769 0 ;
-	setAttr ".rp" -type "double3" 2.2204460492503131e-16 0 -2.2204460492503131e-16 ;
-	setAttr ".rpt" -type "double3" 1.8407895128242319e-14 -3.6029035056797965e-15 1.7172525855739805e-14 ;
+	setAttr ".t" -type "double3" -2.0441970387734756 1.4024176374917885 6.0494507053521502 ;
+	setAttr ".r" -type "double3" -4.4427842700975164 55.097364101762047 -2.8140544332311296e-13 ;
+	setAttr ".rp" -type "double3" 0 4.4408920985006262e-16 4.4408920985006262e-16 ;
+	setAttr ".rpt" -type "double3" 1.904782653698075e-14 -3.7543543436658579e-15 1.7255195571733843e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E8C98068-4B2E-E35B-62D7-80A3D1B4D571";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 44.746906967183421;
+	setAttr ".coi" 7.4668836439010828;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -2.329753566322228 1.7817142044019185 -6.0808014559062142 ;
+	setAttr ".tp" -type "double3" -8.1495782938996086 0.82400645544621043 1.7898601633403701 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "5B3B550C-4A7D-6A0E-50A3-C69F95676622";
@@ -8946,7 +8947,7 @@ createNode transform -n "BookShelf_3" -p "Bookshelf_1";
 	rename -uid "95E27E54-4E93-F091-3E66-B8919BACFBEC";
 	setAttr ".rp" -type "double3" 1.763175368309021 1.8323433995246887 -7.1128640174865723 ;
 	setAttr ".sp" -type "double3" 1.763175368309021 1.8323433995246887 -7.1128640174865723 ;
-createNode transform -n "transform3" -p "|Bookshelf_1|BookShelf_3";
+createNode transform -n "transform3" -p "BookShelf_3";
 	rename -uid "E6E32B66-4EF6-8178-AD54-73BE683E3DE6";
 	setAttr ".v" no;
 createNode mesh -n "BookShelf_Shape3" -p "transform3";
@@ -35529,36 +35530,21 @@ createNode transform -n "SnakePlant_1";
 	rename -uid "2486D4F0-4FE2-D077-53EB-1E81154D9523";
 	setAttr ".t" -type "double3" -7.9238303777682999 0 4.7491339788274862 ;
 	setAttr ".s" -type "double3" 0.093300542390273619 0.093300542390273619 0.093300542390273619 ;
-createNode transform -n "BookShelf_3";
-	rename -uid "F034F774-46D1-E47A-6490-6D94AD8065E1";
-	setAttr ".rp" -type "double3" -3.7681018148383236 1.0994455814361572 -8.5590063803166974 ;
-	setAttr ".sp" -type "double3" -3.7681018148383236 1.0994455814361572 -8.5590063803166974 ;
-createNode mesh -n "BookShelf_3Shape" -p "|BookShelf_3";
-	rename -uid "E6E39827-4F77-2836-AD33-3E9CA70E5403";
-	setAttr -k off ".v";
-	setAttr -s 2 ".iog[0].og";
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "82858E6B-40A3-7C5D-DD59-F69AB5315089";
+	rename -uid "B077C9CD-474B-DB33-5E8D-95AD9F017AED";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "F8F9206D-4291-CD1D-E4E3-F19BAB4D36E8";
+	rename -uid "F55B5AC6-4ACC-8F0B-D0AC-CD9CE618FF1B";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "4AA64CB6-49E6-ED73-2260-568D4AC52089";
+	rename -uid "F2640F50-4A3C-3DD0-9D02-058216129F6A";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "48C971FF-4DE1-C1C9-EFE1-05BBC8D1D8B5";
+	rename -uid "6D8FD0BC-4FF4-780D-F690-658C73A8EAF7";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "0FC74B38-43D9-D9A9-AEAE-F8BACC956A67";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "B35C9EF7-4210-C4C5-79B4-C0B1B6C219D7";
+	rename -uid "C08A2B6D-4FCF-E932-169A-BA84D0739ADC";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "95DD8F41-4994-A089-E454-6FBEC009181F";
 	setAttr ".g" yes;
@@ -35578,7 +35564,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
 		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
 		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
-		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1317\n            -height 706\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 937\n            -height 794\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n"
 		+ "            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n"
@@ -35603,10 +35589,10 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"|persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n"
 		+ "                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n"
 		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
-		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n"
-		+ "                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1317\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1317\\n    -height 706\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -excludeObjectPreset \"All\" \n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n"
+		+ "            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 937\\n    -height 794\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 937\\n    -height 794\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -37195,7 +37181,7 @@ createNode reference -n "deadFlowerRN";
 		
 		2 "deadFlower:polyTweakUV1" "uvTweak[779]" " -type \"float2\" 0.39345074000000002 -0.22562832999999999"
 		
-		"deadFlowerRN" 19
+		"deadFlowerRN" 800
 		0 "|deadFlower:bezier1" "|DeadFlower_1" "-s -r "
 		0 "|deadFlower:Stem1" "|DeadFlower_1" "-s -r "
 		0 "|deadFlower:curve1" "|DeadFlower_1" "-s -r "
@@ -37211,6 +37197,2046 @@ createNode reference -n "deadFlowerRN";
 		
 		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1" "scalePivot" " -type \"double3\" 0 0 0"
 		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints" " -s 780"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[0]" " -type \"float2\" 0.60881722000000005 0.065529637000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[1]" " -type \"float2\" 0.53656197000000005 0.32868436000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[2]" " -type \"float2\" 0.35637911999999999 0.083700493000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[3]" " -type \"float2\" 0.21219209 0.20751095"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[4]" " -type \"float2\" 0.53736483999999995 0.18524968999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[5]" " -type \"float2\" 0.0017830195 0.19852026"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[6]" " -type \"float2\" 0.14219043000000001 0.11403864"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[7]" " -type \"float2\" 0.073658682000000003 0.16106556"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[8]" " -type \"float2\" 0.54174655999999999 0.10653303"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[9]" " -type \"float2\" 0.57031321999999995 0.07771045"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[10]" " -type \"float2\" 0.58893048999999997 0.069292508000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[11]" " -type \"float2\" 0.60832858000000001 0.054711088999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[12]" " -type \"float2\" 0.58547008 0.059043799000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[13]" " -type \"float2\" 0.56436324000000004 0.068537682000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[14]" " -type \"float2\" 0.55428290000000002 0.090389259"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[15]" " -type \"float2\" 0.54629159000000005 0.082767010000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[16]" " -type \"float2\" 0.53220188999999996 0.1008245"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[17]" " -type \"float2\" 0.038047853999999999 0.18166097"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[18]" " -type \"float2\" 0.73776394000000001 0.051750623000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[19]" " -type \"float2\" 0.77753311000000003 0.051493249999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[20]" " -type \"float2\" 0.75760578999999995 0.048905856999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[21]" " -type \"float2\" 0.020040371000000001 0.19068940000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[22]" " -type \"float2\" 0 0.19351757"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[23]" " -type \"float2\" 0.75752269999999999 0.051344488000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[24]" " -type \"float2\" 0.77673477000000002 0.053874354999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[25]" " -type \"float2\" 0.81172758 0.072223"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[26]" " -type \"float2\" 0.79603886999999995 0.059493496999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[27]" " -type \"float2\" 0.055928989999999998 0.17172095000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[28]" " -type \"float2\" 0.79460620999999998 0.061668988000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[29]" " -type \"float2\" 0.80980646999999994 0.074008650999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[30]" " -type \"float2\" 0.52987057000000004 0.14533749000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[31]" " -type \"float2\" 0.53345436000000002 0.12521514"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[32]" " -type \"float2\" 0.52295815999999995 0.12178028"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[33]" " -type \"float2\" 0.51896995000000001 0.14443301"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[34]" " -type \"float2\" 0.53128677999999996 0.16573273999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[35]" " -type \"float2\" 0.52058017000000001 0.16751873"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[36]" " -type \"float2\" 0.52758819000000001 0.18968396000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[37]" " -type \"float2\" 0.10851368 0.13827796000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[38]" " -type \"float2\" 0.82990717999999997 0.10783874"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[39]" " -type \"float2\" 0.82327837000000004 0.088798635000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[40]" " -type \"float2\" 0.091225929999999997 0.14989664999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[41]" " -type \"float2\" 0.82100421000000001 0.090068764999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[42]" " -type \"float2\" 0.82747411999999998 0.10846126"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[43]" " -type \"float2\" 0.82674903 0.14748316"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[44]" " -type \"float2\" 0.83103382999999997 0.12790175000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[45]" " -type \"float2\" 0.12549546 0.12630783000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[46]" " -type \"float2\" 0.82859563999999997 0.12780670999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[47]" " -type \"float2\" 0.82450807000000004 0.14665460999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[48]" " -type \"float2\" 0.13439733000000001 0.26189888"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[49]" " -type \"float2\" 0.01260445 0.22622597"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[50]" " -type \"float2\" 0.088272571999999994 0.18600911000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[51]" " -type \"float2\" 0.050938013999999997 0.20772294999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[52]" " -type \"float2\" 0.031924135999999999 0.21742851999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[53]" " -type \"float2\" 0.0059179272999999996 0.2095293"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[54]" " -type \"float2\" 0.024690068999999999 0.20132775999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[55]" " -type \"float2\" 0.043148476999999998 0.19204541999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[56]" " -type \"float2\" 0.069731265000000001 0.19718954999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[57]" " -type \"float2\" 0.061402585000000003 0.18186614000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[58]" " -type \"float2\" 0.079518645999999998 0.17104688000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[59]" " -type \"float2\" 0.093863100000000005 0.28723386000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[60]" " -type \"float2\" 0.022277188 0.24860652"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[61]" " -type \"float2\" 0.061658781000000003 0.22874822"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[62]" " -type \"float2\" 0.042126234999999998 0.23903799000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[63]" " -type \"float2\" 0.073402748000000004 0.29916638000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[64]" " -type \"float2\" 0.32850614 0.057622075000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[65]" " -type \"float2\" 0.055687199999999999 0.2663025"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[66]" " -type \"float2\" 0.075829193000000003 0.25521070000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[67]" " -type \"float2\" 0.10016532 0.20608269000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[68]" " -type \"float2\" 0.081033930000000004 0.2177009"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[69]" " -type \"float2\" 0.11425209 0.27476402999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[70]" " -type \"float2\" 0.095700412999999998 0.24352904"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[71]" " -type \"float2\" 0.11540323 0.23132989000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[72]" " -type \"float2\" 0.15952577000000001 0.13715263"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[73]" " -type \"float2\" 0.12458329999999999 0.16222793999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[74]" " -type \"float2\" 0.10659953 0.17431384"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[75]" " -type \"float2\" 0.097361393000000004 0.159619"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[76]" " -type \"float2\" 0.11494166 0.14782785000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[77]" " -type \"float2\" 0.14220956000000001 0.14982152000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[78]" " -type \"float2\" 0.13217778999999999 0.13568359999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[79]" " -type \"float2\" 0.14911579999999999 0.12327080999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[80]" " -type \"float2\" 0.17395355000000001 0.23517189999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[81]" " -type \"float2\" 0.13748801999999999 0.18149984"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[82]" " -type \"float2\" 0.11898106999999999 0.19395956"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[83]" " -type \"float2\" 0.15433857000000001 0.24865984999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[84]" " -type \"float2\" 0.13481113 0.21869783000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[85]" " -type \"float2\" 0.15385744000000001 0.20576304000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[86]" " -type \"float2\" 0.17343205 0.15570901000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[87]" " -type \"float2\" 0.15562175 0.16873619000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[88]" " -type \"float2\" 0.19323075000000001 0.22145534"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[89]" " -type \"float2\" 0.17256472 0.19255148999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[90]" " -type \"float2\" 0.19094813999999999 0.17908853"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[91]" " -type \"float2\" 0.59942757999999996 0.23389846"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[92]" " -type \"float2\" 0.20666329999999999 0.061606257999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[93]" " -type \"float2\" 0.69079142999999998 0.22521843"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[94]" " -type \"float2\" 0.56243103999999999 0.21720729999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[95]" " -type \"float2\" 0.54803431000000002 0.20268754999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[96]" " -type \"float2\" 0.53964352999999998 0.20955977000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[97]" " -type \"float2\" 0.55592912000000005 0.22600020000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[98]" " -type \"float2\" 0.57991546000000005 0.22779936000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[99]" " -type \"float2\" 0.57557786 0.23795705"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[100]" " -type \"float2\" 0.59742123000000003 0.2448467"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[101]" " -type \"float2\" 0.17496972 0.088609159000000007"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[102]" " -type \"float2\" 0.80335760000000001 0.17964675999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[103]" " -type \"float2\" 0.81726491000000001 0.16514222000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[104]" " -type \"float2\" 0.15868468999999999 0.10150473"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[105]" " -type \"float2\" 0.81535131000000005 0.16362827999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[106]" " -type \"float2\" 0.80191475000000001 0.17759121999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[107]" " -type \"float2\" 0.76638138 0.19486961999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[108]" " -type \"float2\" 0.78593701000000005 0.18979512000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[109]" " -type \"float2\" 0.19100036000000001 0.075319119000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[110]" " -type \"float2\" 0.78503603 0.18735102000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[111]" " -type \"float2\" 0.76608401999999998 0.19226373999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[112]" " -type \"float2\" 0.63992791999999998 0.23143652000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[113]" " -type \"float2\" 0.61982649999999995 0.23512844999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[114]" " -type \"float2\" 0.62028830999999995 0.24616442999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[115]" " -type \"float2\" 0.64290214000000001 0.24195886999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[116]" " -type \"float2\" 0.65853214000000004 0.22298524"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[117]" " -type \"float2\" 0.66395563000000002 0.23234737999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[118]" " -type \"float2\" 0.23647095000000001 0.033256429999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[119]" " -type \"float2\" 0.72692608999999997 0.18836882999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[120]" " -type \"float2\" 0.74618523999999997 0.19433142"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[121]" " -type \"float2\" 0.22189109000000001 0.047608588"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[122]" " -type \"float2\" 0.74651235000000005 0.19174716"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[123]" " -type \"float2\" 0.72786874000000001 0.18604106000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[124]" " -type \"float2\" 0.71010852000000002 0.17737052"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[125]" " -type \"float2\" 0.25020429 0.018518748000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[126]" " -type \"float2\" 0.71163182999999997 0.17546438"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[127]" " -type \"float2\" 0.28640890000000002 0.14835438000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[128]" " -type \"float2\" 0.22653882 0.082646832000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[129]" " -type \"float2\" 0.19346273999999999 0.1107374"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[130]" " -type \"float2\" 0.17657907 0.12413573"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[131]" " -type \"float2\" 0.16581635 0.11054367"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[132]" " -type \"float2\" 0.18234012999999999 0.097451538000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[133]" " -type \"float2\" 0.21013086 0.096900961999999993"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[134]" " -type \"float2\" 0.19862568 0.083933167000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[135]" " -type \"float2\" 0.21460762999999999 0.070020415000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[136]" " -type \"float2\" 0.24956529999999999 0.17868825999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[137]" " -type \"float2\" 0.20834261000000001 0.12853339"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[138]" " -type \"float2\" 0.19097397999999999 0.1423268"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[139]" " -type \"float2\" 0.23094173000000001 0.19327435000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[140]" " -type \"float2\" 0.20906432 0.16526774999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[141]" " -type \"float2\" 0.22703829 0.15109299000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[142]" " -type \"float2\" 0.24246959000000001 0.099704601000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[143]" " -type \"float2\" 0.2255221 0.11432407"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[144]" " -type \"float2\" 0.26806790000000003 0.16370357999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[145]" " -type \"float2\" 0.24484881999999999 0.13645805"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[146]" " -type \"float2\" 0.26244536000000002 0.12144538000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[147]" " -type \"float2\" 0.25788820000000001 0.052952594999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[148]" " -type \"float2\" 0.24248821000000001 0.068008265999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[149]" " -type \"float2\" 0.23010257000000001 0.055705823000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[150]" " -type \"float2\" 0.24501439999999999 0.041066012999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[151]" " -type \"float2\" 0.27255838999999998 0.037438768999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[152]" " -type \"float2\" 0.25911807999999997 0.025967697000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[153]" " -type \"float2\" 0.32219458000000001 0.11666437"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[154]" " -type \"float2\" 0.27506697000000002 0.069185965000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[155]" " -type \"float2\" 0.25902303999999998 0.084624313000000007"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[156]" " -type \"float2\" 0.30447444000000001 0.13265896999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[157]" " -type \"float2\" 0.27969392999999998 0.10603786"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[158]" " -type \"float2\" 0.29654792000000002 0.090224832000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[159]" " -type \"float2\" 0.29046728999999999 0.053314346999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[160]" " -type \"float2\" 0.33945760000000003 0.10038931"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[161]" " -type \"float2\" 0.31280380000000002 0.074116669999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[162]" " -type \"float2\" 0.38249456999999998 0.43609121000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[163]" " -type \"float2\" 0.17794657999999999 0.49630931"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[164]" " -type \"float2\" 0.33617318000000002 0.37381902"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[165]" " -type \"float2\" 0.25659713000000001 0.43354767999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[166]" " -type \"float2\" 0.099637403999999999 0.3910805"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[167]" " -type \"float2\" 0.18289000999999999 0.33503192999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[168]" " -type \"float2\" 0.14145081000000001 0.36350824999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[169]" " -type \"float2\" 0.12059494 0.37742153000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[170]" " -type \"float2\" 0.074380427999999998 0.34973752000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[171]" " -type \"float2\" 0.095300853000000005 0.33719376000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[172]" " -type \"float2\" 0.11615022999999999 0.32422533999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[173]" " -type \"float2\" 0.16224733 0.34935613999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[174]" " -type \"float2\" 0.13680436000000001 0.31091838999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[175]" " -type \"float2\" 0.15739274 0.29727477000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[176]" " -type \"float2\" 0.21684033999999999 0.46423398999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[177]" " -type \"float2\" 0.12676150999999999 0.43135136000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[178]" " -type \"float2\" 0.16811766 0.40189743"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[179]" " -type \"float2\" 0.14750651000000001 0.41665261999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[180]" " -type \"float2\" 0.19731762999999999 0.48000609999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[181]" " -type \"float2\" 0.15364124000000001 0.46746543000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[182]" " -type \"float2\" 0.17381390999999999 0.45186715999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[183]" " -type \"float2\" 0.19407889 0.43635899"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[184]" " -type \"float2\" 0.209415 0.37210905999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[185]" " -type \"float2\" 0.18874015 0.38704363000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[186]" " -type \"float2\" 0.23664165000000001 0.44878723999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[187]" " -type \"float2\" 0.21440171999999999 0.42101115"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[188]" " -type \"float2\" 0.23477465 0.40578455000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[189]" " -type \"float2\" 0.26381042999999998 0.27662768999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[190]" " -type \"float2\" 0.22382373999999999 0.30596662000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[191]" " -type \"float2\" 0.20349410000000001 0.32053061999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[192]" " -type \"float2\" 0.17768239999999999 0.28341058000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[193]" " -type \"float2\" 0.19775583999999999 0.26934891999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[194]" " -type \"float2\" 0.24393435999999999 0.2913425"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[195]" " -type \"float2\" 0.21750833 0.25513381000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[196]" " -type \"float2\" 0.23701535000000001 0.24076363000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[197]" " -type \"float2\" 0.29655761000000003 0.40346330000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[198]" " -type \"float2\" 0.2503455 0.34228995000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[199]" " -type \"float2\" 0.22993416999999999 0.35718885"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[200]" " -type \"float2\" 0.27661028999999998 0.41844457000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[201]" " -type \"float2\" 0.25510695999999999 0.39066037999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[202]" " -type \"float2\" 0.27533333999999998 0.37563997999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[203]" " -type \"float2\" 0.29056123 0.31254724"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[204]" " -type \"float2\" 0.27052078000000002 0.32741573000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[205]" " -type \"float2\" 0.31640989000000003 0.38860893000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[206]" " -type \"float2\" 0.29540965000000002 0.36071228999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[207]" " -type \"float2\" 0.31537387 0.34583430999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[208]" " -type \"float2\" 0.30628124000000001 0.49440292000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[209]" " -type \"float2\" 0.21025044000000001 0.52890795000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[210]" " -type \"float2\" 0.28413021999999999 0.46728261999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[211]" " -type \"float2\" 0.24601509999999999 0.49720820999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[212]" " -type \"float2\" 0.22774180999999999 0.51260304000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[213]" " -type \"float2\" 0.19686122 0.51627325999999996"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[214]" " -type \"float2\" 0.21524541 0.49975422000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[215]" " -type \"float2\" 0.23411762999999999 0.48404061999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[216]" " -type \"float2\" 0.26486515999999999 0.4821395"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[217]" " -type \"float2\" 0.25341311 0.46877369000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[218]" " -type \"float2\" 0.27292960999999999 0.45361005999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[219]" " -type \"float2\" 0.26957977 0.52315997999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[220]" " -type \"float2\" 0.21907233000000001 0.53650695000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[221]" " -type \"float2\" 0.25370121000000001 0.50563144999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[222]" " -type \"float2\" 0.23586878 0.52070516"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[223]" " -type \"float2\" 0.25229227999999998 0.53787737999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[224]" " -type \"float2\" 0.52849232999999995 0.31548946999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[225]" " -type \"float2\" 0.24134264999999999 0.52617437"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[226]" " -type \"float2\" 0.25886762000000002 0.51131338000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[227]" " -type \"float2\" 0.29126602000000001 0.47595327999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[228]" " -type \"float2\" 0.27226514000000002 0.49077427000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[229]" " -type \"float2\" 0.28758934000000003 0.50867390999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[230]" " -type \"float2\" 0.27724307999999998 0.49658701"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[231]" " -type \"float2\" 0.29605376999999999 0.48179218000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[232]" " -type \"float2\" 0.36190148999999999 0.40842952999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[233]" " -type \"float2\" 0.3229996 0.43762182999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[234]" " -type \"float2\" 0.30351031000000001 0.45236838000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[235]" " -type \"float2\" 0.29263603999999999 0.43871536999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[236]" " -type \"float2\" 0.31229621000000002 0.42383"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[237]" " -type \"float2\" 0.34247416000000003 0.42298275000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[238]" " -type \"float2\" 0.33192807000000002 0.40909236999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[239]" " -type \"float2\" 0.35148582 0.39442380999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[240]" " -type \"float2\" 0.34405077000000001 0.46520530999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[241]" " -type \"float2\" 0.32988109999999998 0.44651011000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[242]" " -type \"float2\" 0.31054312000000001 0.46120733000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[243]" " -type \"float2\" 0.32505402 0.47977787"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[244]" " -type \"float2\" 0.31526475999999998 0.46717033000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[245]" " -type \"float2\" 0.33451059 0.45251215"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[246]" " -type \"float2\" 0.36861729999999998 0.41745883"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[247]" " -type \"float2\" 0.34925008000000002 0.43192290999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[248]" " -type \"float2\" 0.36322489000000002 0.45065817000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[249]" " -type \"float2\" 0.35380682000000002 0.43795722999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[250]" " -type \"float2\" 0.37316114 0.42356461000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[251]" " -type \"float2\" 0.41620850999999998 0.31466851000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[252]" " -type \"float2\" 0.34283092999999998 0.21570422"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[253]" " -type \"float2\" 0.30331507000000002 0.24665864000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[254]" " -type \"float2\" 0.2835705 0.26174226"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[255]" " -type \"float2\" 0.25633851000000002 0.22614335999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[256]" " -type \"float2\" 0.27558985000000003 0.21122889"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[257]" " -type \"float2\" 0.32306519 0.23132141000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[258]" " -type \"float2\" 0.29478367999999999 0.1959786"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[259]" " -type \"float2\" 0.31389081000000002 0.18041693"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[260]" " -type \"float2\" 0.37587574000000001 0.34430441000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[261]" " -type \"float2\" 0.33054048000000003 0.28248191"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[262]" " -type \"float2\" 0.31053191000000002 0.29760391000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[263]" " -type \"float2\" 0.35599476000000002 0.35911447000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[264]" " -type \"float2\" 0.33534056000000001 0.33095100999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[265]" " -type \"float2\" 0.35537389000000003 0.31596162999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[266]" " -type \"float2\" 0.37079002999999999 0.25179457999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[267]" " -type \"float2\" 0.35063997000000002 0.26717945999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[268]" " -type \"float2\" 0.39596301 0.32949212"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[269]" " -type \"float2\" 0.37554753000000002 0.30088565"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[270]" " -type \"float2\" 0.39584174999999999 0.28575595999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[271]" " -type \"float2\" 0.38195025999999999 0.18410251"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[272]" " -type \"float2\" 0.36247811000000002 0.19996852000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[273]" " -type \"float2\" 0.33281642 0.16457331"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[274]" " -type \"float2\" 0.35143360000000001 0.14856734999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[275]" " -type \"float2\" 0.40118905999999999 0.16813259"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[276]" " -type \"float2\" 0.36979025999999998 0.13226412000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[277]" " -type \"float2\" 0.45700606999999999 0.28541052"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[278]" " -type \"float2\" 0.41119409000000001 0.22068107000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[279]" " -type \"float2\" 0.39100130999999999 0.23625747999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[280]" " -type \"float2\" 0.43649401999999998 0.29996926000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[281]" " -type \"float2\" 0.41627169000000003 0.27060455"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[282]" " -type \"float2\" 0.43672012999999998 0.25560808000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[283]" " -type \"float2\" 0.43126583000000002 0.20513523"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[284]" " -type \"float2\" 0.47770004999999999 0.27124052999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[285]" " -type \"float2\" 0.45741519000000003 0.24060717000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[286]" " -type \"float2\" 0.46004065999999999 0.37989350999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[287]" " -type \"float2\" 0.44054183000000002 0.35076517000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[288]" " -type \"float2\" 0.40098636999999998 0.37947874999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[289]" " -type \"float2\" 0.38137915999999999 0.39394837999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[290]" " -type \"float2\" 0.37110868000000002 0.37984027999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[291]" " -type \"float2\" 0.39087680000000002 0.36526564"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[292]" " -type \"float2\" 0.42072713 0.36507170999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[293]" " -type \"float2\" 0.41075060000000002 0.35066479"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[294]" " -type \"float2\" 0.43073431000000001 0.33613082999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[295]" " -type \"float2\" 0.42130962 0.40755221000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[296]" " -type \"float2\" 0.40749970000000002 0.38862425"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[297]" " -type \"float2\" 0.38799085999999999 0.40301158999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[298]" " -type \"float2\" 0.40193319 0.42176825000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[299]" " -type \"float2\" 0.39246055000000002 0.40911027999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[300]" " -type \"float2\" 0.41190398 0.39478173999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[301]" " -type \"float2\" 0.44678515000000002 0.36012369"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[302]" " -type \"float2\" 0.42713900999999999 0.37434882000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[303]" " -type \"float2\" 0.44062129 0.39354071000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[304]" " -type \"float2\" 0.43146822000000001 0.38059637000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[305]" " -type \"float2\" 0.45098065999999998 0.36641136000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[306]" " -type \"float2\" 0.48020834000000001 0.32292008"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[307]" " -type \"float2\" 0.46034588999999998 0.336631"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[308]" " -type \"float2\" 0.45085218999999999 0.32180181000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[309]" " -type \"float2\" 0.47101124999999999 0.30770840999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[310]" " -type \"float2\" 0.50018947999999996 0.30982180999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[311]" " -type \"float2\" 0.49145874000000001 0.29414326000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[312]" " -type \"float2\" 0.49830717000000002 0.35299631999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[313]" " -type \"float2\" 0.48606803999999998 0.33272289999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[314]" " -type \"float2\" 0.46647360999999998 0.34621998999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[315]" " -type \"float2\" 0.47920620000000003 0.36617449000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[316]" " -type \"float2\" 0.47059107 0.35267353000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[317]" " -type \"float2\" 0.49002575999999998 0.33931723000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[318]" " -type \"float2\" 0.505624 0.31994027000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[319]" " -type \"float2\" 0.51738357999999995 0.34059745000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[320]" " -type \"float2\" 0.50929659999999999 0.32675606000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[321]" " -type \"float2\" 0.035473693000000001 0.2767289"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[322]" " -type \"float2\" 0.052711938 0.31063685000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[323]" " -type \"float2\" 0.26284572 0.0031944360000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[324]" " -type \"float2\" 0.25854239000000001 8.0280231000000009e-05"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[325]" " -type \"float2\" 0.68228412000000005 0.21801901000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[326]" " -type \"float2\" 0.67448264000000002 0.21051879000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[327]" " -type \"float2\" 0.69688969999999995 0.16230222999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[328]" " -type \"float2\" 0.28642768000000002 0.021369738999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[329]" " -type \"float2\" 0.27226001 0.010253986"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[330]" " -type \"float2\" 0.30522340999999997 0.036974974000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[331]" " -type \"float2\" 0.22508170999999999 0.54135573000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[332]" " -type \"float2\" 0.23542398 0.55285441999999996"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[333]" " -type \"float2\" 0.49871036000000002 0.25745787999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[334]" " -type \"float2\" 0.47815928000000002 0.22579297000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[335]" " -type \"float2\" 0.42028388 0.15192628999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[336]" " -type \"float2\" 0.38779314999999998 0.11577924000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[337]" " -type \"float2\" 0.45129483999999997 0.18948673999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[338]" " -type \"float2\" 0.52080022999999998 0.29770982000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[339]" " -type \"float2\" 0.51250505000000002 0.28126356000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[340]" " -type \"float2\" 0.52556323999999999 0.30834156000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[341]" " -type \"float2\" 0.54387182000000001 0.94949651000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[342]" " -type \"float2\" 0.55053454999999996 0.97193574999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[343]" " -type \"float2\" 0.54336976999999997 0.97516113999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[344]" " -type \"float2\" 0.53650129000000002 0.95160281999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[345]" " -type \"float2\" 0.23784185999999999 0.95701002999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[346]" " -type \"float2\" 0.23148874999999999 0.98354858000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[347]" " -type \"float2\" 0.19146742 0.97301161000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[348]" " -type \"float2\" 0.19944202999999999 0.94834381000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[349]" " -type \"float2\" 0.25814998 0.74151075"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[350]" " -type \"float2\" 0.2585268 0.76868051000000004"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[351]" " -type \"float2\" 0.22419415000000001 0.76869427999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[352]" " -type \"float2\" 0.22380994000000001 0.74271619"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[353]" " -type \"float2\" 0.14316696000000001 0.74657565000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[354]" " -type \"float2\" 0.1435332 0.76845187000000004"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[355]" " -type \"float2\" 0.13627217999999999 0.76841532999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[356]" " -type \"float2\" 0.13589678999999999 0.74697970999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[357]" " -type \"float2\" 0.13181633000000001 0.66062719000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[358]" " -type \"float2\" 0.13644434999999999 0.68172734999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[359]" " -type \"float2\" 0.12935466000000001 0.68353777999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[360]" " -type \"float2\" 0.12487332 0.66299545999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[361]" " -type \"float2\" 0.12042077 0.66453397000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[362]" " -type \"float2\" 0.12478387000000001 0.68472635999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[363]" " -type \"float2\" 0.12233731 0.68536823999999996"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[364]" " -type \"float2\" 0.1180171 0.66536951"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[365]" " -type \"float2\" 0.10649788 0.62612610999999996"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[366]" " -type \"float2\" 0.11452598 0.64486456000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[367]" " -type \"float2\" 0.11220065999999999 0.64593339000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[368]" " -type \"float2\" 0.10430939 0.62748092"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[369]" " -type \"float2\" 0.093292937000000006 0.61067413999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[370]" " -type \"float2\" 0.095275149000000003 0.60895549999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[371]" " -type \"float2\" 0.090590164000000001 0.61293072000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[372]" " -type \"float2\" 0.10134688 0.62933229999999996"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[373]" " -type \"float2\" 0.10904627 0.64739751999999995"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[374]" " -type \"float2\" 0.11473998000000001 0.66651863"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[375]" " -type \"float2\" 0.11897074000000001 0.68624954999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[376]" " -type \"float2\" 0.11710245 0.61992389000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[377]" " -type \"float2\" 0.12560345000000001 0.63992559999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[378]" " -type \"float2\" 0.1188454 0.64289909999999995"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[379]" " -type \"float2\" 0.11059504000000001 0.62364352000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[380]" " -type \"float2\" 0.10767794 0.62540019000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[381]" " -type \"float2\" 0.11577813000000001 0.64429247000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[382]" " -type \"float2\" 0.096282244000000003 0.60792208000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[383]" " -type \"float2\" 0.099010728000000006 0.60566962000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[384]" " -type \"float2\" 0.10541583 0.60105090999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[385]" " -type \"float2\" 0.12610595999999999 0.68438052999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[386]" " -type \"float2\" 0.1217028 0.66408902000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[387]" " -type \"float2\" 0.13158742000000001 0.76839447000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[388]" " -type \"float2\" 0.12905511 0.76838105999999995"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[389]" " -type \"float2\" 0.12871854999999999 0.74738740999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[390]" " -type \"float2\" 0.13123778999999999 0.74724442000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[391]" " -type \"float2\" 0.12544151000000001 0.70579212999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[392]" " -type \"float2\" 0.12793547999999999 0.70532291999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[393]" " -type \"float2\" 0.13005017999999999 0.72618985000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[394]" " -type \"float2\" 0.12752454999999999 0.72649372000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[395]" " -type \"float2\" 0.12203037 0.70642936000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[396]" " -type \"float2\" 0.12408204 0.72690635999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[397]" " -type \"float2\" 0.1252683 0.74758177999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[398]" " -type \"float2\" 0.12557773 0.76835763000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[399]" " -type \"float2\" 0.13971737000000001 0.70314317999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[400]" " -type \"float2\" 0.14196067000000001 0.72477119999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[401]" " -type \"float2\" 0.13472651999999999 0.72562855000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[402]" " -type \"float2\" 0.13253509999999999 0.70446301"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[403]" " -type \"float2\" 0.13140184999999999 0.72602557999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[404]" " -type \"float2\" 0.1292633 0.70507306000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[405]" " -type \"float2\" 0.13293999000000001 0.76839864000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[406]" " -type \"float2\" 0.13258201 0.74716687000000004"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[407]" " -type \"float2\" 0.24852867000000001 0.63339645"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[408]" " -type \"float2\" 0.25226979999999999 0.66020614"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[409]" " -type \"float2\" 0.21696426999999999 0.66507762999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[410]" " -type \"float2\" 0.21251513 0.63942211999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[411]" " -type \"float2\" 0.16051561 0.65175223000000004"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[412]" " -type \"float2\" 0.16547939 0.67472094000000005"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[413]" " -type \"float2\" 0.14831664 0.67880713999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[414]" " -type \"float2\" 0.14352292 0.65684277000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[415]" " -type \"float2\" 0.14547972000000001 0.60636144999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[416]" " -type \"float2\" 0.15399510999999999 0.62893330999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[417]" " -type \"float2\" 0.13709869999999999 0.63512581999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[418]" " -type \"float2\" 0.12841821 0.61404460999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[419]" " -type \"float2\" 0.11697343 0.59384464999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[420]" " -type \"float2\" 0.13479540000000001 0.58462983000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[421]" " -type \"float2\" 0.23840528999999999 0.58036010999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[422]" " -type \"float2\" 0.24389537 0.60674620000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[423]" " -type \"float2\" 0.20685677 0.61393576999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[424]" " -type \"float2\" 0.19995378999999999 0.58862168000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[425]" " -type \"float2\" 0.16910413999999999 0.59782343999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[426]" " -type \"float2\" 0.17702435999999999 0.62154489999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[427]" " -type \"float2\" 0.15965778 0.57436734"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[428]" " -type \"float2\" 0.19201509999999999 0.56376749000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[429]" " -type \"float2\" 0.23221750999999999 0.55402231000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[430]" " -type \"float2\" 0.18815365000000001 0.67005705999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[431]" " -type \"float2\" 0.1833571 0.64562052000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[432]" " -type \"float2\" 0.17307507999999999 0.76855594000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[433]" " -type \"float2\" 0.15569696999999999 0.76849579999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[434]" " -type \"float2\" 0.15530251 0.74590688999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[435]" " -type \"float2\" 0.17265849 0.74498951000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[436]" " -type \"float2\" 0.1517348 0.70098406000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[437]" " -type \"float2\" 0.16894624999999999 0.69807428000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[438]" " -type \"float2\" 0.17135136000000001 0.72146301999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[439]" " -type \"float2\" 0.15406014000000001 0.72336124999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[440]" " -type \"float2\" 0.25508446000000001 0.68725455000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[441]" " -type \"float2\" 0.25703925 0.71435504999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[442]" " -type \"float2\" 0.22251919000000001 0.71676242000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[443]" " -type \"float2\" 0.22026293 0.69087219"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[444]" " -type \"float2\" 0.1940528 0.71918923000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[445]" " -type \"float2\" 0.19170353000000001 0.69453370999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[446]" " -type \"float2\" 0.19579972000000001 0.76860534999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[447]" " -type \"float2\" 0.19543536 0.74386662000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[448]" " -type \"float2\" 0.10498571 0.93656879999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[449]" " -type \"float2\" 0.098535455999999993 0.93200921999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[450]" " -type \"float2\" 0.11000942 0.91357337999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[451]" " -type \"float2\" 0.11653707000000001 0.91725939999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[452]" " -type \"float2\" 0.13927466999999999 0.83381802000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[453]" " -type \"float2\" 0.13592902000000001 0.85530448000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[454]" " -type \"float2\" 0.12883845999999999 0.85347092000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[455]" " -type \"float2\" 0.13211122 0.83246498999999996"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[456]" " -type \"float2\" 0.12500747000000001 0.83110642000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[457]" " -type \"float2\" 0.12750033 0.83158379999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[458]" " -type \"float2\" 0.12427008 0.85226672999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[459]" " -type \"float2\" 0.12181482 0.85161692"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[460]" " -type \"float2\" 0.12851849000000001 0.78939360000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[461]" " -type \"float2\" 0.13104669999999999 0.78956079000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[462]" " -type \"float2\" 0.129723 0.81066179000000005"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[463]" " -type \"float2\" 0.12720844000000001 0.81034236999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[464]" " -type \"float2\" 0.12507117000000001 0.78915930000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[465]" " -type \"float2\" 0.12375735 0.80990123999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[466]" " -type \"float2\" 0.12160116 0.83044797000000004"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[467]" " -type \"float2\" 0.11846167000000001 0.85072219000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[468]" " -type \"float2\" 0.14299653000000001 0.79033165999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[469]" " -type \"float2\" 0.14163178000000001 0.81215894"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[470]" " -type \"float2\" 0.13438341000000001 0.81125522000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[471]" " -type \"float2\" 0.13572567999999999 0.78986608999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[472]" " -type \"float2\" 0.13239767999999999 0.78964858999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[473]" " -type \"float2\" 0.1310741 0.81083614000000004"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[474]" " -type \"float2\" 0.12559132000000001 0.85261703"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[475]" " -type \"float2\" 0.12882689999999999 0.83184022000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[476]" " -type \"float2\" 0.094763844999999999 0.92871075999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[477]" " -type \"float2\" 0.092765838000000003 0.92698919999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[478]" " -type \"float2\" 0.10370865 0.90979843999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[479]" " -type \"float2\" 0.10590297 0.91113352999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[480]" " -type \"float2\" 0.11743922 0.87170517000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[481]" " -type \"float2\" 0.11984292000000001 0.87254381000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[482]" " -type \"float2\" 0.11391854999999999 0.89229022999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[483]" " -type \"float2\" 0.11159147 0.89122575999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[484]" " -type \"float2\" 0.11416301 0.87055205999999996"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[485]" " -type \"float2\" 0.10843527 0.88976644999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[486]" " -type \"float2\" 0.10073828999999999 0.90796357000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[487]" " -type \"float2\" 0.090044513000000007 0.92474632999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[488]" " -type \"float2\" 0.13124155000000001 0.87645435000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[489]" " -type \"float2\" 0.12500602999999999 0.89722531999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[490]" " -type \"float2\" 0.11824534 0.89424859999999995"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[491]" " -type \"float2\" 0.12429046000000001 0.87409294000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[492]" " -type \"float2\" 0.12113053 0.87299561999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[493]" " -type \"float2\" 0.11516377 0.89286118999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[494]" " -type \"float2\" 0.095781893000000007 0.92975395999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[495]" " -type \"float2\" 0.10708544 0.91184443000000004"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[496]" " -type \"float2\" 0.25472987000000002 0.85008353000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[497]" " -type \"float2\" 0.25183024999999998 0.87705617999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[498]" " -type \"float2\" 0.21648011 0.87222498999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[499]" " -type \"float2\" 0.21987483999999999 0.84647530000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[500]" " -type \"float2\" 0.16495149000000001 0.86234409000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[501]" " -type \"float2\" 0.14781164999999999 0.85826712999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[502]" " -type \"float2\" 0.15129087999999999 0.83603190999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[503]" " -type \"float2\" 0.16852233 0.83901917999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[504]" " -type \"float2\" 0.15513821999999999 0.79108959000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[505]" " -type \"float2\" 0.17248522999999999 0.79211229000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[506]" " -type \"float2\" 0.17104964 0.8156426"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[507]" " -type \"float2\" 0.15372997999999999 0.81362217999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[508]" " -type \"float2\" 0.25804709999999997 0.79586696999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[509]" " -type \"float2\" 0.25679468999999999 0.82301175999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[510]" " -type \"float2\" 0.22224553 0.82060856000000004"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[511]" " -type \"float2\" 0.22367322000000001 0.79467403999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[512]" " -type \"float2\" 0.19376692000000001 0.81799865000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[513]" " -type \"float2\" 0.19527911000000001 0.79333639"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[514]" " -type \"float2\" 0.18766859 0.86706066000000004"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[515]" " -type \"float2\" 0.19129634000000001 0.84262245999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[516]" " -type \"float2\" 0.13442478999999999 0.95262617000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[517]" " -type \"float2\" 0.11659189 0.94361192000000005"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[518]" " -type \"float2\" 0.12789213999999999 0.92309808999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[519]" " -type \"float2\" 0.14499245999999999 0.93069553000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[520]" " -type \"float2\" 0.14295530000000001 0.88025450999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[521]" " -type \"float2\" 0.15996265000000001 0.88535178000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[522]" " -type \"float2\" 0.15344943 0.90825999000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[523]" " -type \"float2\" 0.13651925000000001 0.90201889999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[524]" " -type \"float2\" 0.24804958999999999 0.90389770000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[525]" " -type \"float2\" 0.24338582 0.93056863999999995"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[526]" " -type \"float2\" 0.20629874000000001 0.92322594000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[527]" " -type \"float2\" 0.21198648 0.89784050000000004"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[528]" " -type \"float2\" 0.17650393 0.91547358000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[529]" " -type \"float2\" 0.18282250999999999 0.89144515999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[530]" " -type \"float2\" 0.15923562999999999 0.96278368999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[531]" " -type \"float2\" 0.16862953 0.93943292"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[532]" " -type \"float2\" 0.53539294000000004 0.74255729000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[533]" " -type \"float2\" 0.53543216000000005 0.76920646000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[534]" " -type \"float2\" 0.52772927000000003 0.76915853999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[535]" " -type \"float2\" 0.52786606999999997 0.74232476999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[536]" " -type \"float2\" 0.46094035999999999 0.74067073999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[537]" " -type \"float2\" 0.46082385999999997 0.76891403999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[538]" " -type \"float2\" 0.42618114000000001 0.76888144000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[539]" " -type \"float2\" 0.42624964999999998 0.740161"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[540]" " -type \"float2\" 0.46333286000000001 0.62785345000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[541]" " -type \"float2\" 0.46220373999999997 0.65602486999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[542]" " -type \"float2\" 0.42674631000000002 0.65405725999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[543]" " -type \"float2\" 0.42727628000000001 0.62532984999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[544]" " -type \"float2\" 0.33766812000000002 0.62532567999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[545]" " -type \"float2\" 0.33920004999999998 0.65374339000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[546]" " -type \"float2\" 0.29390221999999999 0.65652089999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[547]" " -type \"float2\" 0.29121569000000003 0.62855786000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[548]" " -type \"float2\" 0.33372885000000002 0.56840694000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[549]" " -type \"float2\" 0.33582619000000002 0.59681194999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[550]" " -type \"float2\" 0.28792328 0.60072415999999995"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[551]" " -type \"float2\" 0.28404816999999999 0.57298762000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[552]" " -type \"float2\" 0.27970784999999998 0.54559743000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[553]" " -type \"float2\" 0.33137724000000002 0.54010552000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[554]" " -type \"float2\" 0.46794616999999999 0.57144200999999994"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[555]" " -type \"float2\" 0.46515799000000002 0.59963560000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[556]" " -type \"float2\" 0.42820491999999999 0.59655327000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[557]" " -type \"float2\" 0.42959413000000002 0.56764859000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[558]" " -type \"float2\" 0.38357144999999998 0.56672376000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[559]" " -type \"float2\" 0.38388568000000001 0.59539538999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[560]" " -type \"float2\" 0.38321576000000002 0.53790689000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[561]" " -type \"float2\" 0.43134558000000001 0.53886813"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[562]" " -type \"float2\" 0.47175032 0.54300778999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[563]" " -type \"float2\" 0.3846291 0.65309638000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[564]" " -type \"float2\" 0.38423604 0.62414068"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[565]" " -type \"float2\" 0.34190562000000002 0.76876897"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[566]" " -type \"float2\" 0.29854393000000001 0.76866977999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[567]" " -type \"float2\" 0.29834726 0.74048709999999995"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[568]" " -type \"float2\" 0.341795 0.73998134999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[569]" " -type \"float2\" 0.29600573000000002 0.68436706000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[570]" " -type \"float2\" 0.34042521999999997 0.682504"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[571]" " -type \"float2\" 0.34128994000000001 0.71118283000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[572]" " -type \"float2\" 0.29748085000000002 0.71237534000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[573]" " -type \"float2\" 0.4615573 0.68423480000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[574]" " -type \"float2\" 0.46116882999999997 0.71243875999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[575]" " -type \"float2\" 0.42633313 0.71145146999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[576]" " -type \"float2\" 0.42646652000000002 0.68274968999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[577]" " -type \"float2\" 0.38530004000000001 0.71089274000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[578]" " -type \"float2\" 0.38499242 0.68192284999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[579]" " -type \"float2\" 0.38547220999999998 0.76878493999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[580]" " -type \"float2\" 0.38545823000000001 0.73981154000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[581]" " -type \"float2\" 0.53863667999999998 0.63755779999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[582]" " -type \"float2\" 0.53746516 0.66335171000000004"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[583]" " -type \"float2\" 0.52978705999999998 0.66253786999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[584]" " -type \"float2\" 0.53105932 0.63647746999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[585]" " -type \"float2\" 0.50885581999999996 0.63329190000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[586]" " -type \"float2\" 0.50739228999999997 0.66016722000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[587]" " -type \"float2\" 0.48865967999999999 0.65836190999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[588]" " -type \"float2\" 0.49008191000000001 0.63082963000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[589]" " -type \"float2\" 0.51515812000000005 0.5801326"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[590]" " -type \"float2\" 0.51117544999999998 0.60658531999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[591]" " -type \"float2\" 0.49231404000000001 0.6033541"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[592]" " -type \"float2\" 0.49594780999999999 0.57583708"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[593]" " -type \"float2\" 0.50134873000000002 0.54841185000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[594]" " -type \"float2\" 0.52155094999999996 0.55385828000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[595]" " -type \"float2\" 0.54464257000000005 0.58825481000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[596]" " -type \"float2\" 0.54090643000000005 0.61242883999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[597]" " -type \"float2\" 0.53340441000000005 0.61092060999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[598]" " -type \"float2\" 0.53727948999999997 0.58612489999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[599]" " -type \"float2\" 0.52814024999999998 0.58353794000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[600]" " -type \"float2\" 0.52410829000000003 0.60907650000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[601]" " -type \"float2\" 0.53494828999999999 0.55851680000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[602]" " -type \"float2\" 0.54412084999999999 0.56231344000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[603]" " -type \"float2\" 0.55129260000000002 0.56557875999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[604]" " -type \"float2\" 0.52041662 0.66153234000000005"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[605]" " -type \"float2\" 0.52184045000000001 0.63514035999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[606]" " -type \"float2\" 0.50551975000000005 0.76904315000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[607]" " -type \"float2\" 0.48694368999999998 0.76897572999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[608]" " -type \"float2\" 0.48712202999999998 0.74121462999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[609]" " -type \"float2\" 0.50570541999999996 0.74169642000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[610]" " -type \"float2\" 0.48788591999999997 0.68587421999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[611]" " -type \"float2\" 0.50655890000000003 0.68721359999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[612]" " -type \"float2\" 0.50599514999999995 0.71440022999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[613]" " -type \"float2\" 0.48738861 0.71350371999999995"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[614]" " -type \"float2\" 0.53637670999999998 0.68955045999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[615]" " -type \"float2\" 0.53592669999999998 0.71598530000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[616]" " -type \"float2\" 0.52822654999999996 0.71555471000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[617]" " -type \"float2\" 0.528862 0.68893342999999996"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[618]" " -type \"float2\" 0.51893312000000003 0.71506417"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[619]" " -type \"float2\" 0.51953846000000004 0.68820398999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[620]" " -type \"float2\" 0.51833903999999997 0.76910710000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[621]" " -type \"float2\" 0.51865119000000004 0.74204963000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[622]" " -type \"float2\" 0.47128838000000001 0.99464916999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[623]" " -type \"float2\" 0.43090504000000002 0.99889320000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[624]" " -type \"float2\" 0.42897874000000003 0.97008192999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[625]" " -type \"float2\" 0.46729174000000001 0.96631467000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[626]" " -type \"float2\" 0.46105158000000002 0.85354357999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[627]" " -type \"float2\" 0.46157202000000003 0.88177912999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[628]" " -type \"float2\" 0.42617642999999999 0.88364779999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[629]" " -type \"float2\" 0.42599973000000002 0.85499901"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[630]" " -type \"float2\" 0.29566038 0.8530643"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[631]" " -type \"float2\" 0.34003626999999997 0.85504144000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[632]" " -type \"float2\" 0.33870283000000001 0.88380360999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[633]" " -type \"float2\" 0.29349574 0.88107579999999996"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[634]" " -type \"float2\" 0.29818860000000003 0.79684138000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[635]" " -type \"float2\" 0.34163281000000001 0.79758286"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[636]" " -type \"float2\" 0.34101283999999998 0.82634306000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[637]" " -type \"float2\" 0.29722886999999998 0.8249824"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[638]" " -type \"float2\" 0.46078986 0.79715018999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[639]" " -type \"float2\" 0.46081662000000001 0.82537024999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[640]" " -type \"float2\" 0.42599308000000002 0.82631856000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[641]" " -type \"float2\" 0.42607107999999999 0.79761165000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[642]" " -type \"float2\" 0.38531715 0.79773271000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[643]" " -type \"float2\" 0.38499659000000003 0.82669484999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[644]" " -type \"float2\" 0.38410910999999998 0.88446634999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[645]" " -type \"float2\" 0.38455829000000002 0.85565179999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[646]" " -type \"float2\" 0.33078012000000001 0.99747490999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[647]" " -type \"float2\" 0.27909148 0.99195646999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[648]" " -type \"float2\" 0.28343654000000001 0.96453904999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[649]" " -type \"float2\" 0.33315316 0.96912127999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[650]" " -type \"float2\" 0.29071942000000001 0.90898692999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[651]" " -type \"float2\" 0.33711078999999999 0.91236525999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[652]" " -type \"float2\" 0.33524710000000002 0.94083333000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[653]" " -type \"float2\" 0.28736359 0.93680036"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[654]" " -type \"float2\" 0.46264458000000003 0.90984118000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[655]" " -type \"float2\" 0.46441855999999998 0.93817145000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[656]" " -type \"float2\" 0.42757165000000003 0.94101495000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[657]" " -type \"float2\" 0.42660785000000001 0.91242343000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[658]" " -type \"float2\" 0.38363638999999999 0.91342347999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[659]" " -type \"float2\" 0.38324380000000002 0.94240259999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[660]" " -type \"float2\" 0.38266995999999998 1"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[661]" " -type \"float2\" 0.38296548000000002 0.97119546000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[662]" " -type \"float2\" 0.53591937000000001 0.84871322000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[663]" " -type \"float2\" 0.53682649000000005 0.87480849000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[664]" " -type \"float2\" 0.52914148999999999 0.87555616999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[665]" " -type \"float2\" 0.52829409000000005 0.84924054000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[666]" " -type \"float2\" 0.506724 0.87776922999999996"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[667]" " -type \"float2\" 0.48805323 0.87951904999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[668]" " -type \"float2\" 0.48738842999999998 0.85204911000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[669]" " -type \"float2\" 0.50606351999999999 0.85080153000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[670]" " -type \"float2\" 0.48695618000000002 0.79672092000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[671]" " -type \"float2\" 0.50548046999999996 0.79638016"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[672]" " -type \"float2\" 0.50565028000000001 0.82366896000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[673]" " -type \"float2\" 0.48700315 0.82441264000000003"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[674]" " -type \"float2\" 0.53519969999999994 0.79583764000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[675]" " -type \"float2\" 0.53554654000000002 0.82235217000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[676]" " -type \"float2\" 0.52794421000000002 0.82268363"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[677]" " -type \"float2\" 0.52766997000000004 0.79597127000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[678]" " -type \"float2\" 0.51856250000000004 0.82310158"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[679]" " -type \"float2\" 0.51844263000000002 0.79614991000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[680]" " -type \"float2\" 0.51976197999999996 0.87648725999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[681]" " -type \"float2\" 0.51906030999999997 0.84990566999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[682]" " -type \"float2\" 0.52092737 0.98353588999999997"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[683]" " -type \"float2\" 0.50083745000000002 0.98908335000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[684]" " -type \"float2\" 0.49520894999999998 0.96189851000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[685]" " -type \"float2\" 0.51438916000000001 0.95759939999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[686]" " -type \"float2\" 0.48935905000000002 0.9069739"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[687]" " -type \"float2\" 0.50810456000000004 0.90457761000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[688]" " -type \"float2\" 0.51039672000000003 0.93121588"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[689]" " -type \"float2\" 0.49154081999999999 0.93443005999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[690]" " -type \"float2\" 0.53787923000000004 0.90048777999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[691]" " -type \"float2\" 0.54016220999999998 0.92546200999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[692]" " -type \"float2\" 0.53256928999999997 0.92692940999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[693]" " -type \"float2\" 0.53037566000000003 0.901492"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[694]" " -type \"float2\" 0.52334064000000002 0.92875236000000005"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[695]" " -type \"float2\" 0.52107912000000001 0.90278912"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[696]" " -type \"float2\" 0.53421819000000004 0.97886090999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[697]" " -type \"float2\" 0.52737361000000005 0.95420706"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[698]" " -type \"float2\" 0.51274693000000005 0.33286786000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[699]" " -type \"float2\" 0.53106003999999996 0.32183941999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[700]" " -type \"float2\" 0.58617914000000004 0.061297253000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[701]" " -type \"float2\" 0.60859143999999998 0.057065308000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[702]" " -type \"float2\" 0.56559276999999997 0.070565804999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[703]" " -type \"float2\" 0.54798234000000001 0.084449715999999994"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[704]" " -type \"float2\" 0.53424375999999996 0.1020457"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[705]" " -type \"float2\" 0.52524059999999995 0.12247387999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[706]" " -type \"float2\" 0.52133929999999995 0.14455715"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[707]" " -type \"float2\" 0.52291036000000002 0.16707522999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[708]" " -type \"float2\" 0.52973049999999999 0.18871291000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[709]" " -type \"float2\" 0.54150975000000001 0.20810586"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[710]" " -type \"float2\" 0.55740171999999999 0.22414052000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[711]" " -type \"float2\" 0.57656640000000003 0.23578547999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[712]" " -type \"float2\" 0.59785354000000002 0.24250068"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[713]" " -type \"float2\" 0.62013865000000001 0.24378321999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[714]" " -type \"float2\" 0.64218770999999997 0.23969708000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[715]" " -type \"float2\" 0.66272646000000002 0.23032691"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[716]" " -type \"float2\" 0.68069201999999995 0.21627271000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[717]" " -type \"float2\" 0.35792759000000002 0.44340768000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[718]" " -type \"float2\" 0.37729231000000002 0.42911199"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[719]" " -type \"float2\" 0.28165844000000001 0.50174951999999995"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[720]" " -type \"float2\" 0.3004193 0.48710706999999998"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[721]" " -type \"float2\" 0.24620940999999999 0.53122813000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[722]" " -type \"float2\" 0.26348078000000003 0.51647383000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[723]" " -type \"float2\" 0.23043168 0.54562991999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[724]" " -type \"float2\" 0.31952642999999997 0.47254290999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[725]" " -type \"float2\" 0.33870643 0.45792556000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[726]" " -type \"float2\" 0.43532949999999998 0.38613951000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[727]" " -type \"float2\" 0.45482737000000001 0.37211960999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[728]" " -type \"float2\" 0.39649995999999998 0.41462070000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[729]" " -type \"float2\" 0.41587383 0.40035218"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[730]" " -type \"float2\" 0.47432374999999999 0.35846776000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[731]" " -type \"float2\" 0.49364540000000001 0.34522834000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[732]" " -type \"float2\" 0.24613012000000001 0.015145522"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[733]" " -type \"float2\" 0.23254448 0.029699481999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[734]" " -type \"float2\" 0.21810272 0.043885656000000002"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[735]" " -type \"float2\" 0.20303019999999999 0.057756636"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[736]" " -type \"float2\" 0.18750122 0.071330204999999994"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[737]" " -type \"float2\" 0.17161330999999999 0.084524848"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[738]" " -type \"float2\" 0.15544239000000001 0.097348123999999994"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[739]" " -type \"float2\" 0.13901921 0.10981189"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[740]" " -type \"float2\" 0.73842680000000005 0.054046023999999998"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[741]" " -type \"float2\" 0.69888633 0.16099013000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[742]" " -type \"float2\" 0.12241104 0.12203261999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[743]" " -type \"float2\" 0.10552954000000001 0.13391395"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[744]" " -type \"float2\" 0.088372490999999997 0.14542408000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[745]" " -type \"float2\" 0.070975460000000004 0.15650228999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[746]" " -type \"float2\" 0.053414386000000001 0.16704331"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[747]" " -type \"float2\" 0.035732761000000002 0.17689645000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[748]" " -type \"float2\" 0.017943989 0.18583416999999999"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[749]" " -type \"float2\" 0.72184378000000005 0.23972811999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[750]" " -type \"float2\" 0.64258455999999997 0.30122584000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[751]" " -type \"float2\" 0.67809688999999995 0.28964296"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[752]" " -type \"float2\" 0.75484103000000002 0.24510981000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[753]" " -type \"float2\" 0.78894401000000003 0.24121813"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[754]" " -type \"float2\" 0.81988048999999996 0.22854053999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[755]" " -type \"float2\" 0.84686547999999995 0.2074078"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[756]" " -type \"float2\" 0.50610482999999995 0.25810862000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[757]" " -type \"float2\" 0.60583538000000003 0.30378686999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[758]" " -type \"float2\" 0.53516191000000002 0.28150332"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[759]" " -type \"float2\" 0.56858927000000004 0.29694535999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[760]" " -type \"float2\" 0.86654251999999998 0.18044869999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[761]" " -type \"float2\" 0.87841648000000006 0.14833346"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[762]" " -type \"float2\" 0.88100993999999999 0.11505801"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[763]" " -type \"float2\" 0.87426287000000003 0.081453517000000003"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[764]" " -type \"float2\" 0.46357440999999999 0.12336287999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[765]" " -type \"float2\" 0.46196749999999998 0.16066556000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[766]" " -type \"float2\" 0.48411658000000002 0.22955014000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[767]" " -type \"float2\" 0.46895307000000003 0.19610675999999999"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[768]" " -type \"float2\" 0.85901468999999997 0.051700353999999997"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[769]" " -type \"float2\" 0.83564585000000002 0.026559358000000002"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[770]" " -type \"float2\" 0.66554636 0.20338568000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[771]" " -type \"float2\" 0.74068551999999999 0.00015879676"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[772]" " -type \"float2\" 0.80708407999999998 0.0091807637000000004"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[773]" " -type \"float2\" 0.77406149999999996 0"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[774]" " -type \"float2\" 0.70872915000000003 0.27076662000000001"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[775]" " -type \"float2\" 0.58610260000000003 5.0553295000000002e-05"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[776]" " -type \"float2\" 0.55170839999999999 0.01063941"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[777]" " -type \"float2\" 0.51959431 0.029699558000000001"
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[778]" " -type \"float2\" 0.47404503999999997 0.088067888999999996"
+		
+		2 "|DeadFlower_1|deadFlower:Dead_Flower_Pot1|deadFlower:Dead_Flower_PotShape1" 
+		"uvSet[0].uvSetPoints[779]" " -type \"float2\" 0.49345073 0.055621668999999999"
 		2 "|DeadFlower_1|deadFlower:Flower_Petals1" "translate" " -type \"double3\" 0 0 0"
 		
 		2 "|DeadFlower_1|deadFlower:Flower_Petals1" "rotate" " -type \"double3\" 0 0 0"
@@ -37356,10 +39382,6 @@ createNode reference -n "SnakePlantRN";
 		3 "SnakePlant:file1.message" ":initialMaterialInfo.texture" "-na";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
-createNode polyUnite -n "polyUnite1";
-	rename -uid "037B505D-44AB-E926-1B1D-DFA4CEFD0845";
-	setAttr -s 3 ".ip";
-	setAttr -s 3 ".im";
 createNode groupId -n "groupId1";
 	rename -uid "1A02BA05-4C5F-F0C0-D488-6282ED1CAAA2";
 	setAttr ".ihi" 0;
@@ -37381,62 +39403,13 @@ createNode groupId -n "groupId6";
 createNode groupId -n "groupId7";
 	rename -uid "E66A739A-45F9-77B6-FA3F-02895CE14969";
 	setAttr ".ihi" 0;
-createNode groupParts -n "groupParts1";
-	rename -uid "1A566772-4515-C151-0FCF-808B8B5DE195";
-	setAttr ".ihi" 0;
-	setAttr ".ic" -type "componentList" 1 "f[0:137]";
-createNode groupId -n "groupId8";
-	rename -uid "17FFF3C3-4835-E650-B935-D1AD95B685A7";
-	setAttr ".ihi" 0;
-createNode polyPlanarProj -n "polyPlanarProj1";
-	rename -uid "7E0D6A35-40C6-C11A-F52B-889B7BEAF37B";
-	setAttr ".uopa" yes;
-	setAttr ".ics" -type "componentList" 1 "f[0:137]";
-	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".ws" yes;
-	setAttr ".pc" -type "double3" -3.7681019306182861 1.0994455814361572 -8.5590062141418457 ;
-	setAttr ".ro" -type "double3" 0 90 0 ;
-	setAttr ".ps" -type "double2" 1.0869817733764648 2.1988911628723145 ;
-	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-createNode polyPlanarProj -n "polyPlanarProj2";
-	rename -uid "91D72B12-439B-FE6F-9959-018B5FE74A66";
-	setAttr ".uopa" yes;
-	setAttr ".ics" -type "componentList" 1 "f[0:137]";
-	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".ws" yes;
-	setAttr ".pc" -type "double3" -3.7681019306182861 1.0994455814361572 -8.5590062141418457 ;
-	setAttr ".ro" -type "double3" -90 0 0 ;
-	setAttr ".ps" -type "double2" 4.7124209403991699 1.0869817733764648 ;
-	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-createNode polyPlanarProj -n "polyPlanarProj3";
-	rename -uid "A555915D-4D8E-10EA-845D-75A30562DEF5";
-	setAttr ".uopa" yes;
-	setAttr ".ics" -type "componentList" 1 "f[0:137]";
-	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".ws" yes;
-	setAttr ".pc" -type "double3" -3.7681019306182861 1.0994455814361572 -8.5590062141418457 ;
-	setAttr ".ro" -type "double3" 0 90 0 ;
-	setAttr ".ps" -type "double2" 1.0869817733764648 2.1988911628723145 ;
-	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-createNode polyPlanarProj -n "polyPlanarProj4";
-	rename -uid "78172AC3-41CA-6FB2-5099-F38A02DC772B";
-	setAttr ".uopa" yes;
-	setAttr ".ics" -type "componentList" 1 "f[0:137]";
-	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".ws" yes;
-	setAttr ".pc" -type "double3" -3.768101692199707 1.0791587829589844 -8.5648164749145508 ;
-	setAttr ".ro" -type "double3" -8.3879388152787636e-05 -15.983751337846236 90.000000000062244 ;
-	setAttr ".ps" -type "double2" 2.3709919592826445 4.7124223477708256 ;
-	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-createNode polyAutoProj -n "polyAutoProj1";
-	rename -uid "694CD53E-473E-D1EE-14DF-478F6A384A16";
-	setAttr ".cch" yes;
-	setAttr ".uopa" yes;
-	setAttr ".ics" -type "componentList" 1 "f[84]";
-	setAttr ".ix" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".s" -type "double3" 0.92267990112304688 0.92267990112304688 0.92267990112304688 ;
-	setAttr ".ps" 0.20000000298023224;
-	setAttr ".dl" yes;
+createNode reference -n "Bookshelf_1RN";
+	rename -uid "0AEE7E65-457B-9E10-7EB9-E493038A9F5E";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Bookshelf_1RN"
+		"Bookshelf_1RN" 0;
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -37455,7 +39428,7 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
-	setAttr -s 3 ".r";
+	setAttr -s 4 ".r";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -37463,9 +39436,9 @@ select -ne :openPBR_shader1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
 select -ne :initialShadingGroup;
-	setAttr -s 112 ".dsm";
+	setAttr -s 118 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 15 ".gn";
+	setAttr -s 22 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
@@ -37486,8 +39459,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "groupId1.id" "BookShelf_Shape3.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "BookShelf_Shape3.iog.og[0].gco";
 connectAttr "groupId2.id" "BookShelf_Shape3.ciog.cog[0].cgid";
@@ -37497,10 +39468,6 @@ connectAttr "groupId4.id" "BookShelf_Shape2.ciog.cog[0].cgid";
 connectAttr "groupId5.id" "BookShelf_Shape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "BookShelf_Shape1.iog.og[0].gco";
 connectAttr "groupId6.id" "BookShelf_Shape1.ciog.cog[0].cgid";
-connectAttr "polyAutoProj1.out" "BookShelf_3Shape.i";
-connectAttr "groupId7.id" "BookShelf_3Shape.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "BookShelf_3Shape.iog.og[0].gco";
-connectAttr "groupId8.id" "BookShelf_3Shape.ciog.cog[0].cgid";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -37513,24 +39480,6 @@ connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drive
 		 -na;
 connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
-connectAttr "BookShelf_Shape3.o" "polyUnite1.ip[0]";
-connectAttr "BookShelf_Shape2.o" "polyUnite1.ip[1]";
-connectAttr "BookShelf_Shape1.o" "polyUnite1.ip[2]";
-connectAttr "BookShelf_Shape3.wm" "polyUnite1.im[0]";
-connectAttr "BookShelf_Shape2.wm" "polyUnite1.im[1]";
-connectAttr "BookShelf_Shape1.wm" "polyUnite1.im[2]";
-connectAttr "polyUnite1.out" "groupParts1.ig";
-connectAttr "groupId7.id" "groupParts1.gi";
-connectAttr "groupParts1.og" "polyPlanarProj1.ip";
-connectAttr "BookShelf_3Shape.wm" "polyPlanarProj1.mp";
-connectAttr "polyPlanarProj1.out" "polyPlanarProj2.ip";
-connectAttr "BookShelf_3Shape.wm" "polyPlanarProj2.mp";
-connectAttr "polyPlanarProj2.out" "polyPlanarProj3.ip";
-connectAttr "BookShelf_3Shape.wm" "polyPlanarProj3.mp";
-connectAttr "polyPlanarProj3.out" "polyPlanarProj4.ip";
-connectAttr "BookShelf_3Shape.wm" "polyPlanarProj4.mp";
-connectAttr "polyPlanarProj4.out" "polyAutoProj1.ip";
-connectAttr "BookShelf_3Shape.wm" "polyAutoProj1.mp";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "Floor_1Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "TableTop_Shape1.iog" ":initialShadingGroup.dsm" -na;
@@ -37633,8 +39582,6 @@ connectAttr "BookShelf_Shape2.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "BookShelf_Shape2.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "BookShelf_Shape1.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "BookShelf_Shape1.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "BookShelf_3Shape.iog.og[0]" ":initialShadingGroup.dsm" -na;
-connectAttr "BookShelf_3Shape.ciog.cog[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId3.msg" ":initialShadingGroup.gn" -na;
