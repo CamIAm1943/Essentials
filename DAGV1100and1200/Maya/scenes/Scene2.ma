@@ -1,39 +1,42 @@
 //Maya ASCII 2026 scene
 //Name: Scene2.ma
-//Last modified: Tue, Nov 11, 2025 12:38:19 PM
+//Last modified: Thu, Nov 13, 2025 03:53:25 PM
 //Codeset: 1252
 file -rdi 1 -ns "Bucket" -rfn "BucketRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Bucket.ma";
 file -rdi 1 -ns "Wooden_Table" -rfn "Wooden_TableRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Wooden Table.ma";
+file -rdi 1 -ns "Bed" -rfn "BedRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Bed.ma";
 file -r -ns "Bucket" -dr 1 -rfn "BucketRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Bucket.ma";
 file -r -ns "Wooden_Table" -dr 1 -rfn "Wooden_TableRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Wooden Table.ma";
+file -r -ns "Bed" -dr 1 -rfn "BedRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Bed.ma";
 requires maya "2026";
 requires "stereoCamera" "10.0";
 requires "mtoa" "5.5.3";
+requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "68CB6668-4209-6999-A9AE-69A19D481106";
+fileInfo "UUID" "E83B614E-42A6-290E-B461-77A68658F77D";
 createNode transform -s -n "persp";
 	rename -uid "5E7E39D6-4F8C-4AE3-2232-22AFC1F466CD";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 25.626343727930056 21.326070416682072 53.70456880052253 ;
-	setAttr ".r" -type "double3" -13.330363618713566 26.093025929086295 -1.1421338934615003e-13 ;
-	setAttr ".rp" -type "double3" 8.8817841970012523e-16 -2.6645352591003757e-15 0 ;
-	setAttr ".rpt" -type "double3" 5.3926304286730422e-15 7.2278949766974753e-16 -3.0622579138145809e-15 ;
+	setAttr ".t" -type "double3" 40.019222445223228 16.40803198192668 33.406933570237648 ;
+	setAttr ".r" -type "double3" -13.334452056751619 65.869786855715645 -2.4506993853231322e-13 ;
+	setAttr ".rp" -type "double3" -3.5527136788005009e-15 3.5527136788005009e-15 -7.1054273576010019e-15 ;
+	setAttr ".rpt" -type "double3" 3.3062621302992905e-16 -2.392591586137439e-15 5.9777482150272718e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E30D1C86-4306-40D6-0114-EB9235501752";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 61.401917938141366;
+	setAttr ".coi" 53.404026577283275;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -0.65241498678384602 7.1689104204376601 0.046417623494150462 ;
+	setAttr ".tp" -type "double3" -7.404346975975848 4.0912012657104864 12.163327493868135 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "88F1A0D5-45CB-831A-9DDC-4CBAD6A80601";
@@ -221,6 +224,7 @@ createNode mesh -n "pPlaneShape3" -p "pPlane3";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pCube1";
 	rename -uid "EC922A3F-4AF7-B6C0-5F62-7F8D98D1FAD8";
+	setAttr ".v" no;
 	setAttr ".rp" -type "double3" -8.7406011100374563 2.4356462296449006 10.623071196532273 ;
 	setAttr ".sp" -type "double3" -8.7406011100374563 2.4356462296449006 10.623071196532273 ;
 createNode mesh -n "pCubeShape1" -p "pCube1";
@@ -614,20 +618,20 @@ createNode mesh -n "pCubeShape7" -p "pCube7";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "9C15DCCF-4F9C-DA34-1C28-608257EF12CF";
-	setAttr -s 4 ".lnk";
-	setAttr -s 4 ".slnk";
+	rename -uid "C63AD399-402A-20D2-5A78-44AFE21CF4EC";
+	setAttr -s 5 ".lnk";
+	setAttr -s 5 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "B993412E-48A4-9E8C-566C-7D9D0040584F";
+	rename -uid "92DF8283-40AC-88F3-0B52-2B9DA6FDA9AB";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "5E27F356-4E50-AA2E-FACD-7B9E338FE35E";
+	rename -uid "0A6052BC-4CAD-5DDF-BF0F-73A02E34A325";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "CEA9EC00-4D8E-285B-CB85-4CAA5097B6E1";
+	rename -uid "242DB5AF-4AD5-1545-F633-F191BBF6F4EF";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "76EBFDCB-46B8-8613-44E9-729B0525E54A";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "A8A78228-4E92-2DC0-6B77-13943F1A497E";
+	rename -uid "B18B8BB9-493A-E043-71E4-25ADB6D66EAB";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "156C12E5-4A6F-E88B-2A3C-3C905893A3EC";
 	setAttr ".g" yes;
@@ -688,7 +692,7 @@ createNode reference -n "BucketRN";
 		"BucketRN"
 		"BucketRN" 0
 		"BucketRN" 18
-		2 "|Bucket:BucketGroup" "translate" " -type \"double3\" 0 0 0.39843383222400952"
+		2 "|Bucket:BucketGroup" "translate" " -type \"double3\" -0.76363117592786134 0 0.39843383222400952"
 		
 		2 "|Bucket:BucketGroup" "rotate" " -type \"double3\" 0 0 0"
 		2 "|Bucket:BucketGroup" "scale" " -type \"double3\" 1 1 1"
@@ -760,6 +764,17 @@ createNode reference -n "Wooden_TableRN";
 		2 "|Wooden_Table:WoodenTable" "scale" " -type \"double3\" 3.16878995813173248 3.89465963593744169 3.89465963593744169";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode reference -n "BedRN";
+	rename -uid "FA043AEE-489B-591C-7F05-29996ADE4538";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"BedRN"
+		"BedRN" 0
+		"BedRN" 2
+		2 "|Bed:pCube1" "translate" " -type \"double3\" -6.86665914328141369 0.96449400743844693 10.05627086544669346"
+		
+		2 "|Bed:pCube1" "scale" " -type \"double3\" 11.89531508782240188 1.97704265333270701 5.59419243313854597";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -771,18 +786,18 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 4 ".st";
+	setAttr -s 5 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 8 ".s";
+	setAttr -s 9 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 2 ".u";
+	setAttr -s 3 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 3 ".r";
+	setAttr -s 4 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 2 ".tx";
+	setAttr -s 3 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
