@@ -1,42 +1,45 @@
 //Maya ASCII 2026 scene
 //Name: Scene2.ma
-//Last modified: Thu, Nov 13, 2025 03:53:25 PM
+//Last modified: Thu, Nov 20, 2025 04:38:52 PM
 //Codeset: 1252
 file -rdi 1 -ns "Bucket" -rfn "BucketRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Bucket.ma";
 file -rdi 1 -ns "Wooden_Table" -rfn "Wooden_TableRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Wooden Table.ma";
 file -rdi 1 -ns "Bed" -rfn "BedRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Bed.ma";
+file -rdi 1 -ns "Wooden_Chair" -rfn "Wooden_ChairRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Wooden Chair.ma";
 file -r -ns "Bucket" -dr 1 -rfn "BucketRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Bucket.ma";
 file -r -ns "Wooden_Table" -dr 1 -rfn "Wooden_TableRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Wooden Table.ma";
 file -r -ns "Bed" -dr 1 -rfn "BedRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Bed.ma";
+file -r -ns "Wooden_Chair" -dr 1 -rfn "Wooden_ChairRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Wooden Chair.ma";
 requires maya "2026";
 requires "stereoCamera" "10.0";
 requires "mtoa" "5.5.3";
-requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "E83B614E-42A6-290E-B461-77A68658F77D";
+fileInfo "UUID" "C91461C6-4245-F809-2C04-D4B29E3DE44D";
 createNode transform -s -n "persp";
 	rename -uid "5E7E39D6-4F8C-4AE3-2232-22AFC1F466CD";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 40.019222445223228 16.40803198192668 33.406933570237648 ;
-	setAttr ".r" -type "double3" -13.334452056751619 65.869786855715645 -2.4506993853231322e-13 ;
-	setAttr ".rp" -type "double3" -3.5527136788005009e-15 3.5527136788005009e-15 -7.1054273576010019e-15 ;
-	setAttr ".rpt" -type "double3" 3.3062621302992905e-16 -2.392591586137439e-15 5.9777482150272718e-15 ;
+	setAttr ".t" -type "double3" 56.018944605454919 22.23448477366226 17.404196315494701 ;
+	setAttr ".r" -type "double3" -21.450001562845202 81.970462149073995 -1.4800309925919519e-13 ;
+	setAttr ".rp" -type "double3" 0 4.2188474935755949e-15 0 ;
+	setAttr ".rpt" -type "double3" 9.6663453953555781e-15 -8.564615684028961e-15 -1.5023157781614377e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E30D1C86-4306-40D6-0114-EB9235501752";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 53.404026577283275;
+	setAttr ".coi" 66.667985777040215;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -7.404346975975848 4.0912012657104864 12.163327493868135 ;
+	setAttr ".tp" -type "double3" -5.4230888508261472 -2.1452756215539139 8.7367782803053995 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "88F1A0D5-45CB-831A-9DDC-4CBAD6A80601";
@@ -395,6 +398,7 @@ createNode mesh -n "pCubeShape3" -p "pCube3";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pCube4";
 	rename -uid "B260133F-4629-D6D2-3B28-F4A1E2BED0AE";
+	setAttr ".v" no;
 	setAttr ".rp" -type "double3" 5.6554057485418756 2.4356462296449006 5.1256379585590803 ;
 	setAttr ".sp" -type "double3" 5.6554057485418756 2.4356462296449006 5.1256379585590803 ;
 createNode mesh -n "pCubeShape4" -p "pCube4";
@@ -618,20 +622,20 @@ createNode mesh -n "pCubeShape7" -p "pCube7";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "C63AD399-402A-20D2-5A78-44AFE21CF4EC";
-	setAttr -s 5 ".lnk";
-	setAttr -s 5 ".slnk";
+	rename -uid "3895FDD5-474C-3E97-6A82-B9A500C4BF73";
+	setAttr -s 6 ".lnk";
+	setAttr -s 6 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "92DF8283-40AC-88F3-0B52-2B9DA6FDA9AB";
+	rename -uid "0D97FF70-40C5-868D-CB62-C49893D5E73F";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "0A6052BC-4CAD-5DDF-BF0F-73A02E34A325";
+	rename -uid "4E2E2DD3-4CF4-C6E2-F904-64BF8532B667";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "242DB5AF-4AD5-1545-F633-F191BBF6F4EF";
+	rename -uid "BDBA8B03-4A33-1D0E-4BD7-0CA9D338E1BA";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "76EBFDCB-46B8-8613-44E9-729B0525E54A";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "B18B8BB9-493A-E043-71E4-25ADB6D66EAB";
+	rename -uid "F52CE780-432A-18B4-C9FB-83A1C2EE5CC8";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "156C12E5-4A6F-E88B-2A3C-3C905893A3EC";
 	setAttr ".g" yes;
@@ -775,6 +779,1822 @@ createNode reference -n "BedRN";
 		2 "|Bed:pCube1" "scale" " -type \"double3\" 11.89531508782240188 1.97704265333270701 5.59419243313854597";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode reference -n "Wooden_ChairRN";
+	rename -uid "9E604215-4E35-6025-75D3-8196F5778607";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Wooden_ChairRN"
+		"Wooden_ChairRN" 0
+		"Wooden_ChairRN" 905
+		2 "|Wooden_Chair:pCylinder1" "translate" " -type \"double3\" 6.74798959696815892 2.30567364857560708 5.34479382174422923"
+		
+		2 "|Wooden_Chair:pCylinder1" "rotate" " -type \"double3\" 0 -43.67764520398473138 0"
+		
+		2 "|Wooden_Chair:pCylinder1" "scale" " -type \"double3\" 1.52826421847759875 0.13090543689264703 1.52826421847759875"
+		
+		2 "|Wooden_Chair:pCylinder1|Wooden_Chair:pCylinderShape1" "uvPivot" " -type \"double2\" 0.1841894811843432 0.43973192383286186"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak" " -s 900"
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[0]" " -type \"float2\" -0.42717223999999998 0.24567768000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[1]" " -type \"float2\" -0.21921553999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[2]" " -type \"float2\" -0.21907607000000001 0.037826790999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[3]" " -type \"float2\" -0.21977421999999999 -0.16724321"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[4]" " -type \"float2\" -0.41240543000000002 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[5]" " -type \"float2\" -0.41254550000000001 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[6]" " -type \"float2\" -0.40418893 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[7]" " -type \"float2\" -0.40976 0.27819579999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[8]" " -type \"float2\" -0.41258389000000001 0.27430901000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[9]" " -type \"float2\" -0.32946521000000001 0.21392565999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[10]" " -type \"float2\" -0.22895094999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[11]" " -type \"float2\" -0.22881153000000001 0.037826552999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[12]" " -type \"float2\" -0.23868647000000001 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[13]" " -type \"float2\" -0.23854694000000001 0.037826493000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[14]" " -type \"float2\" -0.34995084999999998 0.31981477000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[15]" " -type \"float2\" -0.24842181999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[16]" " -type \"float2\" -0.24828243 0.037826552999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[17]" " -type \"float2\" -0.31340839999999998 0.32484155999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[18]" " -type \"float2\" -0.31821274999999999 0.32484155999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[19]" " -type \"float2\" -0.31820791999999998 0.22210452"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[20]" " -type \"float2\" -0.25815727999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[21]" " -type \"float2\" -0.25801784 0.037826552999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[22]" " -type \"float2\" -0.27710109999999999 0.31833017000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[23]" " -type \"float2\" -0.28167033000000002 0.31981477000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[24]" " -type \"float2\" -0.31341322999999999 0.22210452"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[25]" " -type \"float2\" -0.26789275000000001 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[26]" " -type \"float2\" -0.26775326999999999 0.037826493000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[27]" " -type \"float2\" -0.27762815000000002 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[28]" " -type \"float2\" -0.27748871000000003 0.037826552999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[29]" " -type \"float2\" -0.21903723 0.27430909999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[30]" " -type \"float2\" -0.28736365000000003 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[31]" " -type \"float2\" -0.28722414000000002 0.037826493000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[32]" " -type \"float2\" -0.20296428 0.24110851"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[33]" " -type \"float2\" -0.20444884999999999 0.24567770999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[34]" " -type \"float2\" -0.30215594000000001 0.21392565999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[35]" " -type \"float2\" -0.29709901999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[36]" " -type \"float2\" -0.29695960999999998 0.037826552999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[37]" " -type \"float2\" -0.19793746000000001 0.20456621"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[38]" " -type \"float2\" -0.19793746000000001 0.20937046000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[39]" " -type \"float2\" -0.30067431999999999 0.20936569999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[40]" " -type \"float2\" -0.30683445999999998 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[41]" " -type \"float2\" -0.30669503999999997 0.037826552999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[42]" " -type \"float2\" -0.20444888 0.16825888"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[43]" " -type \"float2\" -0.20296428 0.17282817"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[44]" " -type \"float2\" -0.30067431999999999 0.20457098000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[45]" " -type \"float2\" -0.31656997999999997 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[46]" " -type \"float2\" -0.31643051 0.037826493000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[47]" " -type \"float2\" -0.22186112 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[48]" " -type \"float2\" -0.21903719999999999 0.13962767000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[49]" " -type \"float2\" -0.30215591000000003 0.20001099"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[50]" " -type \"float2\" -0.32630538999999997 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[51]" " -type \"float2\" -0.32616591 0.037826552999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[52]" " -type \"float2\" -0.33604078999999998 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[53]" " -type \"float2\" -0.33590138000000003 0.037826314999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[54]" " -type \"float2\" -0.28167036000000001 0.094121888000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[55]" " -type \"float2\" -0.34577626 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[56]" " -type \"float2\" -0.34563679000000003 0.037826552999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[57]" " -type \"float2\" -0.31821274999999999 0.089095070999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[58]" " -type \"float2\" -0.31340839999999998 0.089095070999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[59]" " -type \"float2\" -0.3134132 0.19183204000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[60]" " -type \"float2\" -0.35551167 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[61]" " -type \"float2\" -0.35537218999999998 0.037826552999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[62]" " -type \"float2\" -0.35451996000000002 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[63]" " -type \"float2\" -0.34995079000000001 0.094122006999999994"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[64]" " -type \"float2\" -0.31820791999999998 0.19183204000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[65]" " -type \"float2\" -0.36524719 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[66]" " -type \"float2\" -0.36510772000000002 0.037826493000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[67]" " -type \"float2\" -0.3749826 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[68]" " -type \"float2\" -0.37484311999999997 0.037826552999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[69]" " -type \"float2\" -0.41258389000000001 0.13962754999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[70]" " -type \"float2\" -0.38471805999999997 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[71]" " -type \"float2\" -0.38457859 0.037826493000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[72]" " -type \"float2\" -0.42865688000000002 0.17282817"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[73]" " -type \"float2\" -0.4271723 0.16825914"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[74]" " -type \"float2\" -0.32946521000000001 0.20001113000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[75]" " -type \"float2\" -0.39445346999999997 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[76]" " -type \"float2\" -0.39431399 0.037826552999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[77]" " -type \"float2\" -0.43368362999999999 0.20456621"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[78]" " -type \"float2\" -0.33094679999999999 0.20457098000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[79]" " -type \"float2\" -0.33094679999999999 0.20936569999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[80]" " -type \"float2\" -0.40404946000000003 0.037826552999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[81]" " -type \"float2\" -0.43196929000000001 -0.36342426999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[82]" " -type \"float2\" -0.41240239000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[83]" " -type \"float2\" -0.40419190999999999 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[84]" " -type \"float2\" -0.40404874000000002 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[85]" " -type \"float2\" -0.22881085000000001 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[86]" " -type \"float2\" -0.23730694999999999 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[87]" " -type \"float2\" -0.23854628 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[88]" " -type \"float2\" -0.24704239 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[89]" " -type \"float2\" -0.24828175 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[90]" " -type \"float2\" -0.25677788000000001 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[91]" " -type \"float2\" -0.25801714999999997 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[92]" " -type \"float2\" -0.26651329000000001 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[93]" " -type \"float2\" -0.26775262 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[94]" " -type \"float2\" -0.27624872 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[95]" " -type \"float2\" -0.27748802 -0.15833112999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[96]" " -type \"float2\" -0.28598415999999999 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[97]" " -type \"float2\" -0.28722349000000003 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[98]" " -type \"float2\" -0.29571958999999998 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[99]" " -type \"float2\" -0.29710206 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[100]" " -type \"float2\" -0.30545506 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[101]" " -type \"float2\" -0.30531254000000002 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[102]" " -type \"float2\" -0.30683749999999999 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[103]" " -type \"float2\" -0.30669436 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[104]" " -type \"float2\" -0.31519048999999999 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[105]" " -type \"float2\" -0.31504798000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[106]" " -type \"float2\" -0.31657296000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[107]" " -type \"float2\" -0.31642985000000001 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[108]" " -type \"float2\" -0.32492596000000001 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[109]" " -type \"float2\" -0.32478343999999998 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[110]" " -type \"float2\" -0.32630837000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[111]" " -type \"float2\" -0.32616519999999999 -0.15833112999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[112]" " -type \"float2\" -0.33466129999999999 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[113]" " -type \"float2\" -0.33451884999999998 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[114]" " -type \"float2\" -0.33604378000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[115]" " -type \"float2\" -0.33590059999999999 -0.15833130000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[116]" " -type \"float2\" -0.34439677000000002 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[117]" " -type \"float2\" -0.34425425999999998 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[118]" " -type \"float2\" -0.34577930000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[119]" " -type \"float2\" -0.34563612999999999 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[120]" " -type \"float2\" -0.35413218000000002 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[121]" " -type \"float2\" -0.35398965999999998 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[122]" " -type \"float2\" -0.35551471000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[123]" " -type \"float2\" -0.35537152999999999 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[124]" " -type \"float2\" -0.36386770000000002 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[125]" " -type \"float2\" -0.36372524000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[126]" " -type \"float2\" -0.36525016999999999 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[127]" " -type \"float2\" -0.36510705999999998 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[128]" " -type \"float2\" -0.37360316999999998 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[129]" " -type \"float2\" -0.37346065000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[130]" " -type \"float2\" -0.37498557999999999 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[131]" " -type \"float2\" -0.37484241000000001 -0.15833112999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[132]" " -type \"float2\" -0.38333851000000002 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[133]" " -type \"float2\" -0.38319611999999997 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[134]" " -type \"float2\" -0.38472104000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[135]" " -type \"float2\" -0.38457786999999999 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[136]" " -type \"float2\" -0.39307397999999999 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[137]" " -type \"float2\" -0.39293151999999998 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[138]" " -type \"float2\" -0.39445650999999998 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[139]" " -type \"float2\" -0.39431334000000001 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[140]" " -type \"float2\" -0.40280944000000002 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[141]" " -type \"float2\" -0.40266692999999998 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[142]" " -type \"float2\" -0.43712318 -0.33088382999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[143]" " -type \"float2\" -0.43712383999999999 -0.33087936000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[144]" " -type \"float2\" -0.41019136 -0.40033766999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[145]" " -type \"float2\" -0.33094358000000001 -0.33619209999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[146]" " -type \"float2\" -0.43440199000000002 -0.33113870000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[147]" " -type \"float2\" -0.32782011999999999 -0.34049097"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[148]" " -type \"float2\" -0.38766682000000002 -0.42286286000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[149]" " -type \"float2\" -0.32352120000000001 -0.34361430999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[150]" " -type \"float2\" -0.31846743999999999 -0.34525642000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[151]" " -type \"float2\" -0.31315365000000001 -0.34525635999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[152]" " -type \"float2\" -0.30809996000000001 -0.34361437"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[153]" " -type \"float2\" -0.303801 -0.34049102999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[154]" " -type \"float2\" -0.30067759999999999 -0.33619209999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[155]" " -type \"float2\" -0.29903554999999998 -0.3311384"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[156]" " -type \"float2\" -0.29903554999999998 -0.32582459000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[157]" " -type \"float2\" -0.30067762999999997 -0.32077071000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[158]" " -type \"float2\" -0.303801 -0.31647186999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[159]" " -type \"float2\" -0.30809993000000002 -0.31334828999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[160]" " -type \"float2\" -0.31315367999999999 -0.31170636000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[161]" " -type \"float2\" -0.31846743999999999 -0.31170629999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[162]" " -type \"float2\" -0.32352120000000001 -0.31334828999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[163]" " -type \"float2\" -0.32782018000000002 -0.31647182000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[164]" " -type \"float2\" -0.33094351999999999 -0.32077071000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[165]" " -type \"float2\" -0.35498434000000001 -0.44044819000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[166]" " -type \"float2\" -0.31846755999999998 -0.44707361000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[167]" " -type \"float2\" -0.28169044999999998 -0.44209018"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[168]" " -type \"float2\" -0.24825346000000001 -0.42598614000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[169]" " -type \"float2\" -0.22142925999999999 -0.40033742999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[170]" " -type \"float2\" -0.1945383 -0.33113888000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[171]" " -type \"float2\" -0.19721851000000001 -0.33113833999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[172]" " -type \"float2\" -0.19449720000000001 -0.32608363000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[173]" " -type \"float2\" -0.19965261000000001 -0.29353352999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[174]" " -type \"float2\" -0.20220181000000001 -0.29436114000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[175]" " -type \"float2\" -0.20117572 -0.28871295000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[176]" " -type \"float2\" -0.21613723000000001 -0.25934926000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[177]" " -type \"float2\" -0.21830589 -0.26092425000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[178]" " -type \"float2\" -0.21907537999999999 -0.25523528000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[179]" " -type \"float2\" -0.24237859 -0.23193200999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[180]" " -type \"float2\" -0.24395423999999999 -0.23409995"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[181]" " -type \"float2\" -0.24644426 -0.22892734000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[182]" " -type \"float2\" -0.27580795000000002 -0.21396580000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[183]" " -type \"float2\" -0.27663672 -0.21651461999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[184]" " -type \"float2\" -0.28060313999999997 -0.21236446"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[185]" " -type \"float2\" -0.31315309000000002 -0.20720914000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[186]" " -type \"float2\" -0.31315370999999997 -0.20988925999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[187]" " -type \"float2\" -0.3182084 -0.20716794999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[188]" " -type \"float2\" -0.35075831000000002 -0.21232334"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[189]" " -type \"float2\" -0.34993069999999998 -0.21487233"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[190]" " -type \"float2\" -0.35557896 -0.21384642000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[191]" " -type \"float2\" -0.38494271000000002 -0.22880808"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[192]" " -type \"float2\" -0.38336772000000002 -0.23097661"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[193]" " -type \"float2\" -0.38905674000000001 -0.23174617"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[194]" " -type \"float2\" -0.41235989000000001 -0.25504932000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[195]" " -type \"float2\" -0.41019201 -0.25662497000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[196]" " -type \"float2\" -0.41536455999999999 -0.25911500999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[197]" " -type \"float2\" -0.43032609999999999 -0.28847869999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[198]" " -type \"float2\" -0.42777723000000001 -0.28930739"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[199]" " -type \"float2\" -0.43192744 -0.29327389999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[200]" " -type \"float2\" -0.43708270999999999 -0.32582399000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[201]" " -type \"float2\" -0.43440253000000001 -0.32582453"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[202]" " -type \"float2\" -0.22757210999999999 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[203]" " -type \"float2\" -0.23730755000000001 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[204]" " -type \"float2\" -0.24704298 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[205]" " -type \"float2\" -0.25677844999999999 0.037873878999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[206]" " -type \"float2\" -0.26651387999999998 0.037873878999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[207]" " -type \"float2\" -0.27624932000000002 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[208]" " -type \"float2\" -0.28598475000000001 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[209]" " -type \"float2\" -0.29572018999999999 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[210]" " -type \"float2\" -0.30545562999999998 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[211]" " -type \"float2\" -0.31519109000000001 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[212]" " -type \"float2\" -0.32492655999999998 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[213]" " -type \"float2\" -0.33466195999999998 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[214]" " -type \"float2\" -0.34439736999999998 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[215]" " -type \"float2\" -0.35413288999999998 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[216]" " -type \"float2\" -0.36386829999999998 0.037873878999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[217]" " -type \"float2\" -0.37360376000000001 0.037873878999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[218]" " -type \"float2\" -0.38333917000000001 0.037873878999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[219]" " -type \"float2\" -0.39307462999999998 0.037873878999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[220]" " -type \"float2\" -0.40281003999999998 0.037873759999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[221]" " -type \"float2\" -0.41254485000000002 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[222]" " -type \"float2\" -0.42865688000000002 0.24110851"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[223]" " -type \"float2\" -0.43368362999999999 0.20937046000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[224]" " -type \"float2\" -0.41331511999999998 -0.39603867999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[225]" " -type \"float2\" -0.38336712000000001 -0.42598589999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[226]" " -type \"float2\" -0.34993011000000002 -0.44208983000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[227]" " -type \"float2\" -0.31315330000000002 -0.44707295000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[228]" " -type \"float2\" -0.27663641999999999 -0.44044778000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[229]" " -type \"float2\" -0.24395451000000001 -0.42286207999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[230]" " -type \"float2\" -0.21830591999999999 -0.39603809000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[231]" " -type \"float2\" -0.19721880999999999 -0.32582411"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[232]" " -type \"float2\" -0.20384452 -0.28930720999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[233]" " -type \"float2\" -0.22142988 -0.25662526000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[234]" " -type \"float2\" -0.24825390999999999 -0.23097667"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[235]" " -type \"float2\" -0.28169090000000002 -0.21487269000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[236]" " -type \"float2\" -0.31846785999999999 -0.20988937999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[237]" " -type \"float2\" -0.35498469999999999 -0.21651486"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[238]" " -type \"float2\" -0.38766687999999999 -0.23410048999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[239]" " -type \"float2\" -0.41331506000000001 -0.26092472999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[240]" " -type \"float2\" -0.42941891999999998 -0.29436180000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[241]" " -type \"float2\" -0.33258557 -0.32582459000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[242]" " -type \"float2\" -0.42941879999999999 -0.36260101"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[243]" " -type \"float2\" -0.33258563000000002 -0.3311384"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[244]" " -type \"float2\" -0.43044341000000003 -0.36825385999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[245]" " -type \"float2\" -0.19453909999999999 -0.33114389"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[246]" " -type \"float2\" -0.19449791 -0.32607903999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[247]" " -type \"float2\" -0.19965181000000001 -0.29353854000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[248]" " -type \"float2\" -0.20117774999999999 -0.28870884000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[249]" " -type \"float2\" -0.21613494 -0.25935373"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[250]" " -type \"float2\" -0.21907863 -0.25523201000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[251]" " -type \"float2\" -0.24237502 -0.23193559"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[252]" " -type \"float2\" -0.24644833999999999 -0.22892531999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[253]" " -type \"float2\" -0.27580345000000001 -0.21396807000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[254]" " -type \"float2\" -0.28060766999999998 -0.21236380999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[255]" " -type \"float2\" -0.31314808 -0.20720991"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[256]" " -type \"float2\" -0.31821293 -0.20716867"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[257]" " -type \"float2\" -0.35075337000000001 -0.21232255999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[258]" " -type \"float2\" -0.35558300999999998 -0.2138485"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[259]" " -type \"float2\" -0.38493818000000002 -0.22880569000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[260]" " -type \"float2\" -0.38905995999999998 -0.23174933"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[261]" " -type \"float2\" -0.41235632 -0.25504579999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[262]" " -type \"float2\" -0.41536665 -0.25911906000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[263]" " -type \"float2\" -0.43032389999999998 -0.28847423"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[264]" " -type \"float2\" -0.43192809999999998 -0.29327842999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[265]" " -type \"float2\" -0.43708193000000001 -0.32581898999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[266]" " -type \"float2\" -0.43196851000000003 -0.36342928000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[267]" " -type \"float2\" -0.21845606000000001 0.040578841999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[268]" " -type \"float2\" -0.21845606000000001 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[269]" " -type \"float2\" -0.22819149 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[270]" " -type \"float2\" -0.22743200999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[271]" " -type \"float2\" -0.23792695999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[272]" " -type \"float2\" -0.23716751 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[273]" " -type \"float2\" -0.24766242999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[274]" " -type \"float2\" -0.24690297 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[275]" " -type \"float2\" -0.25739782999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[276]" " -type \"float2\" -0.25663838 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[277]" " -type \"float2\" -0.26713326999999998 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[278]" " -type \"float2\" -0.26637380999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[279]" " -type \"float2\" -0.27686870000000002 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[280]" " -type \"float2\" -0.27610924999999997 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[281]" " -type \"float2\" -0.28660414000000001 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[282]" " -type \"float2\" -0.28584471 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[283]" " -type \"float2\" -0.29633959999999998 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[284]" " -type \"float2\" -0.29558014999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[285]" " -type \"float2\" -0.30607504000000002 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[286]" " -type \"float2\" -0.30531557999999998 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[287]" " -type \"float2\" -0.31581047000000001 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[288]" " -type \"float2\" -0.31505102000000001 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[289]" " -type \"float2\" -0.32554590999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[290]" " -type \"float2\" -0.32478642000000002 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[291]" " -type \"float2\" -0.33528137000000002 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[292]" " -type \"float2\" -0.33452188999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[293]" " -type \"float2\" -0.34501678000000002 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[294]" " -type \"float2\" -0.34425735000000002 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[295]" " -type \"float2\" -0.35475217999999997 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[296]" " -type \"float2\" -0.35399269999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[297]" " -type \"float2\" -0.36448765 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[298]" " -type \"float2\" -0.36372822999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[299]" " -type \"float2\" -0.37422311000000003 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[300]" " -type \"float2\" -0.37346362999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[301]" " -type \"float2\" -0.38395857999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[302]" " -type \"float2\" -0.38319910000000001 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[303]" " -type \"float2\" -0.39369398 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[304]" " -type \"float2\" -0.39293450000000002 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[305]" " -type \"float2\" -0.40342945000000002 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[306]" " -type \"float2\" -0.40266996999999999 0.085275247999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[307]" " -type \"float2\" -0.21852267 -0.20478985"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[308]" " -type \"float2\" -0.30607504000000002 -0.20477608"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[309]" " -type \"float2\" -0.31581047000000001 -0.20477608"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[310]" " -type \"float2\" -0.32554590999999999 -0.20477608"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[311]" " -type \"float2\" -0.33528137000000002 -0.20477608"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[312]" " -type \"float2\" -0.34501678000000002 -0.20477608"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[313]" " -type \"float2\" -0.35475217999999997 -0.20477608"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[314]" " -type \"float2\" -0.36448765 -0.20477608"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[315]" " -type \"float2\" -0.37422311000000003 -0.20477608"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[316]" " -type \"float2\" -0.38395857999999999 -0.20477608"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[317]" " -type \"float2\" -0.39369398 -0.20477608"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[318]" " -type \"float2\" -0.40342945000000002 -0.20477608"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[319]" " -type \"float2\" -0.42821609999999999 -0.36879309999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[320]" " -type \"float2\" -0.42981892999999999 -0.36914733"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[321]" " -type \"float2\" -0.24210775000000001 -0.22724894000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[322]" " -type \"float2\" -0.21937153000000001 -0.16784742"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[323]" " -type \"float2\" -0.24540319999999999 -0.18107322000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[324]" " -type \"float2\" -0.27504086 -0.21957466"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[325]" " -type \"float2\" -0.41254127000000002 -0.40172913999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[326]" " -type \"float2\" -0.41254573999999999 -0.40172741000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[327]" " -type \"float2\" -0.41089255000000002 -0.40075042999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[328]" " -type \"float2\" -0.22895399 -0.20468256000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[329]" " -type \"float2\" -0.25236376999999999 -0.18515411000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[330]" " -type \"float2\" -0.27489477000000001 -0.22519096999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[331]" " -type \"float2\" -0.38517277999999999 -0.42803749000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[332]" " -type \"float2\" -0.38517588000000003 -0.42803368000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[333]" " -type \"float2\" -0.38380122 -0.42647728000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[334]" " -type \"float2\" -0.23868942000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[335]" " -type \"float2\" -0.25686692999999999 -0.18444774"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[336]" " -type \"float2\" -0.27082503000000002 -0.22114946999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[337]" " -type \"float2\" -0.35101336 -0.444599"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[338]" " -type \"float2\" -0.35101795000000002 -0.44459829000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[339]" " -type \"float2\" -0.35015434000000001 -0.44260695999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[340]" " -type \"float2\" -0.24842489000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[341]" " -type \"float2\" -0.26205674000000001 -0.18289807"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[342]" " -type \"float2\" -0.26954224999999998 -0.21897516"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[343]" " -type \"float2\" -0.31340820000000003 -0.44979407999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[344]" " -type \"float2\" -0.31341272999999997 -0.44979474000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[345]" " -type \"float2\" -0.31320995000000001 -0.44766804999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[346]" " -type \"float2\" -0.25816032 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[347]" " -type \"float2\" -0.26782495000000001 -0.1828362"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[348]" " -type \"float2\" -0.26955393 -0.22024484999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[349]" " -type \"float2\" -0.27603811 -0.44311431000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[350]" " -type \"float2\" -0.27604219000000002 -0.44311640000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[351]" " -type \"float2\" -0.27651164 -0.44100788000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[352]" " -type \"float2\" -0.26789575999999998 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[353]" " -type \"float2\" -0.27369207000000001 -0.18430647"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[354]" " -type \"float2\" -0.26886012999999997 -0.22425862999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[355]" " -type \"float2\" -0.24256121999999999 -0.42521331000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[356]" " -type \"float2\" -0.24256447 -0.42521659000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[357]" " -type \"float2\" -0.24359914999999999 -0.42346384999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[358]" " -type \"float2\" -0.27763115999999999 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[359]" " -type \"float2\" -0.27951812999999998 -0.18291368999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[360]" " -type \"float2\" -0.27000874000000002 -0.21642897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[361]" " -type \"float2\" -0.21625449999999999 -0.39784356999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[362]" " -type \"float2\" -0.21625655999999999 -0.39784762000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[363]" " -type \"float2\" -0.2176756 -0.39659359999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[364]" " -type \"float2\" -0.28736663000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[365]" " -type \"float2\" -0.28831503000000003 -0.17410395000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[366]" " -type \"float2\" -0.27778493999999998 -0.19820889999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[367]" " -type \"float2\" -0.20350488999999999 -0.35474136000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[368]" " -type \"float2\" -0.20138538 -0.36030993"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[369]" " -type \"float2\" -0.41019136 -0.40033766999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[370]" " -type \"float2\" -0.41019136 -0.40033773"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[371]" " -type \"float2\" -0.38766682000000002 -0.42286286000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[372]" " -type \"float2\" -0.38766682000000002 -0.42286291999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[373]" " -type \"float2\" -0.38336712000000001 -0.42598589999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[374]" " -type \"float2\" -0.38336717999999997 -0.42598596"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[375]" " -type \"float2\" -0.35498434000000001 -0.44044819000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[376]" " -type \"float2\" -0.35498434000000001 -0.44044824999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[377]" " -type \"float2\" -0.34993011000000002 -0.44208983000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[378]" " -type \"float2\" -0.34993011000000002 -0.44208988999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[379]" " -type \"float2\" -0.31846755999999998 -0.44707361000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[380]" " -type \"float2\" -0.31846755999999998 -0.44707361000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[381]" " -type \"float2\" -0.31315330000000002 -0.44707295000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[382]" " -type \"float2\" -0.31315330000000002 -0.44707295000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[383]" " -type \"float2\" -0.28169044999999998 -0.44209018"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[384]" " -type \"float2\" -0.28169044999999998 -0.44209024000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[385]" " -type \"float2\" -0.27663657000000003 -0.44044783999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[386]" " -type \"float2\" -0.27663641999999999 -0.44044778000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[387]" " -type \"float2\" -0.24825358 -0.42598614000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[388]" " -type \"float2\" -0.24825346000000001 -0.42598619999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[389]" " -type \"float2\" -0.24395469 -0.42286225999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[390]" " -type \"float2\" -0.24395454 -0.42286207999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[391]" " -type \"float2\" -0.22142925999999999 -0.40033742999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[392]" " -type \"float2\" -0.22142925999999999 -0.40033749000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[393]" " -type \"float2\" -0.21830591999999999 -0.39603809000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[394]" " -type \"float2\" -0.21830595 -0.39603809000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[395]" " -type \"float2\" -0.20384385999999999 -0.36765531000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[396]" " -type \"float2\" -0.28722349000000003 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[397]" " -type \"float2\" -0.28722352000000001 -0.15833125000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[398]" " -type \"float2\" -0.28598415999999999 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[399]" " -type \"float2\" -0.28598419000000003 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[400]" " -type \"float2\" -0.27748802 -0.15833112999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[401]" " -type \"float2\" -0.27748802 -0.15833112999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[402]" " -type \"float2\" -0.27624872 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[403]" " -type \"float2\" -0.27624872 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[404]" " -type \"float2\" -0.26775262 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[405]" " -type \"float2\" -0.26775262 -0.15833125000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[406]" " -type \"float2\" -0.26651329000000001 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[407]" " -type \"float2\" -0.26651329000000001 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[408]" " -type \"float2\" -0.25801714999999997 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[409]" " -type \"float2\" -0.25801718000000001 -0.15833125000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[410]" " -type \"float2\" -0.25677788000000001 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[411]" " -type \"float2\" -0.25677788000000001 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[412]" " -type \"float2\" -0.24828175 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[413]" " -type \"float2\" -0.24828178000000001 -0.15833125000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[414]" " -type \"float2\" -0.24704239 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[415]" " -type \"float2\" -0.24704242000000001 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[416]" " -type \"float2\" -0.23854628 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[417]" " -type \"float2\" -0.23854631000000001 -0.15833125000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[418]" " -type \"float2\" -0.23730694999999999 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[419]" " -type \"float2\" -0.23730698 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[420]" " -type \"float2\" -0.22881085000000001 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[421]" " -type \"float2\" -0.22881085000000001 -0.15833125000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[422]" " -type \"float2\" -0.22757152 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[423]" " -type \"float2\" -0.38759350999999997 -0.36413636999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[424]" " -type \"float2\" -0.36918032000000001 -0.39118847000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[425]" " -type \"float2\" -0.34405219999999997 -0.41264334000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[426]" " -type \"float2\" -0.31295626999999998 -0.42158452000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[427]" " -type \"float2\" -0.28041968 -0.41945753000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[428]" " -type \"float2\" -0.24987522000000001 -0.40880676999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[429]" " -type \"float2\" -0.22790307000000001 -0.37557831000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[430]" " -type \"float2\" -0.20173316999999999 -0.36402424999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[431]" " -type \"float2\" -0.20312706 -0.36544868000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[432]" " -type \"float2\" -0.41331511999999998 -0.39603867999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[433]" " -type \"float2\" -0.42777686999999998 -0.36765543000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[434]" " -type \"float2\" -0.43044560999999998 -0.36824944999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[435]" " -type \"float2\" -0.21921855000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[436]" " -type \"float2\" -0.21907537999999999 -0.15833125000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[437]" " -type \"float2\" -0.22757152 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[438]" " -type \"float2\" -0.22881085000000001 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[439]" " -type \"float2\" -0.41019136 -0.40033766999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[440]" " -type \"float2\" -0.38766682000000002 -0.42286286000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[441]" " -type \"float2\" -0.23730694999999999 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[442]" " -type \"float2\" -0.23854628 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[443]" " -type \"float2\" -0.38336712000000001 -0.42598589999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[444]" " -type \"float2\" -0.35498434000000001 -0.44044819000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[445]" " -type \"float2\" -0.24704239 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[446]" " -type \"float2\" -0.24828175 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[447]" " -type \"float2\" -0.34993011000000002 -0.44208983000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[448]" " -type \"float2\" -0.31846755999999998 -0.44707361000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[449]" " -type \"float2\" -0.25677788000000001 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[450]" " -type \"float2\" -0.25801714999999997 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[451]" " -type \"float2\" -0.31315330000000002 -0.44707295000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[452]" " -type \"float2\" -0.28169044999999998 -0.44209018"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[453]" " -type \"float2\" -0.26651329000000001 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[454]" " -type \"float2\" -0.26775262 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[455]" " -type \"float2\" -0.27663641999999999 -0.44044778000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[456]" " -type \"float2\" -0.24825346000000001 -0.42598614000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[457]" " -type \"float2\" -0.27624872 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[458]" " -type \"float2\" -0.27748802 -0.15833112999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[459]" " -type \"float2\" -0.24395451000000001 -0.42286207999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[460]" " -type \"float2\" -0.22142925999999999 -0.40033742999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[461]" " -type \"float2\" -0.28598415999999999 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[462]" " -type \"float2\" -0.28722349000000003 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[463]" " -type \"float2\" -0.21830591999999999 -0.39603809000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[464]" " -type \"float2\" -0.20384385999999999 -0.36765531000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[465]" " -type \"float2\" -0.29571958999999998 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[466]" " -type \"float2\" -0.29695892000000002 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[467]" " -type \"float2\" -0.19969298999999999 -0.36368433"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[468]" " -type \"float2\" -0.19969374000000001 -0.36368879999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[469]" " -type \"float2\" -0.20220195999999999 -0.36260101"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[470]" " -type \"float2\" -0.20384385999999999 -0.36765531000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[471]" " -type \"float2\" -0.20220202000000001 -0.36260124999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[472]" " -type \"float2\" -0.20384385999999999 -0.36765531000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[473]" " -type \"float2\" -0.20302284000000001 -0.36512782999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[474]" " -type \"float2\" -0.29571962000000002 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[475]" " -type \"float2\" -0.29571958999999998 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[476]" " -type \"float2\" -0.29695892000000002 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[477]" " -type \"float2\" -0.22757155000000001 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[478]" " -type \"float2\" -0.21907541 -0.15833791999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[479]" " -type \"float2\" -0.22757152 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[480]" " -type \"float2\" -0.21969691 -0.15832748999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[481]" " -type \"float2\" -0.41331511999999998 -0.39603867999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[482]" " -type \"float2\" -0.41331511999999998 -0.39603867999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[483]" " -type \"float2\" -0.42777686999999998 -0.36765543000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[484]" " -type \"float2\" -0.20220195999999999 -0.36260101"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[485]" " -type \"float2\" -0.29520604 -0.16203210000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[486]" " -type \"float2\" -0.29695895 -0.15833125000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[487]" " -type \"float2\" -0.21907537999999999 -0.15833178000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[488]" " -type \"float2\" -0.42779951999999999 -0.36766054999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[489]" " -type \"float2\" -0.42777693 -0.36765548999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[490]" " -type \"float2\" -0.43044560999999998 -0.36824944999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[491]" " -type \"float2\" -0.21921855000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[492]" " -type \"float2\" -0.41734481000000001 -0.35810461999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[493]" " -type \"float2\" -0.21907537999999999 -0.15833125000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[494]" " -type \"float2\" -0.21907537999999999 -0.15833125000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[495]" " -type \"float2\" -0.26374706999999997 -0.23916408"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[496]" " -type \"float2\" -0.19969298999999999 -0.36368433"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[497]" " -type \"float2\" -0.19969374000000001 -0.36368879999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[498]" " -type \"float2\" -0.19969317 -0.36368521999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[499]" " -type \"float2\" -0.20220195999999999 -0.36260101"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[500]" " -type \"float2\" -0.20220195999999999 -0.36260101"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[501]" " -type \"float2\" -0.19969368000000001 -0.36368862000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[502]" " -type \"float2\" -0.19970410999999999 -0.36368439000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[503]" " -type \"float2\" -0.19969395000000001 -0.36368874000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[504]" " -type \"float2\" -0.19969298999999999 -0.36368433"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[505]" " -type \"float2\" -0.19975239 -0.36355904"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[506]" " -type \"float2\" -0.29694524 -0.15836009000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[507]" " -type \"float2\" -0.21921890999999999 -0.20468315000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[508]" " -type \"float2\" -0.21921848999999999 -0.20465389"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[509]" " -type \"float2\" -0.43043010999999998 -0.36824593"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[510]" " -type \"float2\" -0.42571198999999998 -0.36458394"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[511]" " -type \"float2\" -0.42777686999999998 -0.36765543000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[512]" " -type \"float2\" -0.29634010999999999 -0.15830573000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[513]" " -type \"float2\" -0.42655838000000001 -0.37004693999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[514]" " -type \"float2\" -0.42717223999999998 0.24567768000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[515]" " -type \"float2\" -0.42865688000000002 0.24110851"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[516]" " -type \"float2\" -0.40976 0.27819579999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[517]" " -type \"float2\" -0.41258389000000001 0.27430901000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[518]" " -type \"float2\" -0.34995084999999998 0.31981477000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[519]" " -type \"float2\" -0.31340839999999998 0.32484155999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[520]" " -type \"float2\" -0.31821274999999999 0.32484155999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[521]" " -type \"float2\" -0.27710109999999999 0.31833017000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[522]" " -type \"float2\" -0.28167033000000002 0.31981477000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[523]" " -type \"float2\" -0.21903723 0.27430909999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[524]" " -type \"float2\" -0.20296428 0.24110851"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[525]" " -type \"float2\" -0.20444884999999999 0.24567770999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[526]" " -type \"float2\" -0.19793746000000001 0.20456621"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[527]" " -type \"float2\" -0.19793746000000001 0.20937046000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[528]" " -type \"float2\" -0.20444888 0.16825888"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[529]" " -type \"float2\" -0.20296428 0.17282817"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[530]" " -type \"float2\" -0.22186112 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[531]" " -type \"float2\" -0.21903719999999999 0.13962767000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[532]" " -type \"float2\" -0.28167036000000001 0.094121888000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[533]" " -type \"float2\" -0.31821274999999999 0.089095070999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[534]" " -type \"float2\" -0.31340839999999998 0.089095070999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[535]" " -type \"float2\" -0.35451996000000002 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[536]" " -type \"float2\" -0.34995079000000001 0.094122006999999994"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[537]" " -type \"float2\" -0.41258389000000001 0.13962754999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[538]" " -type \"float2\" -0.42865688000000002 0.17282817"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[539]" " -type \"float2\" -0.4271723 0.16825914"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[540]" " -type \"float2\" -0.43368362999999999 0.20937046000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[541]" " -type \"float2\" -0.43368362999999999 0.20456621"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[542]" " -type \"float2\" -0.42717223999999998 0.24567768000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[543]" " -type \"float2\" -0.42865688000000002 0.24110851"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[544]" " -type \"float2\" -0.40976 0.27819579999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[545]" " -type \"float2\" -0.41258389000000001 0.27430901000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[546]" " -type \"float2\" -0.34995084999999998 0.31981477000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[547]" " -type \"float2\" -0.31340839999999998 0.32484155999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[548]" " -type \"float2\" -0.31821274999999999 0.32484155999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[549]" " -type \"float2\" -0.27710109999999999 0.31833017000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[550]" " -type \"float2\" -0.28167033000000002 0.31981477000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[551]" " -type \"float2\" -0.21903744 0.27430937"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[552]" " -type \"float2\" -0.20296428 0.24110851"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[553]" " -type \"float2\" -0.20444884999999999 0.24567770999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[554]" " -type \"float2\" -0.19793746000000001 0.20456621"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[555]" " -type \"float2\" -0.19793746000000001 0.20937046000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[556]" " -type \"float2\" -0.20444888 0.16825888"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[557]" " -type \"float2\" -0.20296428 0.17282817"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[558]" " -type \"float2\" -0.22186112 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[559]" " -type \"float2\" -0.21903719999999999 0.13962767000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[560]" " -type \"float2\" -0.28166996999999999 0.094122067000000004"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[561]" " -type \"float2\" -0.31821274999999999 0.089095070999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[562]" " -type \"float2\" -0.31340839999999998 0.089095070999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[563]" " -type \"float2\" -0.35451996000000002 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[564]" " -type \"float2\" -0.34995079000000001 0.094122006999999994"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[565]" " -type \"float2\" -0.41258365000000002 0.13962731"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[566]" " -type \"float2\" -0.42865688000000002 0.17282817"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[567]" " -type \"float2\" -0.4271723 0.16825914"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[568]" " -type \"float2\" -0.43368362999999999 0.20937046000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[569]" " -type \"float2\" -0.43368362999999999 0.20456621"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[570]" " -type \"float2\" -0.38703810999999999 0.30091783"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[571]" " -type \"float2\" -0.38703810999999999 0.30091783"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[572]" " -type \"float2\" -0.35451996000000002 0.31833013999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[573]" " -type \"float2\" -0.38315135 0.30374181"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[574]" " -type \"float2\" -0.38703810999999999 0.30091783"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[575]" " -type \"float2\" -0.32664692000000001 0.21780479"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[576]" " -type \"float2\" -0.32276797000000002 0.22062296000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[577]" " -type \"float2\" -0.24846985999999999 0.30374166000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[578]" " -type \"float2\" -0.24846985999999999 0.30374166000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[579]" " -type \"float2\" -0.22186112 0.27819582999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[580]" " -type \"float2\" -0.2445831 0.30091785999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[581]" " -type \"float2\" -0.24846950000000001 0.30374142999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[582]" " -type \"float2\" -0.30885318 0.22062296000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[583]" " -type \"float2\" -0.30497419999999997 0.21780479"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[584]" " -type \"float2\" -0.24458298000000001 0.1130188"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[585]" " -type \"float2\" -0.24458298000000001 0.1130188"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[586]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[587]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[588]" " -type \"float2\" -0.24458334000000001 0.11301862"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[589]" " -type \"float2\" -0.30497419999999997 0.19613189"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[590]" " -type \"float2\" -0.30885318 0.19331369000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[591]" " -type \"float2\" -0.38315128999999998 0.11019509"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[592]" " -type \"float2\" -0.38315128999999998 0.11019509"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[593]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[594]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[595]" " -type \"float2\" -0.38315158999999999 0.11019519999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[596]" " -type \"float2\" -0.32276790999999999 0.19331369000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[597]" " -type \"float2\" -0.32664692000000001 0.19613189"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[598]" " -type \"float2\" -0.38315135 0.30374181"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[599]" " -type \"float2\" -0.38315135 0.30374181"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[600]" " -type \"float2\" -0.37813658 0.30629694000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[601]" " -type \"float2\" -0.35875319999999999 0.31617317"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[602]" " -type \"float2\" -0.35872166999999999 0.31618926000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[603]" " -type \"float2\" -0.35846210000000001 0.31632155000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[604]" " -type \"float2\" -0.38315135 0.30374181"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[605]" " -type \"float2\" -0.37844615999999998 0.30613917000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[606]" " -type \"float2\" -0.35846214999999998 0.31632155000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[607]" " -type \"float2\" -0.37813783000000001 0.30629632000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[608]" " -type \"float2\" -0.35953354999999998 0.31577559999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[609]" " -type \"float2\" -0.35451996000000002 0.31833013999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[610]" " -type \"float2\" -0.35451996000000002 0.31833013999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[611]" " -type \"float2\" -0.2445831 0.30091785999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[612]" " -type \"float2\" -0.2445831 0.30091785999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[613]" " -type \"float2\" -0.24060329999999999 0.29693806"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[614]" " -type \"float2\" -0.22517773999999999 0.28151247000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[615]" " -type \"float2\" -0.22519562000000001 0.28153034999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[616]" " -type \"float2\" -0.22498956000000001 0.28132433000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[617]" " -type \"float2\" -0.2445831 0.30091785999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[618]" " -type \"float2\" -0.24086893000000001 0.29720363"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[619]" " -type \"float2\" -0.22498958999999999 0.28132433000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[620]" " -type \"float2\" -0.24060434 0.29693907000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[621]" " -type \"float2\" -0.22583987999999999 0.28217456000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[622]" " -type \"float2\" -0.22186112 0.27819582999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[623]" " -type \"float2\" -0.22186112 0.27819582999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[624]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[625]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[626]" " -type \"float2\" -0.25348463999999998 0.10763983000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[627]" " -type \"float2\" -0.27285719000000003 0.097768991999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[628]" " -type \"float2\" -0.27289939000000002 0.097747445000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[629]" " -type \"float2\" -0.27315903000000002 0.097615152999999996"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[630]" " -type \"float2\" -0.24846979999999999 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[631]" " -type \"float2\" -0.25317085 0.10779969"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[632]" " -type \"float2\" -0.27315903000000002 0.097615152999999996"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[633]" " -type \"float2\" -0.25348335999999999 0.10764043"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[634]" " -type \"float2\" -0.27208763000000002 0.098161042000000004"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[635]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[636]" " -type \"float2\" -0.27710109999999999 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[637]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[638]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[639]" " -type \"float2\" -0.39101785 0.11699866"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[640]" " -type \"float2\" -0.40644335999999998 0.13242424999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[641]" " -type \"float2\" -0.40642548000000001 0.13240634000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[642]" " -type \"float2\" -0.40663146999999999 0.13261240999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[643]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[644]" " -type \"float2\" -0.39075219999999999 0.11673306"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[645]" " -type \"float2\" -0.40663146999999999 0.13261240999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[646]" " -type \"float2\" -0.39101683999999998 0.1169977"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[647]" " -type \"float2\" -0.40578121 0.13176222000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[648]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[649]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[650]" " -type \"float2\" -0.3780908 0.30632028"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[651]" " -type \"float2\" -0.24056696999999999 0.29690167000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[652]" " -type \"float2\" -0.25353035000000002 0.10761647000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[653]" " -type \"float2\" -0.39105414999999999 0.11703502"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[654]" " -type \"float2\" -0.37896584999999999 0.30587444000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[655]" " -type \"float2\" -0.37924587999999998 0.30573173999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[656]" " -type \"float2\" -0.38315135 0.30374181"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[657]" " -type \"float2\" -0.35922514999999999 0.31593281000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[658]" " -type \"float2\" -0.35451996000000002 0.31833013999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[659]" " -type \"float2\" -0.35451996000000002 0.31833013999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[660]" " -type \"float2\" -0.24126645999999999 0.29760122"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[661]" " -type \"float2\" -0.24148372000000001 0.29781838999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[662]" " -type \"float2\" -0.2445831 0.30091785999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[663]" " -type \"float2\" -0.22561498999999999 0.28194973000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[664]" " -type \"float2\" -0.22186112 0.27819582999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[665]" " -type \"float2\" -0.22186112 0.27819582999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[666]" " -type \"float2\" -0.25265530000000003 0.10806230999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[667]" " -type \"float2\" -0.25237530000000002 0.10820507"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[668]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[669]" " -type \"float2\" -0.27237507999999999 0.098014592999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[670]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[671]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[672]" " -type \"float2\" -0.39035469 0.11633556"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[673]" " -type \"float2\" -0.39013743000000001 0.11611836"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[674]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[675]" " -type \"float2\" -0.40600609999999998 0.13198695999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[676]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[677]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[678]" " -type \"float2\" -0.38616036999999998 0.30155559999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[679]" " -type \"float2\" -0.38315135 0.30374181"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[680]" " -type \"float2\" -0.35451996000000002 0.31833013999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[681]" " -type \"float2\" -0.35098273000000002 0.31947944"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[682]" " -type \"float2\" -0.38034754999999998 0.29988226000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[683]" " -type \"float2\" -0.35304570000000002 0.31379315000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[684]" " -type \"float2\" -0.24759208999999999 0.30310388999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[685]" " -type \"float2\" -0.2445831 0.30091785999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[686]" " -type \"float2\" -0.22186112 0.27819582999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[687]" " -type \"float2\" -0.21967492 0.27518674999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[688]" " -type \"float2\" -0.24738764999999999 0.29705805000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[689]" " -type \"float2\" -0.22572067000000001 0.27539142999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[690]" " -type \"float2\" -0.24546075000000001 0.11238115"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[691]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[692]" " -type \"float2\" -0.27710112999999997 0.095606521"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[693]" " -type \"float2\" -0.28063849000000002 0.094457224000000006"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[694]" " -type \"float2\" -0.25127387000000001 0.11405477999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[695]" " -type \"float2\" -0.27857545 0.10014373"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[696]" " -type \"float2\" -0.38402902999999999 0.11083274"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[697]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[698]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[699]" " -type \"float2\" -0.41194618 0.13874996000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[700]" " -type \"float2\" -0.38423389000000002 0.11687814000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[701]" " -type \"float2\" -0.40590041999999998 0.13854522"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[702]" " -type \"float2\" -0.38315135 0.30374181"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[703]" " -type \"float2\" -0.38155997000000003 0.30455263999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[704]" " -type \"float2\" -0.37980360000000002 0.30544755000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[705]" " -type \"float2\" -0.38123112999999997 0.30472016000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[706]" " -type \"float2\" -0.35451996000000002 0.31833013999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[707]" " -type \"float2\" -0.35607356000000001 0.31753861999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[708]" " -type \"float2\" -0.35652465 0.31730874999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[709]" " -type \"float2\" -0.35780317 0.31665736"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[710]" " -type \"float2\" -0.38315135 0.30374181"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[711]" " -type \"float2\" -0.37856275 0.30607974999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[712]" " -type \"float2\" -0.38146566999999998 0.30460069000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[713]" " -type \"float2\" -0.38067830000000002 0.30500185000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[714]" " -type \"float2\" -0.35451996000000002 0.31833013999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[715]" " -type \"float2\" -0.35604930000000001 0.31755098999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[716]" " -type \"float2\" -0.35892022000000001 0.31608817"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[717]" " -type \"float2\" -0.35699141000000001 0.31707089999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[718]" " -type \"float2\" -0.2445831 0.30091785999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[719]" " -type \"float2\" -0.24332019999999999 0.29965492999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[720]" " -type \"float2\" -0.24192627999999999 0.29826105000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[721]" " -type \"float2\" -0.24300807999999999 0.29934284"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[722]" " -type \"float2\" -0.22186112 0.27819582999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[723]" " -type \"float2\" -0.22309398999999999 0.27942868999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[724]" " -type \"float2\" -0.22339340999999999 0.27972814000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[725]" " -type \"float2\" -0.22446658999999999 0.28080129999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[726]" " -type \"float2\" -0.2445831 0.30091785999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[727]" " -type \"float2\" -0.24094157999999999 0.29727635000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[728]" " -type \"float2\" -0.24324533000000001 0.29958006999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[729]" " -type \"float2\" -0.24264851000000001 0.29898333999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[730]" " -type \"float2\" -0.22186112 0.27819582999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[731]" " -type \"float2\" -0.22307482000000001 0.27940949999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[732]" " -type \"float2\" -0.22535315 0.28168786000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[733]" " -type \"float2\" -0.22376468999999999 0.28009936000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[734]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[735]" " -type \"float2\" -0.25006117999999999 0.10938405"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[736]" " -type \"float2\" -0.25181761000000003 0.10848914"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[737]" " -type \"float2\" -0.25038755000000001 0.10921781"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[738]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[739]" " -type \"float2\" -0.27554759000000001 0.096398175000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[740]" " -type \"float2\" -0.27506688000000001 0.096643031000000004"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[741]" " -type \"float2\" -0.27381802 0.097279400000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[742]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[743]" " -type \"float2\" -0.25305840000000002 0.10785691"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[744]" " -type \"float2\" -0.25015547999999999 0.10933606"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[745]" " -type \"float2\" -0.25094095 0.10893588"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[746]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[747]" " -type \"float2\" -0.27557178999999998 0.096385746999999994"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[748]" " -type \"float2\" -0.27270091000000002 0.097848563999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[749]" " -type \"float2\" -0.27463156 0.096864879000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[750]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[751]" " -type \"float2\" -0.38830095999999997 0.11428182000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[752]" " -type \"float2\" -0.38969487000000003 0.11567573"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[753]" " -type \"float2\" -0.38861305000000002 0.11459390999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[754]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[755]" " -type \"float2\" -0.40852714000000001 0.13450798"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[756]" " -type \"float2\" -0.40822767999999998 0.13420856"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[757]" " -type \"float2\" -0.40715456 0.13313547000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[758]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[759]" " -type \"float2\" -0.39067960000000002 0.11666045999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[760]" " -type \"float2\" -0.38837581999999998 0.11435668"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[761]" " -type \"float2\" -0.38897263999999998 0.11495344"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[762]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[763]" " -type \"float2\" -0.40854626999999999 0.13452721000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[764]" " -type \"float2\" -0.40626793999999999 0.13224889000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[765]" " -type \"float2\" -0.40785645999999998 0.13383737000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[766]" " -type \"float2\" -0.38363259999999999 0.30332014000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[767]" " -type \"float2\" -0.38315135 0.30374181"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[768]" " -type \"float2\" -0.35377555999999999 0.31857197999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[769]" " -type \"float2\" -0.35451996000000002 0.31833013999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[770]" " -type \"float2\" -0.38362735999999997 0.30265196999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[771]" " -type \"float2\" -0.38315135 0.30374181"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[772]" " -type \"float2\" -0.35362989 0.31806970000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[773]" " -type \"float2\" -0.35451996000000002 0.31833013999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[774]" " -type \"float2\" -0.24513322000000001 0.30124557000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[775]" " -type \"float2\" -0.2445831 0.30091785999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[776]" " -type \"float2\" -0.22140103999999999 0.27756256000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[777]" " -type \"float2\" -0.22186112 0.27819582999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[778]" " -type \"float2\" -0.24576655 0.30103355999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[779]" " -type \"float2\" -0.2445831 0.30091785999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[780]" " -type \"float2\" -0.22183621000000001 0.27727120999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[781]" " -type \"float2\" -0.22186112 0.27819582999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[782]" " -type \"float2\" -0.24798861 0.11061654999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[783]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[784]" " -type \"float2\" -0.27784553000000001 0.095364704999999994"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[785]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[786]" " -type \"float2\" -0.24799398 0.11128465999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[787]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[788]" " -type \"float2\" -0.27798869999999998 0.095868318999999994"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[789]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[790]" " -type \"float2\" -0.3864879 0.11269121"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[791]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[792]" " -type \"float2\" -0.41022003000000001 0.13637411999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[793]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[794]" " -type \"float2\" -0.38585466000000002 0.11290304"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[795]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[796]" " -type \"float2\" -0.40978491 0.13666543"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[797]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[798]" " -type \"float2\" -0.27270091000000002 0.097848563999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[799]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[800]" " -type \"float2\" -0.27557178999999998 0.096385746999999994"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[801]" " -type \"float2\" -0.25015547999999999 0.10933606"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[802]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[803]" " -type \"float2\" -0.25305840000000002 0.10785691"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[804]" " -type \"float2\" -0.27506688000000001 0.096643031000000004"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[805]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[806]" " -type \"float2\" -0.27554759000000001 0.096398175000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[807]" " -type \"float2\" -0.27784553000000001 0.095364704999999994"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[808]" " -type \"float2\" -0.27710112999999997 0.095606521"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[809]" " -type \"float2\" -0.27710112999999997 0.095606521"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[810]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[811]" " -type \"float2\" -0.25006117999999999 0.10938405"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[812]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[813]" " -type \"float2\" -0.28166996999999999 0.094122067000000004"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[814]" " -type \"float2\" -0.27857545 0.10014373"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[815]" " -type \"float2\" -0.27237507999999999 0.098014592999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[816]" " -type \"float2\" -0.25317085 0.10779969"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[817]" " -type \"float2\" -0.25127387000000001 0.11405477999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[818]" " -type \"float2\" -0.24458334000000001 0.11301862"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[819]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[820]" " -type \"float2\" -0.27285719000000003 0.097768991999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[821]" " -type \"float2\" -0.28063849000000002 0.094457224000000006"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[822]" " -type \"float2\" -0.27710112999999997 0.095606579999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[823]" " -type \"float2\" -0.24546075000000001 0.11238115"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[824]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[825]" " -type \"float2\" -0.24846983 0.11019497"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[826]" " -type \"float2\" -0.25265530000000003 0.10806230999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[827]" " -type \"float2\" -0.40626793999999999 0.13224889000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[828]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[829]" " -type \"float2\" -0.39067960000000002 0.11666045999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[830]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[831]" " -type \"float2\" -0.40715456 0.13313547000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[832]" " -type \"float2\" -0.38969487000000003 0.11567573"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[833]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[834]" " -type \"float2\" -0.38861305000000002 0.11459390999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[835]" " -type \"float2\" -0.3864879 0.11269121"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[836]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[837]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[838]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[839]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[840]" " -type \"float2\" -0.41258365000000002 0.13962731"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[841]" " -type \"float2\" -0.40590041999999998 0.13854522"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[842]" " -type \"float2\" -0.40600609999999998 0.13198695999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[843]" " -type \"float2\" -0.39075219999999999 0.11673306"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[844]" " -type \"float2\" -0.38423389000000002 0.11687814000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[845]" " -type \"float2\" -0.38315158999999999 0.11019519999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[846]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[847]" " -type \"float2\" -0.40644335999999998 0.13242424999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[848]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[849]" " -type \"float2\" -0.41194618 0.13874996000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[850]" " -type \"float2\" -0.40976 0.13574085"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[851]" " -type \"float2\" -0.38402902999999999 0.11083274"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[852]" " -type \"float2\" -0.38703805000000002 0.11301897"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[853]" " -type \"float2\" -0.39035469 0.11633556"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[854]" " -type \"float2\" -0.41258389000000001 0.27430901000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[855]" " -type \"float2\" -0.20220195999999999 -0.36260101"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[856]" " -type \"float2\" -0.19969374000000001 -0.36368879999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[857]" " -type \"float2\" -0.20384385999999999 -0.36765531000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[858]" " -type \"float2\" -0.21830591999999999 -0.39603809000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[859]" " -type \"float2\" -0.22142925999999999 -0.40033742999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[860]" " -type \"float2\" -0.24395451000000001 -0.42286207999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[861]" " -type \"float2\" -0.24825346000000001 -0.42598614000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[862]" " -type \"float2\" -0.27663641999999999 -0.44044778000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[863]" " -type \"float2\" -0.28169044999999998 -0.44209018"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[864]" " -type \"float2\" -0.31315330000000002 -0.44707295000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[865]" " -type \"float2\" -0.31846755999999998 -0.44707361000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[866]" " -type \"float2\" -0.34993011000000002 -0.44208983000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[867]" " -type \"float2\" -0.35498434000000001 -0.44044819000000002"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[868]" " -type \"float2\" -0.38336712000000001 -0.42598589999999997"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[869]" " -type \"float2\" -0.38766682000000002 -0.42286286000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[870]" " -type \"float2\" -0.41331511999999998 -0.39603867999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[871]" " -type \"float2\" -0.41019136 -0.40033766999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[872]" " -type \"float2\" -0.42777686999999998 -0.36765543000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[873]" " -type \"float2\" -0.43044560999999998 -0.36824944999999998"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[874]" " -type \"float2\" -0.19969298999999999 -0.36368433"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[875]" " -type \"float2\" -0.29695892000000002 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[876]" " -type \"float2\" -0.28722349000000003 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[877]" " -type \"float2\" -0.29571958999999998 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[878]" " -type \"float2\" -0.27748802 -0.15833112999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[879]" " -type \"float2\" -0.28598415999999999 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[880]" " -type \"float2\" -0.26775262 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[881]" " -type \"float2\" -0.27624872 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[882]" " -type \"float2\" -0.25801714999999997 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[883]" " -type \"float2\" -0.26651329000000001 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[884]" " -type \"float2\" -0.24828175 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[885]" " -type \"float2\" -0.25677788000000001 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[886]" " -type \"float2\" -0.23854628 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[887]" " -type \"float2\" -0.24704239 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[888]" " -type \"float2\" -0.22881085000000001 -0.15833119000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[889]" " -type \"float2\" -0.23730694999999999 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[890]" " -type \"float2\" -0.21907537999999999 -0.15833125000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[891]" " -type \"float2\" -0.22757152 -0.15828016"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[892]" " -type \"float2\" -0.21921855000000001 -0.20468285999999999"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[893]" " -type \"float2\" -0.29571962000000002 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[894]" " -type \"float2\" -0.29571958999999998 -0.15828010000000001"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[895]" " -type \"float2\" -0.26954224999999998 -0.21897516"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[896]" " -type \"float2\" -0.26954224999999998 -0.21897516"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[897]" " -type \"float2\" -0.31341272999999997 -0.44979474000000003"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[898]" " -type \"float2\" -0.26954224999999998 -0.21897516"
+		
+		2 "Wooden_Chair:polyTweakUV1" "uvTweak[899]" " -type \"float2\" -0.31320995000000001 -0.44766804999999998";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -786,18 +2606,18 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 5 ".st";
+	setAttr -s 6 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 9 ".s";
+	setAttr -s 10 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 3 ".u";
+	setAttr -s 4 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 4 ".r";
+	setAttr -s 5 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 3 ".tx";
+	setAttr -s 4 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
