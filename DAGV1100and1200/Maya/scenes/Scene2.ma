@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: Scene2.ma
-//Last modified: Fri, Nov 21, 2025 03:31:16 PM
+//Last modified: Fri, Dec 05, 2025 04:04:31 PM
 //Codeset: 1252
 file -rdi 1 -ns "Bucket" -rfn "BucketRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Bucket.ma";
 file -rdi 1 -ns "Wooden_Table" -rfn "Wooden_TableRN" -op "v=0;" -typ "mayaAscii"
@@ -10,6 +10,10 @@ file -rdi 1 -ns "Wooden_Chair" -rfn "Wooden_ChairRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Wooden Chair.ma";
 file -rdi 1 -ns "Wooden_Shelf" -rfn "Wooden_ShelfRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Wooden Shelf.ma";
+file -rdi 1 -ns "Wood_Bookshelf" -dr 1 -rfn "Wood_BookshelfRN" -op "v=0;" -typ
+		 "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Wood Bookshelf.ma";
+file -rdi 1 -ns "Wood_Bookshelf1" -rfn "Wood_BookshelfRN1" -op "v=0;" -typ "mayaAscii"
+		 "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Wood Bookshelf.ma";
 file -r -ns "Bucket" -dr 1 -rfn "BucketRN" -op "v=0;" -typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Bucket.ma";
 file -r -ns "Wooden_Table" -dr 1 -rfn "Wooden_TableRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Wooden Table.ma";
@@ -18,6 +22,10 @@ file -r -ns "Wooden_Chair" -dr 1 -rfn "Wooden_ChairRN" -op "v=0;" -typ "mayaAsci
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Wooden Chair.ma";
 file -r -ns "Wooden_Shelf" -dr 1 -rfn "Wooden_ShelfRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Wooden Shelf.ma";
+file -r -ns "Wood_Bookshelf" -dr 1 -rfn "Wood_BookshelfRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Wood Bookshelf.ma";
+file -r -ns "Wood_Bookshelf1" -dr 1 -rfn "Wood_BookshelfRN1" -op "v=0;" -typ "mayaAscii"
+		 "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Wood Bookshelf.ma";
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
@@ -28,24 +36,24 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202409190603-cbdc5a7e54";
 fileInfo "osv" "Windows 11 Enterprise v2009 (Build: 26100)";
-fileInfo "UUID" "B4BF1F6B-4378-3A15-9FA2-9B99E70126FD";
+fileInfo "UUID" "97C42AAD-4392-9A07-30DE-A295D2C2F4D6";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "5E7E39D6-4F8C-4AE3-2232-22AFC1F466CD";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 16.567647049556584 26.905753757613624 -18.545810261961567 ;
-	setAttr ".r" -type "double3" 150.43240471203146 56.403180042069835 180 ;
-	setAttr ".rp" -type "double3" 0 3.5527136788005009e-15 0 ;
-	setAttr ".rpt" -type "double3" 4.5761371814454653e-15 -1.3227123044557371e-14 3.1058483737618951e-15 ;
+	setAttr ".t" -type "double3" 19.828865885034471 27.087403629817729 44.39191340362882 ;
+	setAttr ".r" -type "double3" -29.569639506988274 25.771531126375933 -2.7371841273986827e-14 ;
+	setAttr ".rp" -type "double3" -2.886579864025407e-15 4.5519144009631418e-15 0 ;
+	setAttr ".rpt" -type "double3" 2.7074021824072234e-15 -1.3544716289398801e-14 -5.7800485634832019e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E30D1C86-4306-40D6-0114-EB9235501752";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 45.724305025132345;
+	setAttr ".coi" 53.637730085129292;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -16.558700953203317 4.3430941487027219 3.460632644692101 ;
+	setAttr ".tp" -type "double3" -0.45456180425166082 0.61819972603237616 2.3803686265259429 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "88F1A0D5-45CB-831A-9DDC-4CBAD6A80601";
@@ -575,6 +583,7 @@ createNode mesh -n "pCubeShape6" -p "pCube6";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pCube7";
 	rename -uid "D3620F45-48E1-5AB9-4B09-3A87EAED4D0E";
+	setAttr ".v" no;
 	setAttr ".rp" -type "double3" -12.210839241753785 2.4356462296449006 -3.1258682304376144 ;
 	setAttr ".sp" -type "double3" -12.210839241753785 2.4356462296449006 -3.1258682304376144 ;
 createNode mesh -n "pCubeShape7" -p "pCube7";
@@ -1379,20 +1388,20 @@ createNode mesh -n "pCubeShape1Orig8" -p "pCube8";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "8308A2BC-416D-63B3-7D29-0A8F9A831999";
-	setAttr -s 7 ".lnk";
-	setAttr -s 7 ".slnk";
+	rename -uid "82E6E37E-4949-6C7F-DFD9-2491F0CFB210";
+	setAttr -s 19 ".lnk";
+	setAttr -s 19 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "F3DBD311-4134-EE52-4F66-9C8B8BC2F829";
+	rename -uid "F38320AF-447E-DB12-CB1A-D4BAA148D2DB";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "FD0C6FAA-4A1A-7B54-DE8D-5CB9F03C9135";
+	rename -uid "4BEAA1F1-4CE4-C5A9-D2E4-B39EED440DC8";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "31A3132D-4CFB-3560-FC7A-76A060F30144";
+	rename -uid "FF5207FD-4C96-590C-8D18-A5A182655E7E";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "76EBFDCB-46B8-8613-44E9-729B0525E54A";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "A9EAA022-44C4-CA54-491A-4D9AF199000F";
+	rename -uid "31854338-49F4-07B6-37FD-6C91E6AC0C72";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "156C12E5-4A6F-E88B-2A3C-3C905893A3EC";
 	setAttr ".g" yes;
@@ -1449,10 +1458,11 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".st" 6;
 createNode reference -n "BucketRN";
 	rename -uid "319DCD73-4AC9-FF6A-066D-30A48DB692B9";
+	setAttr ".fn[0]" -type "string" "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Bucket.ma";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"BucketRN"
 		"BucketRN" 0
-		"BucketRN" 20
+		"BucketRN" 24
 		2 "|Bucket:BucketGroup" "translate" " -type \"double3\" -0.76363117592786134 0 0.39843383222400952"
 		
 		2 "|Bucket:BucketGroup" "rotate" " -type \"double3\" 0 0 0"
@@ -1523,18 +1533,24 @@ createNode reference -n "BucketRN";
 		+ "1827579999999998 1.33999059999999992 0.81548882 10.134336 1.37211620000000001 0.81740259999999998 10.134556 1.37430830000000004 0.81548882 10.361023 1.40492949999999994 0.81740259999999998 10.351304 1.47699650000000005 0.81548882 10.56601 1.5031158 0.81740259999999998 10.547304 1.63800330000000005 0.81548882 10.729231 1.65706350000000002 0.81740259999999998 10.70337 1.84156790000000004 0.81548882 10.83471 1.85170389999999996 0.81740259999999998 10.804225 2.068526 0.81740259999999998 10.760593 2.06877779999999989 0.81573390999999995 10.723726 2.260711 0.81740259999999998 10.7315 2.24955769999999999 0.81573390999999995 10.696358 2.43449880000000007 0.81740259999999998 10.64444 2.41303210000000012 0.81573390999999995 10.614465 2.54319929999999994 0.81573415000000005 10.486064 2.57287840000000001 0.81740259999999998 10.507938 2.62731789999999998 0.81573390999999995 10.323724 2.66230369999999983 0.81740259999999998 10.335356 2.69402119999999989 0.81740259999999998 10.143586 2.65715289999999982 0.81573390999999995 "
 		+ "10.143334 2.66492649999999998 0.81740259999999998 9.95140080000000005 2.62978509999999988 0.81573390999999995 9.96255490000000066 2.577867 0.81740259999999998 9.77761360000000046 2.5478923 0.81573390999999995 9.79908080000000048 2.44136569999999997 0.81740259999999998 9.63923450000000059 2.41949129999999979 0.81573390999999995 9.66891380000000034 2.2687835999999999 0.81740259999999998 9.54980950000000028 2.25715110000000019 0.81573390999999995 9.584795 2.077014 0.81740259999999998 9.51809120000000064 2.07676220000000011 0.81573390999999995 9.55495930000000016 1.88482949999999994 0.81740259999999998 9.54718590000000056 1.89598270000000002 0.81573390999999995 9.58232779999999984 1.71104159999999994 0.81740259999999998 9.63424589999999981 1.73250829999999989 0.81573390999999995 9.66422080000000072 1.60234089999999996 0.81573390999999995 9.79262070000000051 1.5726621999999999 0.81740259999999998 9.77074720000000063 1.51822279999999998 0.81573390999999995 9.95496179999999953 1.48323690000000008 0.81740259999999998"
 		+ " 9.94332889999999914 1.45151929999999996 0.81740259999999998 10.135098 1.48838730000000008 0.81573415000000005 10.13535 1.48061409999999993 0.81740259999999998 10.327283 1.51575539999999997 0.81573390999999995 10.31613 1.567673 0.81740259999999998 10.501071 1.597648 0.81573390999999995 10.479605 1.70417449999999993 0.81740259999999998 10.63945 1.72604880000000005 0.81573390999999995 10.609772 1.87675679999999989 0.81740259999999998 10.728876 1.88838919999999999 0.81573390999999995 10.69389"
-		);
+		)
+		2 "Bucket:file1" "fileTextureName" " -type \"string\" \"C:/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Scene2_Texture.jpeg\""
+		
+		2 "Bucket:file1" "colorSpace" " -type \"string\" \"sRGB\""
+		2 "Bucket:file1" "viewNameUsed" " 0"
+		2 "Bucket:file1" "viewNameStr" " -type \"string\" \"<N/A>\"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "Wooden_TableRN";
 	rename -uid "141C5BF7-4E5F-D0D7-EB74-EEBD25CE0A8C";
+	setAttr ".fn[0]" -type "string" "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Wooden Table.ma";
 	setAttr -s 2 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Wooden_TableRN"
 		"Wooden_TableRN" 0
-		"Wooden_TableRN" 10
+		"Wooden_TableRN" 14
 		2 "|Wooden_Table:WoodenTable" "translate" " -type \"double3\" 0 0 0"
 		2 "|Wooden_Table:WoodenTable" "scale" " -type \"double3\" 1 1 1"
 		2 "|Wooden_Table:WoodenTable" "rotatePivot" " -type \"double3\" 7.66498015265371002 3.00883665312324933 10.49412307555087054"
@@ -1555,6 +1571,11 @@ createNode reference -n "Wooden_TableRN";
 		+ "231790000000002 -0.28323739999999997 -0.28968801999999999 -0.27968788 -0.29753020000000002 -0.28895482 -0.29570571000000001 -0.28706163000000001 -0.28435758 -0.28975152999999998 -0.28136750999999999 -0.283907 -0.29442056999999999 -0.29766223000000003 -0.28968164000000002 -0.29543981000000002 0.37327778 -0.35851693000000001 0.37414289000000001 -0.35455036000000001 0.37215972000000003 -0.35807079000000003 0.37475376999999999 -0.36056608000000001 0.37535270999999998 -0.36209047 0.37648755 -0.36351788000000002 0.36590539999999999 -0.4879657 0.36458795999999999 -0.4885388 0.36463582999999999 -0.48902153999999998 0.36626887000000002 -0.48831964 0.36665892999999999 -0.48864752 0.36732489000000002 -0.48914289 0.36823993999999999 -0.48973733000000003 0.37304646000000002 -0.35517304999999999 0.27035873999999999 -0.21282074000000001 0.38161433 -0.36311036000000002 0.36475324999999997 -0.48828870000000002 0.26920712000000002 -0.32221424999999998 0.36865866000000003 -0.48966187 0.27021095000000001 -0.23108524 0.2533851300"
 		+ "0000001 -0.23197978999999999 0.25341018999999998 -0.21377888 0.36854017 -0.49065977 0.36820382000000001 -0.49096990000000001 0.25319722 -0.32269013000000002 -0.27817007999999999 -0.27717417 -0.27157149000000003 -0.27914673000000001 -0.286154 -0.27461201000000002 -0.29811111000000001 -0.26428193 -0.29572346999999999 -0.26717889 -0.30433675999999998 -0.2588799 -0.25483546000000001 -0.17081669999999999 -0.25537953000000002 -0.17668428 -0.24825390999999999 -0.16181741999999999 -0.2385951 -0.15879757999999999 -0.22534277999999999 -0.15277535 -0.25923750000000001 -0.18341747999999999 -0.26561567000000003 -0.17967378000000001 -0.15506571999999999 -0.23980868 -0.24795958000000001 -0.13540830000000001 -0.2888675 -0.31214428 -0.34187970000000001 -0.25881874999999999 -0.32158807 -0.23590821000000001 -0.28111717000000003 -0.30785093000000002 -0.1336097 -0.23822677 -0.15479224999999999 -0.21826762 -0.13408998999999999 -0.21942526000000001 -0.30996737000000002 -0.24859714999999999 -0.13026898000000001 -0.33058356999999999 "
 		+ "-0.15200648 -0.33709282000000002")
+		2 "Wooden_Table:file1" "fileTextureName" " -type \"string\" \"C:/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Scene2_Texture.jpeg\""
+		
+		2 "Wooden_Table:file1" "colorSpace" " -type \"string\" \"sRGB\""
+		2 "Wooden_Table:file1" "viewNameUsed" " 0"
+		2 "Wooden_Table:file1" "viewNameStr" " -type \"string\" \"<N/A>\""
 		3 "Wooden_Table:polyTweakUV3.output" "|Wooden_Table:WoodenTable|Wooden_Table:WoodenTableShape.inMesh" 
 		""
 		5 4 "Wooden_TableRN" "|Wooden_Table:WoodenTable|Wooden_Table:WoodenTableShape.inMesh" 
@@ -1565,13 +1586,14 @@ createNode reference -n "Wooden_TableRN";
 lockNode -l 1 ;
 createNode reference -n "BedRN";
 	rename -uid "FA043AEE-489B-591C-7F05-29996ADE4538";
+	setAttr ".fn[0]" -type "string" "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Bed.ma";
 	setAttr -s 2 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"BedRN"
 		"BedRN" 0
-		"BedRN" 8
+		"BedRN" 12
 		2 "|Bed:pCube1" "translate" " -type \"double3\" 0 0 0"
 		2 "|Bed:pCube1" "scale" " -type \"double3\" 1 1 1"
 		2 "|Bed:pCube1" "rotatePivot" " -type \"double3\" -6.86665914328141369 1.0020810775768445 10.05627086544669346"
@@ -1580,6 +1602,11 @@ createNode reference -n "BedRN";
 		
 		2 "|Bed:pCube1|Bed:pCubeShape1" "uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		
+		2 "Bed:file1" "fileTextureName" " -type \"string\" \"C:/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Scene2_Texture.jpeg\""
+		
+		2 "Bed:file1" "colorSpace" " -type \"string\" \"sRGB\""
+		2 "Bed:file1" "viewNameUsed" " 0"
+		2 "Bed:file1" "viewNameStr" " -type \"string\" \"<N/A>\""
 		3 "Bed:polyTweakUV8.output" "|Bed:pCube1|Bed:pCubeShape1.inMesh" ""
 		5 4 "BedRN" "|Bed:pCube1|Bed:pCubeShape1.inMesh" "BedRN.placeHolderList[1]" 
 		""
@@ -1588,13 +1615,14 @@ createNode reference -n "BedRN";
 lockNode -l 1 ;
 createNode reference -n "Wooden_ChairRN";
 	rename -uid "9E604215-4E35-6025-75D3-8196F5778607";
+	setAttr ".fn[0]" -type "string" "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Wooden Chair.ma";
 	setAttr -s 2 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Wooden_ChairRN"
 		"Wooden_ChairRN" 0
-		"Wooden_ChairRN" 15
+		"Wooden_ChairRN" 19
 		2 "|Wooden_Chair:pCylinder1" "translate" " -type \"double3\" 0 0 0"
 		2 "|Wooden_Chair:pCylinder1" "rotate" " -type \"double3\" 0 0 0"
 		2 "|Wooden_Chair:pCylinder1" "scale" " -type \"double3\" 1 1 1"
@@ -1606,6 +1634,11 @@ createNode reference -n "Wooden_ChairRN";
 		
 		2 "|Wooden_Chair:pCylinder1|Wooden_Chair:pCylinderShape1" "uvSet[0].uvSetName" 
 		" -type \"string\" \"map1\""
+		2 "Wooden_Chair:file1" "fileTextureName" " -type \"string\" \"C:/GitHub/Essentials/DAGV1100and1200/Maya/sourceimages/Scene2_Texture.jpeg\""
+		
+		2 "Wooden_Chair:file1" "colorSpace" " -type \"string\" \"sRGB\""
+		2 "Wooden_Chair:file1" "viewNameUsed" " 0"
+		2 "Wooden_Chair:file1" "viewNameStr" " -type \"string\" \"<N/A>\""
 		2 "Wooden_Chair:polyTweakUV1" "uvTweak" " -s 900"
 		2 "Wooden_Chair:polyTweakUV1" "uvtk[0:249]" (" -type \"float2\" -0.42717223999999998 0.24567768000000001 -0.21921553999999999 0.085275247999999998 -0.21907607000000001 0.037826790999999998 -0.21977421999999999 -0.16724321 -0.41240543000000002 0.085275247999999998 -0.41254550000000001 0.037873759999999999 -0.40418893 0.085275247999999998 -0.40976 0.27819579999999999 -0.41258389000000001 0.27430901000000002 -0.32946521000000001 0.21392565999999999 -0.22895094999999999 0.085275247999999998 -0.22881153000000001 0.037826552999999999 -0.23868647000000001 0.085275247999999998 -0.23854694000000001 0.037826493000000003 -0.34995084999999998 0.31981477000000003 -0.24842181999999999 0.085275247999999998 -0.24828243 0.037826552999999999 -0.31340839999999998 0.32484155999999997 -0.31821274999999999 0.32484155999999997 -0.31820791999999998 0.22210452 -0.25815727999999999 0.085275247999999998 -0.25801784 0.037826552999999999 -0.27710109999999999 0.31833017000000002 -0.28167033000000002 0.31981477000000003 -0.31341322999999999 0.22210452 -0.26789275000000001 0.085275247999"
 		+ "999998 -0.26775326999999999 0.037826493000000003 -0.27762815000000002 0.085275247999999998 -0.27748871000000003 0.037826552999999999 -0.21903723 0.27430909999999997 -0.28736365000000003 0.085275247999999998 -0.28722414000000002 0.037826493000000003 -0.20296428 0.24110851 -0.20444884999999999 0.24567770999999999 -0.30215594000000001 0.21392565999999999 -0.29709901999999999 0.085275247999999998 -0.29695960999999998 0.037826552999999999 -0.19793746000000001 0.20456621 -0.19793746000000001 0.20937046000000001 -0.30067431999999999 0.20936569999999999 -0.30683445999999998 0.085275247999999998 -0.30669503999999997 0.037826552999999999 -0.20444888 0.16825888 -0.20296428 0.17282817 -0.30067431999999999 0.20457098000000001 -0.31656997999999997 0.085275247999999998 -0.31643051 0.037826493000000003 -0.22186112 0.13574085 -0.21903719999999999 0.13962767000000001 -0.30215591000000003 0.20001099 -0.32630538999999997 0.085275247999999998 -0.32616591 0.037826552999999999 -0.33604078999999998 0.085275247999999998 -0.3359013800"
@@ -1688,6 +1721,7 @@ createNode polySmoothFace -n "polySmoothFace1";
 	setAttr ".m08" yes;
 createNode reference -n "Wooden_ShelfRN";
 	rename -uid "E869A36F-4A4F-1D95-49E0-44820D59F246";
+	setAttr ".fn[0]" -type "string" "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Wooden Shelf.ma";
 	setAttr -s 3 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
@@ -1698,8 +1732,7 @@ createNode reference -n "Wooden_ShelfRN";
 		"Wooden_ShelfRN" 34
 		2 "|Wooden_Shelf:pCube1" "translate" " -type \"double3\" 0 0 0"
 		2 "|Wooden_Shelf:pCube1" "rotate" " -type \"double3\" 0 0 0"
-		2 "|Wooden_Shelf:pCube1" "scale" " -type \"double3\" 1 1 0.19637343830950196"
-		
+		2 "|Wooden_Shelf:pCube1" "scale" " -type \"double3\" 1 1 1"
 		2 "|Wooden_Shelf:pCube1" "rotatePivot" " -type \"double3\" -12.40885258150653669 6.87105207912658411 3.53694511467983652"
 		
 		2 "|Wooden_Shelf:pCube1" "scalePivot" " -type \"double3\" -12.40885258150653669 6.87105207912658411 3.53694511467983652"
@@ -1873,6 +1906,198 @@ createNode transformGeometry -n "transformGeometry4";
 	rename -uid "5F58AF66-4778-0A88-BAD8-2CA3BF3EF9A5";
 	setAttr ".txf" -type "matrix" 0 0 7.5242626992339741 0 0 0.11303525038383325 0 0
 		 -1.1223365415796638 0 0 0 -12.408852581506537 6.8710520791265841 3.5369451146798365 1;
+createNode reference -n "Wood_BookshelfRN";
+	rename -uid "7D1752A8-4B6D-4F55-BF41-A09B7D1B2669";
+	setAttr ".fn[0]" -type "string" "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Wood Bookshelf.ma";
+	setAttr -s 2 ".phl";
+	setAttr ".phl[2]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Wood_BookshelfRN"
+		"Wood_BookshelfRN" 28
+		2 "|Wood_Bookshelf:pCube1" "visibility" " 1"
+		2 "|Wood_Bookshelf:pCube1" "translate" " -type \"double3\" 0 0 0"
+		2 "|Wood_Bookshelf:pCube1" "scale" " -type \"double3\" 1 1 1"
+		2 "|Wood_Bookshelf:pCube1" "rotatePivot" " -type \"double3\" -11.90273061415156519 4.40630356119546818 -4.37947382609055236"
+		
+		2 "|Wood_Bookshelf:pCube1" "scalePivot" " -type \"double3\" -11.90273061415156519 4.40630356119546818 -4.37947382609055236"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "uvSet[0].uvSetName" 
+		" -type \"string\" \"map1\""
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pnts" " -s 40"
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[14]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[15]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[16]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[17]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[18]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[19]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[20]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[22]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[23]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[28]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[29]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[32]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[33]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[34]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[35]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[36]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[37]" " -type \"float3\" 0 0 0"
+		
+		2 "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1" "pt[39]" " -type \"float3\" 0 0 0"
+		
+		3 "Wood_Bookshelf:polyTweakUV1.output" "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1.inMesh" 
+		""
+		5 3 "Wood_BookshelfRN" "Wood_Bookshelf:polyTweakUV1.output" "Wood_BookshelfRN.placeHolderList[2]" 
+		"Wood_Bookshelf:pCubeShape1.i"
+		5 4 "Wood_BookshelfRN" "|Wood_Bookshelf:pCube1|Wood_Bookshelf:pCubeShape1.inMesh" 
+		"Wood_BookshelfRN.placeHolderList[3]" "";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode polyTweak -n "polyTweak2";
+	rename -uid "72809D35-4267-B941-F486-22B0BC9232B9";
+	setAttr ".uopa" yes;
+	setAttr -s 18 ".tk";
+	setAttr ".tk[14]" -type "float3" 0 -0.016135009 0 ;
+	setAttr ".tk[15]" -type "float3" 0 -0.016135009 0 ;
+	setAttr ".tk[16]" -type "float3" 0 -0.11593627 0 ;
+	setAttr ".tk[17]" -type "float3" 0 -0.14808904 0 ;
+	setAttr ".tk[18]" -type "float3" 0 -0.13724296 0 ;
+	setAttr ".tk[19]" -type "float3" 0 -0.16939574 0 ;
+	setAttr ".tk[20]" -type "float3" 0 -0.063160874 0 ;
+	setAttr ".tk[22]" -type "float3" 0 -0.07862027 0 ;
+	setAttr ".tk[23]" -type "float3" 0 -0.015459385 0 ;
+	setAttr ".tk[28]" -type "float3" 0 -0.07862027 0 ;
+	setAttr ".tk[29]" -type "float3" 0 -0.015459385 0 ;
+	setAttr ".tk[32]" -type "float3" 0 -0.016135009 0 ;
+	setAttr ".tk[33]" -type "float3" 0 -0.016135009 0 ;
+	setAttr ".tk[34]" -type "float3" 0 -0.14808904 0 ;
+	setAttr ".tk[35]" -type "float3" 0 -0.11593627 0 ;
+	setAttr ".tk[36]" -type "float3" 0 -0.13724296 0 ;
+	setAttr ".tk[37]" -type "float3" 0 -0.16939574 0 ;
+	setAttr ".tk[39]" -type "float3" 0 -0.063160874 0 ;
+createNode transformGeometry -n "transformGeometry5";
+	rename -uid "0C9613E1-4BA4-2FC7-DB1E-E9B0386B35F9";
+	setAttr ".txf" -type "matrix" 2.3473550669199046 0 0 0 0 8.7476694229966423 0 0
+		 0 0 5.9575117609892851 0 -11.902730614151565 4.4063035611954682 -4.3794738260905524 1;
+createNode transformGeometry -n "transformGeometry6";
+	rename -uid "A955C192-42C0-2F3A-61CF-30B737912C3E";
+	setAttr ".txf" -type "matrix" 1 0 0 0 0 1 0 0 0 0 0.19637343830950196 0 0 0 2.8423830413981612 1;
+createNode reference -n "sharedReferenceNode";
+	rename -uid "AA506FCE-4A81-1622-B713-BE9E33FB920B";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"sharedReferenceNode";
+createNode reference -n "Wood_BookshelfRN1";
+	rename -uid "C00FE041-410A-04FF-FE29-94A6A711761D";
+	setAttr ".fn[0]" -type "string" "C:/GitHub/Essentials/DAGV1100and1200/Maya/scenes/Wood Bookshelf.ma{1}";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Wood_BookshelfRN1"
+		"Wood_BookshelfRN1" 0
+		"Wood_BookshelfRN1" 46
+		2 "|Wood_Bookshelf1:pCube1" "translate" " -type \"double3\" 0 0 0"
+		2 "|Wood_Bookshelf1:pCube1" "scale" " -type \"double3\" 1 1 1"
+		2 "|Wood_Bookshelf1:pCube1" "rotatePivot" " -type \"double3\" -11.45436950513161811 5.19738214464935755 -5.31665599802767375"
+		
+		2 "|Wood_Bookshelf1:pCube1" "scalePivot" " -type \"double3\" -11.45436950513161811 5.19738214464935755 -5.31665599802767375"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "uvPivot" " -type \"double2\" 0.17868912220001221 0.43916261196136475"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts" " -s 40"
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[0]" " -type \"float3\" -12.398974 0.63742136999999999 -2.23076629999999998"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[1]" " -type \"float3\" -10.509765 0.63742136999999999 -2.23076629999999998"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[2]" " -type \"float3\" -12.398974 9.7573433000000005 -2.23076629999999998"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[3]" " -type \"float3\" -10.509765 9.7573433000000005 -2.23076629999999998"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[4]" " -type \"float3\" -12.398974 9.7573433000000005 -8.40254589999999979"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[5]" " -type \"float3\" -10.509765 9.7573433000000005 -8.40254589999999979"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[6]" " -type \"float3\" -12.398974 0.63742136999999999 -8.40254589999999979"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[7]" " -type \"float3\" -10.509765 0.63742136999999999 -8.40254589999999979"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[8]" " -type \"float3\" -10.509765 0.86243987 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[9]" " -type \"float3\" -10.509765 0.86243987 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[10]" " -type \"float3\" -10.509765 9.5323247999999996 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[11]" " -type \"float3\" -10.509765 9.5323247999999996 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[12]" " -type \"float3\" -10.509765 2.70422649999999987 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[13]" " -type \"float3\" -10.509765 2.64599079999999987 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[14]" " -type \"float3\" -10.509765 2.7881307999999998 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[15]" " -type \"float3\" -10.509765 2.79737780000000003 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[16]" " -type \"float3\" -10.509765 3.66089529999999996 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[17]" " -type \"float3\" -10.509765 3.275115 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[18]" " -type \"float3\" -10.509765 3.74585910000000011 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[19]" " -type \"float3\" -10.509765 3.40356989999999993 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[20]" " -type \"float3\" -10.509765 6.64430859999999957 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[21]" " -type \"float3\" -10.509765 7.19493060000000018 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[22]" " -type \"float3\" -10.509765 6.75213909999999995 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[23]" " -type \"float3\" -10.509765 7.376421 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[24]" " -type \"float3\" -11.885777 0.86243987 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[25]" " -type \"float3\" -11.885777 0.86243987 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[26]" " -type \"float3\" -11.885777 2.70422649999999987 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[27]" " -type \"float3\" -11.885777 2.64599079999999987 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[28]" " -type \"float3\" -11.885777 6.75213909999999995 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[29]" " -type \"float3\" -11.885777 7.376421 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[30]" " -type \"float3\" -11.885777 9.5323247999999996 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[31]" " -type \"float3\" -11.885777 9.5323247999999996 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[32]" " -type \"float3\" -11.885777 2.7881307999999998 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[33]" " -type \"float3\" -11.885777 2.79737780000000003 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[34]" " -type \"float3\" -11.885777 3.275115 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[35]" " -type \"float3\" -11.885777 3.66089529999999996 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[36]" " -type \"float3\" -11.885777 3.74585910000000011 -2.478061"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[37]" " -type \"float3\" -11.885777 3.40356989999999993 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[38]" " -type \"float3\" -11.885777 7.19493060000000018 -8.15525049999999929"
+		
+		2 "|Wood_Bookshelf1:pCube1|Wood_Bookshelf1:pCubeShape1" "pnts[39]" " -type \"float3\" -11.885777 6.64430859999999957 -2.478061";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -1884,18 +2109,18 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 7 ".st";
+	setAttr -s 8 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 10 ".s";
+	setAttr -s 11 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 5 ".u";
+	setAttr -s 6 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 6 ".r";
+	setAttr -s 7 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 5 ".tx";
+	setAttr -s 6 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -1922,13 +2147,15 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "transformGeometry1.og" "Wooden_TableRN.phl[1]";
 connectAttr "Wooden_TableRN.phl[2]" "transformGeometry1.ig";
 connectAttr "transformGeometry3.og" "BedRN.phl[1]";
 connectAttr "BedRN.phl[2]" "transformGeometry3.ig";
 connectAttr "transformGeometry2.og" "Wooden_ChairRN.phl[1]";
 connectAttr "Wooden_ChairRN.phl[2]" "polySmoothFace1.ip";
-connectAttr "transformGeometry4.og" "Wooden_ShelfRN.phl[1]";
+connectAttr "transformGeometry6.og" "Wooden_ShelfRN.phl[1]";
 connectAttr "pCubeShape8.iog" "Wooden_ShelfRN.phl[2]";
 connectAttr "Wooden_ShelfRN.phl[3]" "polyTweak1.ip";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -1938,17 +2165,28 @@ relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":default
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "_UNKNOWN_REF_NODE_.ur" "BucketRN.ur";
+connectAttr "sharedReferenceNode.sr" "BucketRN.sr";
 connectAttr "_UNKNOWN_REF_NODE_.ur" "Wooden_TableRN.ur";
+connectAttr "sharedReferenceNode.sr" "Wooden_TableRN.sr";
 connectAttr "_UNKNOWN_REF_NODE_.ur" "BedRN.ur";
+connectAttr "sharedReferenceNode.sr" "BedRN.sr";
 connectAttr "_UNKNOWN_REF_NODE_.ur" "Wooden_ChairRN.ur";
+connectAttr "sharedReferenceNode.sr" "Wooden_ChairRN.sr";
 connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
 		;
 connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drivers"
 		 -na;
 connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
+connectAttr "sharedReferenceNode.sr" "Wooden_ShelfRN.sr";
 connectAttr "polySmoothFace1.out" "transformGeometry2.ig";
 connectAttr "polyTweak1.out" "transformGeometry4.ig";
+connectAttr "transformGeometry5.og" "Wood_BookshelfRN.phl[3]";
+connectAttr "sharedReferenceNode.sr" "Wood_BookshelfRN.sr";
+connectAttr "Wood_BookshelfRN.phl[2]" "polyTweak2.ip";
+connectAttr "polyTweak2.out" "transformGeometry5.ig";
+connectAttr "transformGeometry4.og" "transformGeometry6.ig";
+connectAttr "sharedReferenceNode.sr" "Wood_BookshelfRN1.sr";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pPlaneShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pPlaneShape2.iog" ":initialShadingGroup.dsm" -na;
